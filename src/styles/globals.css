@@ -1,0 +1,54 @@
+/* Global reset ve tema renkleri */
+:root {
+  --color-primary: #522D72;
+  --color-secondary: #6A359C;
+  --color-background: #ffffff;
+  --color-card: #ffffff;
+  --color-text: #1a1a1a;
+  --color-white: #fff;
+  --color-accent: #522D72;
+  --color-error: #dc3545;
+  --color-black: #000000;
+  --color-gray: #f8f9fa;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --font-main: 'Montserrat', Inter, Arial, sans-serif;
+  --font-heading: 'Montserrat', Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  letter-spacing: 0.01em;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+section, .card, button, input, textarea {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
