@@ -222,34 +222,139 @@ const Home = () => {
               >
                 <div
                   style={{
-                    border: '1px solid rgba(0,0,0,0.3)',
-                    padding: '3rem 2rem',
-                    textAlign: 'center',
-                    transition: 'all 0.3s',
+                    position: 'relative',
+                    background: hoveredService === index 
+                      ? 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' 
+                      : 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%)',
+                    border: '2px solid',
+                    borderColor: hoveredService === index ? '#8b5cf6' : 'rgba(139, 92, 246, 0.2)',
+                    padding: '0',
+                    overflow: 'hidden',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     cursor: 'pointer',
-                    backgroundColor: hoveredService === index ? '#8b5cf6' : 'transparent',
-                    transform: hoveredService === index ? 'translateY(-10px)' : 'translateY(0)'
+                    transform: hoveredService === index ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
+                    boxShadow: hoveredService === index 
+                      ? '0 20px 40px rgba(139, 92, 246, 0.3), inset 0 0 0 1px rgba(139, 92, 246, 0.2)' 
+                      : '0 4px 12px rgba(0, 0, 0, 0.3)',
+                    clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)'
                   }}
                   onMouseEnter={() => setHoveredService(index)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
-                  <img 
-                    src={service.icon} 
-                    alt={t(service.titleKey)}
-                    style={{ 
-                      width: '100px', 
-                      height: '100px', 
-                      borderRadius: '12px', 
-                      objectFit: 'cover',
+                  {/* Corner accent */}
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                    width: '20px',
+                    height: '20px',
+                    backgroundColor: hoveredService === index ? '#8b5cf6' : 'rgba(139, 92, 246, 0.3)',
+                    clipPath: 'polygon(0 0, 100% 0, 100% 100%)',
+                    transition: 'all 0.4s'
+                  }} />
+                  
+                  {/* Image container */}
+                  <div style={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '200px',
+                    overflow: 'hidden',
+                    backgroundColor: '#000'
+                  }}>
+                    <img 
+                      src={service.icon} 
+                      alt={t(service.titleKey)}
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'cover',
+                        opacity: hoveredService === index ? 0.9 : 0.7,
+                        transition: 'all 0.4s',
+                        transform: hoveredService === index ? 'scale(1.1)' : 'scale(1)',
+                        filter: hoveredService === index ? 'brightness(1.1)' : 'brightness(0.8)'
+                      }} 
+                    />
+                    {/* Gradient overlay */}
+                    <div style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: '60%',
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)',
+                      pointerEvents: 'none'
+                    }} />
+                  </div>
+                  
+                  {/* Content */}
+                  <div style={{
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {/* Number indicator */}
+                    <div style={{
+                      position: 'absolute',
+                      top: '-60px',
+                      right: '2rem',
+                      fontSize: '4rem',
+                      fontWeight: '900',
+                      color: hoveredService === index ? '#8b5cf6' : 'rgba(139, 92, 246, 0.1)',
+                      transition: 'all 0.4s',
+                      lineHeight: 1,
+                      fontFamily: 'Arial, sans-serif'
+                    }}>
+                      0{index + 1}
+                    </div>
+                    
+                    <h3 style={{ 
+                      fontSize: '1.75rem', 
+                      fontWeight: 700, 
                       marginBottom: '1rem',
-                      opacity: hoveredService === index ? 1 : 0.8,
-                      transition: 'opacity 0.3s'
-                    }} 
-                  />
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '1rem' }}>{t(service.titleKey)}</h3>
-                  <p style={{ color: hoveredService === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
-                    {t(service.descriptionKey)}
-                  </p>
+                      letterSpacing: '-0.02em',
+                      color: hoveredService === index ? '#fff' : 'rgba(255,255,255,0.95)',
+                      transition: 'all 0.4s'
+                    }}>
+                      {t(service.titleKey)}
+                    </h3>
+                    
+                    {/* Divider line */}
+                    <div style={{
+                      width: hoveredService === index ? '60px' : '40px',
+                      height: '3px',
+                      backgroundColor: '#8b5cf6',
+                      marginBottom: '1rem',
+                      transition: 'all 0.4s'
+                    }} />
+                    
+                    <p style={{ 
+                      color: hoveredService === index ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.7)', 
+                      lineHeight: 1.6,
+                      fontSize: '0.95rem',
+                      transition: 'all 0.4s'
+                    }}>
+                      {t(service.descriptionKey)}
+                    </p>
+                    
+                    {/* Arrow indicator */}
+                    <div style={{
+                      marginTop: '1.5rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: '#8b5cf6',
+                      fontSize: '0.875rem',
+                      fontWeight: 600,
+                      opacity: hoveredService === index ? 1 : 0,
+                      transform: hoveredService === index ? 'translateX(0)' : 'translateX(-10px)',
+                      transition: 'all 0.4s'
+                    }}>
+                      <span>Learn More</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </Link>
             ))}

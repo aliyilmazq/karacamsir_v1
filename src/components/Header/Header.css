@@ -11,10 +11,11 @@
 .header__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 1.2rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 3rem;
 }
 
 .header__logo {
@@ -23,6 +24,9 @@
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 1001;
+  margin-right: 2.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .header__menu-toggle {
@@ -46,7 +50,13 @@
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.header__nav > div {
+  margin-left: 2.5rem !important;
 }
 
 .header__nav a {
@@ -54,6 +64,7 @@
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.2s, opacity 0.2s;
+  white-space: nowrap;
 }
 
 .header__nav a:hover {
