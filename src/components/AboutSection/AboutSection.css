@@ -24,14 +24,50 @@
   line-height: 1.7;
 }
 
-@media (max-width: 600px) {
+/* Tablet responsive */
+@media (max-width: 992px) {
+  .about {
+    padding: 3rem 1.5rem 2rem 1.5rem;
+  }
+  
+  .about__title {
+    font-size: 2rem;
+  }
+  
+  .about__desc {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: 2.5rem 1rem 2rem 1rem;
+  }
+  
+  .about__title {
+    font-size: 1.75rem;
+  }
+  
+  .about__desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Small mobile responsive */
+@media (max-width: 480px) {
   .about {
     padding: 2rem 1rem 1.5rem 1rem;
   }
+  
   .about__title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
+  
   .about__desc {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 } 

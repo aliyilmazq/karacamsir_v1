@@ -95,21 +95,89 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 600px) {
-  .hero__title {
-    font-size: 1.7rem;
+/* Tablet responsive */
+@media (max-width: 992px) {
+  .hero {
+    min-height: 60vh;
   }
+  
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .hero__desc {
+    font-size: 1.05rem;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+  
+  .hero__content {
+    padding: 3rem 1rem;
+  }
+  
+  .hero__title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero__desc {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .hero__locations {
+    font-size: 1rem;
+  }
+  
+  .hero__cta {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* Small mobile responsive */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 45vh;
+  }
+  
+  .hero__content {
+    padding: 2.5rem 1rem;
+  }
+  
+  .hero__title {
+    font-size: 1.5rem;
+  }
+  
   .hero__subtitle {
     font-size: 1.1rem;
   }
+  
   .hero__desc {
-    font-size: 0.98rem;
+    font-size: 0.9rem;
   }
-  .hero__content {
-    padding: 2.5rem 0.5rem 2rem 0.5rem;
+  
+  .hero__locations {
+    font-size: 0.9rem;
   }
+  
   .hero__cta {
-    font-size: 1rem;
-    padding: 0.7rem 1.3rem;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
   }
 } 
