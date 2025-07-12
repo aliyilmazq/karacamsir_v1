@@ -81,32 +81,32 @@ const Careers = () => {
 
   const benefits = [
     {
-      icon: "💼",
+      icon: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
       title: "Professional Growth",
       description: "Continuous learning opportunities, mentorship programs, and clear career progression paths"
     },
     {
-      icon: "🏥",
+      icon: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop",
       title: "Health & Wellness",
       description: "Comprehensive health insurance, wellness programs, and mental health support"
     },
     {
-      icon: "💰",
+      icon: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=400&fit=crop",
       title: "Competitive Compensation",
       description: "Market-leading salaries, performance bonuses, and profit sharing"
     },
     {
-      icon: "⚖️",
+      icon: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=400&fit=crop",
       title: "Work-Life Balance",
       description: "Flexible working arrangements, generous vacation policy, and family support"
     },
     {
-      icon: "🎓",
+      icon: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=400&fit=crop",
       title: "Education Support",
       description: "Funding for continuing education, bar memberships, and professional development"
     },
     {
-      icon: "🌍",
+      icon: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=400&h=400&fit=crop",
       title: "International Exposure",
       description: "Opportunities to work on international cases and collaborate with global partners"
     }
@@ -134,7 +134,7 @@ const Careers = () => {
       {/* Hero Section */}
       <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
             Join Our
             <span style={{ display: 'block', color: '#a78bfa' }}>Team</span>
           </h1>
@@ -151,7 +151,7 @@ const Careers = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>Why KARAÇAM & ŞİR?</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>Why KARAÇAM & ŞİR?</h2>
               <p style={{ fontSize: '1.125rem', color: '#d8b4fe', lineHeight: 1.8, marginBottom: '2rem' }}>
                 At KARAÇAM & ŞİR, we believe our people are our greatest asset. We foster an environment 
                 where legal professionals can thrive, grow, and make a meaningful impact on our clients' success.
@@ -176,11 +176,11 @@ const Careers = () => {
               borderRadius: '8px',
               textAlign: 'center'
             }}>
-              <div style={{ fontSize: '4rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>25+</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>25+</div>
               <div style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Legal Professionals</div>
-              <div style={{ fontSize: '4rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>15</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>15</div>
               <div style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Years of Excellence</div>
-              <div style={{ fontSize: '4rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>95%</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>95%</div>
               <div style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Employee Satisfaction</div>
               <a 
                 href="https://www.linkedin.com/company/karacam-sir-law-firm/" 
@@ -217,7 +217,7 @@ const Careers = () => {
       <section id="benefits" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Benefits & Perks</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Benefits & Perks</h2>
             <p style={{ color: '#d8b4fe' }}>We take care of our team so they can take care of our clients</p>
           </div>
 
@@ -236,7 +236,19 @@ const Careers = () => {
                 onMouseEnter={() => setHoveredBenefit(index)}
                 onMouseLeave={() => setHoveredBenefit(null)}
               >
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{benefit.icon}</div>
+                <img 
+                  src={benefit.icon} 
+                  alt={benefit.title}
+                  style={{ 
+                    width: '80px', 
+                    height: '80px', 
+                    borderRadius: '8px', 
+                    objectFit: 'cover',
+                    marginBottom: '1rem',
+                    opacity: hoveredBenefit === index ? 1 : 0.8,
+                    transition: 'opacity 0.3s'
+                  }} 
+                />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: '0.5rem' }}>{benefit.title}</h3>
                 <p style={{ color: hoveredBenefit === index ? '#f3e8ff' : '#d8b4fe', fontSize: '0.875rem', lineHeight: 1.6 }}>
                   {benefit.description}
@@ -251,7 +263,7 @@ const Careers = () => {
       <section id="positions" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Open Positions</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Open Positions</h2>
             <p style={{ color: '#d8b4fe' }}>Explore current opportunities to join our team</p>
           </div>
 
@@ -343,7 +355,7 @@ const Careers = () => {
       <section style={{ ...sectionStyle, borderBottom: '1px solid rgba(0,0,0,0.3)' }}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Application Process</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Application Process</h2>
             <p style={{ color: '#d8b4fe' }}>Simple, transparent, and efficient</p>
           </div>
 
@@ -385,7 +397,7 @@ const Careers = () => {
       {/* CTA Section */}
       <section style={{ padding: '5rem 2rem' }}>
         <div style={{ ...containerStyle, textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>
             Ready to Make an Impact?
           </h2>
           <p style={{ color: '#d8b4fe', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>

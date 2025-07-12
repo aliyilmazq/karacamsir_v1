@@ -22,25 +22,25 @@ const Home = () => {
 
   const services = [
     {
-      icon: "🏢",
+      icon: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop",
       title: "Corporate & Commercial",
       description: "M&A transactions, joint ventures, and corporate restructuring with cross-border expertise",
       link: "/what-we-are-doing"
     },
     {
-      icon: "🏗️",
+      icon: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=400&fit=crop",
       title: "EPC+F",
       description: "Infrastructure projects, FIDIC contracts, and project finance structures",
       link: "/what-we-are-doing"
     },
     {
-      icon: "🚀",
+      icon: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=400&fit=crop",
       title: "Technology & Ventures",
       description: "Startup investments, IP strategy, and regulatory compliance for tech companies",
       link: "/what-we-are-doing"
     },
     {
-      icon: "⚖️",
+      icon: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=400&h=400&fit=crop",
       title: "Dispute Resolution",
       description: "International arbitration, commercial litigation, and settlement negotiations",
       link: "/what-we-are-doing"
@@ -104,7 +104,7 @@ const Home = () => {
         
         <div style={containerStyle}>
           <h2 style={{ 
-            fontSize: '5rem', 
+            fontSize: '1.5rem', 
             color: 'rgba(255,255,255,0.95)', 
             fontWeight: 300,
             marginBottom: '1.5rem',
@@ -113,7 +113,7 @@ const Home = () => {
             Preserving Values
           </h2>
           <h3 style={{ 
-            fontSize: '3.5rem', 
+            fontSize: '1.25rem', 
             color: 'rgba(255,255,255,0.9)', 
             fontWeight: 400,
             marginBottom: '2rem',
@@ -122,7 +122,7 @@ const Home = () => {
             Tailored Approach
           </h3>
           <p style={{ 
-            fontSize: '2rem', 
+            fontSize: '1rem', 
             color: 'rgba(255,255,255,0.85)', 
             maxWidth: '90rem', 
             fontWeight: 300, 
@@ -135,7 +135,7 @@ const Home = () => {
             to ensure our clients' success and uphold their core values.
           </p>
           <p style={{ 
-            fontSize: '2.5rem', 
+            fontSize: '1.25rem', 
             color: 'rgba(255,255,255,0.9)', 
             fontWeight: 400,
             letterSpacing: '0.2em',
@@ -204,7 +204,7 @@ const Home = () => {
       <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
         <div style={containerStyle}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Our Practice Areas</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Practice Areas</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.25rem' }}>Specialized expertise across our core practice areas</p>
           </div>
 
@@ -228,7 +228,19 @@ const Home = () => {
                   onMouseEnter={() => setHoveredService(index)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
-                  <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>{service.icon}</div>
+                  <img 
+                    src={service.icon} 
+                    alt={service.title}
+                    style={{ 
+                      width: '100px', 
+                      height: '100px', 
+                      borderRadius: '12px', 
+                      objectFit: 'cover',
+                      marginBottom: '1rem',
+                      opacity: hoveredService === index ? 1 : 0.8,
+                      transition: 'opacity 0.3s'
+                    }} 
+                  />
                   <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '1rem' }}>{service.title}</h3>
                   <p style={{ color: hoveredService === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
                     {service.description}
@@ -273,7 +285,7 @@ const Home = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>
                 Why Choose 
                 <span style={{ color: 'white' }}> KARAÇAM & ŞİR</span>
               </h2>
@@ -371,7 +383,7 @@ const Home = () => {
         textAlign: 'center'
       }}>
         <div style={containerStyle}>
-          <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>
             Transform Your Legal Strategy
           </h2>
           <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>

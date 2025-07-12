@@ -122,7 +122,7 @@ const Blog = () => {
       {/* Hero Section */}
       <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
             Blog &
             <span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>Insights</span>
           </h1>

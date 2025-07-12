@@ -30,7 +30,7 @@ const ContactUs = () => {
       email: "istanbul@karacam-sir.com",
       timezone: "GMT+3",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.8639!2d29.0!3d41.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA2JzAwLjAiTiAyOcKwMDAnMDAuMCJF!5e0!3m2!1sen!2str!4v1234567890",
-      flag: "🇹🇷",
+      flag: "https://images.unsplash.com/photo-1564410267841-915d8e4d71ea?w=400&h=300&fit=crop",
       isHeadquarters: true
     },
     {
@@ -44,7 +44,7 @@ const ContactUs = () => {
       email: "london@karacam-sir.com",
       timezone: "GMT+0",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.0!2d-0.1!3d51.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzAwLjAiTiAwwrAwNicwMC4wIlc!5e0!3m2!1sen!2suk!4v1234567890",
-      flag: "🇬🇧"
+      flag: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=400&h=300&fit=crop"
     },
     {
       id: 2,
@@ -57,7 +57,7 @@ const ContactUs = () => {
       email: "astana@karacam-sir.com",
       timezone: "GMT+6",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.0!2d71.4!3d51.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA2JzAwLjAiTiA3McKwMjQnMDAuMCJF!5e0!3m2!1sen!2skz!4v1234567890",
-      flag: "🇰🇿"
+      flag: "https://images.unsplash.com/photo-1578645635737-6a88e706e0f1?w=400&h=300&fit=crop"
     },
     {
       id: 3,
@@ -70,7 +70,7 @@ const ContactUs = () => {
       email: "newyork@karacam-sir.com",
       timezone: "GMT-5",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.0!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzAwLjAiTiA3M8KwNTgnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890",
-      flag: "🇺🇸"
+      flag: "https://images.unsplash.com/photo-1485470733090-0aae1788d5af?w=400&h=300&fit=crop"
     }
   ];
 
@@ -113,7 +113,7 @@ const ContactUs = () => {
           🌍
         </div>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
             Global Reach,
             <span style={{ display: 'block', color: '#a78bfa' }}>Local Expertise</span>
           </h1>
@@ -129,7 +129,7 @@ const ContactUs = () => {
       <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
         <div style={containerStyle}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Our Global Offices</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Global Offices</h2>
             <p style={{ color: '#d8b4fe' }}>Serving clients worldwide from strategic locations</p>
           </div>
 
@@ -152,7 +152,18 @@ const ContactUs = () => {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem' }}>
                   <div>
-                    <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>{office.flag}</div>
+                    <img 
+                      src={office.flag} 
+                      alt={`${office.country} flag`}
+                      style={{ 
+                        width: '60px', 
+                        height: '40px', 
+                        borderRadius: '4px', 
+                        objectFit: 'cover',
+                        marginBottom: '0.5rem',
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                      }} 
+                    />
                     <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '0.25rem' }}>
                       {office.city}
                       {office.isHeadquarters && (
@@ -453,7 +464,7 @@ const ContactUs = () => {
                 transform: scrollY > 800 ? 'scale(1)' : 'scale(0.8)',
                 transition: `all 0.8s ease ${index * 0.1}s`
               }}>
-                <div style={{ fontSize: '3.5rem', fontWeight: 200, marginBottom: '0.5rem' }}>
+                <div style={{ fontSize: '2.5rem', fontWeight: 200, marginBottom: '0.5rem' }}>
                   {stat.number}
                 </div>
                 <div style={{ fontSize: '1rem', color: '#e9d5ff', textTransform: 'uppercase', letterSpacing: '0.1em' }}>

@@ -280,3 +280,4 @@ ERROR in Error: Child compilation failed:
 1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)
 webpack compiled with 6 errors and 1 warning
 No issues found.
+The build failed because the process exited too early. This probably means the system ran out of memory or someone called `kill -9` on the process.

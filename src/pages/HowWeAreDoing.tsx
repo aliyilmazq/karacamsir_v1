@@ -15,25 +15,25 @@ const HowWeAreDoing = () => {
     {
       title: "Sector Expertise",
       description: "Deep understanding of corporate structures, infrastructure development, and technology ecosystems enables us to anticipate challenges and create value.",
-      icon: "🎯",
+      icon: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop",
       details: ["Industry-specific knowledge", "Regulatory expertise", "Market intelligence", "Cross-sector synergies"]
     },
     {
       title: "Commercial Focus",
       description: "Every legal solution is designed with commercial outcomes in mind, ensuring our advice drives business success, not just compliance.",
-      icon: "📊",
+      icon: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop",
       details: ["ROI-driven strategies", "Risk-adjusted solutions", "Deal optimization", "Value creation"]
     },
     {
       title: "Global Standards",
       description: "We apply international best practices while navigating local complexities, delivering seamless cross-border legal solutions.",
-      icon: "🌐",
+      icon: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop",
       details: ["Multi-jurisdictional expertise", "International frameworks", "Local law integration", "Global coordination"]
     },
     {
       title: "Innovation",
       description: "Leveraging legal technology and innovative structuring to deliver faster, more efficient, and cost-effective solutions.",
-      icon: "⚡",
+      icon: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop",
       details: ["Legal tech integration", "Process automation", "Data analytics", "Agile methodology"]
     }
   ];
@@ -122,7 +122,7 @@ const HowWeAreDoing = () => {
       {/* Hero Section */}
       <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
             How We Are
             <span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>Doing</span>
           </h1>
@@ -139,7 +139,7 @@ const HowWeAreDoing = () => {
       <section id="approach" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Our Methodology</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Methodology</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)' }}>Four pillars that drive exceptional legal outcomes</p>
           </div>
 
@@ -159,7 +159,19 @@ const HowWeAreDoing = () => {
                 onMouseLeave={() => setHoveredApproach(null)}
                 onClick={() => setActiveStep(activeStep === index ? null : index)}
               >
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{approach.icon}</div>
+                <img 
+                  src={approach.icon} 
+                  alt={approach.title}
+                  style={{ 
+                    width: '100px', 
+                    height: '100px', 
+                    borderRadius: '12px', 
+                    objectFit: 'cover',
+                    marginBottom: '1rem',
+                    opacity: hoveredApproach === index ? 1 : 0.8,
+                    transition: 'opacity 0.3s'
+                  }} 
+                />
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '1rem' }}>{approach.title}</h3>
                 <p style={{ color: hoveredApproach === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '1rem' }}>
                   {approach.description}
@@ -189,7 +201,7 @@ const HowWeAreDoing = () => {
       <section id="process" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Transaction Lifecycle</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Transaction Lifecycle</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)' }}>From strategic planning to value realization</p>
           </div>
 
@@ -212,7 +224,7 @@ const HowWeAreDoing = () => {
                 onClick={() => setActiveStep(activeStep === index ? null : index)}
               >
                 <div style={{ 
-                  fontSize: '4rem', 
+                  fontSize: '2.5rem', 
                   fontWeight: 100, 
                   color: activeStep === index ? 'rgba(255,255,255,0.9)' : '#9333ea' 
                 }}>
@@ -261,7 +273,7 @@ const HowWeAreDoing = () => {
       <section style={{ ...sectionStyle, borderBottom: '1px solid rgba(0,0,0,0.3)' }}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Performance Metrics</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Performance Metrics</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)' }}>Delivering measurable value across every engagement</p>
           </div>
 
@@ -280,7 +292,7 @@ const HowWeAreDoing = () => {
                 }}
               >
                 <div style={{ 
-                  fontSize: '3.5rem', 
+                  fontSize: '2.5rem', 
                   fontWeight: 200, 
                   color: '#8b5cf6',
                   marginBottom: '0.5rem' 
@@ -303,7 +315,7 @@ const HowWeAreDoing = () => {
       <section id="case-studies" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Recent Successes</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Recent Successes</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)' }}>Representative matters across our practice areas</p>
           </div>
 
@@ -369,7 +381,7 @@ const HowWeAreDoing = () => {
       {/* CTA Section */}
       <section style={{ padding: '5rem 2rem' }}>
         <div style={{ ...containerStyle, textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>
             Ready to Transform Your Legal Strategy?
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>

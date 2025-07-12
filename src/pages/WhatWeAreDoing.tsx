@@ -159,7 +159,7 @@ const WhatWeAreDoing = () => {
       {/* Hero Section */}
       <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
             What We
             <span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>Are Doing</span>
           </h1>
@@ -176,7 +176,7 @@ const WhatWeAreDoing = () => {
       <section id="services" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Our Practice Areas</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Practice Areas</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)' }}>Comprehensive legal solutions for modern businesses</p>
           </div>
 
@@ -201,7 +201,7 @@ const WhatWeAreDoing = () => {
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', marginBottom: '1rem' }}>
                         <span style={{ 
-                          fontSize: '4rem', 
+                          fontSize: '2.5rem', 
                           fontWeight: 100,
                           color: hoveredCard === index ? 'rgba(255,255,255,0.9)' : '#9333ea'
                         }}>
@@ -308,7 +308,7 @@ const WhatWeAreDoing = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
             <div>
-              <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>Legal Expertise</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>Legal Expertise</h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', lineHeight: 1.6, marginBottom: '3rem' }}>
                 Our expertise spans across critical legal domains, ensuring comprehensive 
                 coverage of your legal needs. We maintain industry-leading 
@@ -369,19 +369,19 @@ const WhatWeAreDoing = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>€7.5B+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>€7.5B+</div>
               <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Transaction Value</div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>800+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>800+</div>
               <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Corporate Clients</div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>45+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>45+</div>
               <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Jurisdictions</div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>30+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>30+</div>
               <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Specialized Lawyers</div>
             </div>
           </div>
@@ -393,7 +393,7 @@ const WhatWeAreDoing = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
             <div>
-              <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>Let's Discuss Your Legal Needs</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>Let's Discuss Your Legal Needs</h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', marginBottom: '2rem' }}>
                 Connect with our expert legal team to explore how we can protect your interests and help you achieve your goals.
               </p>

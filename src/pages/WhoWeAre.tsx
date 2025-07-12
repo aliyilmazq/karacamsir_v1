@@ -16,28 +16,28 @@ const WhoWeAre = () => {
       role: "Managing Partner",
       expertise: "Corporate Law, M&A",
       experience: "20+ years",
-      image: "👨‍💼"
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
     },
     {
       name: "Ayşe Şir",
       role: "Senior Partner",
       expertise: "Litigation, Arbitration",
       experience: "18+ years",
-      image: "👩‍💼"
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
     },
     {
       name: "Mehmet Yılmaz",
       role: "Partner",
       expertise: "Criminal Law, White Collar",
       experience: "15+ years",
-      image: "👨‍💼"
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop"
     },
     {
       name: "Zeynep Demir",
       role: "Partner",
       expertise: "International Business Law",
       experience: "12+ years",
-      image: "👩‍💼"
+      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop"
     }
   ];
 
@@ -45,22 +45,22 @@ const WhoWeAre = () => {
     {
       title: "Integrity",
       description: "We uphold the highest ethical standards in all our professional dealings",
-      icon: "⚖️"
+      icon: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=400&fit=crop"
     },
     {
       title: "Excellence",
       description: "We strive for excellence in every case and transaction we handle",
-      icon: "🏆"
+      icon: "https://images.unsplash.com/photo-1569163139394-de4798aa62ea?w=400&h=400&fit=crop"
     },
     {
       title: "Confidentiality",
       description: "We maintain absolute confidentiality in all client matters",
-      icon: "🔒"
+      icon: "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=400&h=400&fit=crop"
     },
     {
       title: "Innovation",
       description: "We embrace innovative solutions to complex legal challenges",
-      icon: "💡"
+      icon: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop"
     }
   ];
 
@@ -86,7 +86,7 @@ const WhoWeAre = () => {
       {/* Hero Section */}
       <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
             Who We
             <span style={{ display: 'block', color: '#a78bfa' }}>Are</span>
           </h1>
@@ -102,7 +102,7 @@ const WhoWeAre = () => {
       <section id="values" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Our Core Values</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Core Values</h2>
             <p style={{ color: '#d8b4fe' }}>The principles that guide everything we do</p>
           </div>
 
@@ -120,7 +120,18 @@ const WhoWeAre = () => {
                 onMouseEnter={() => setActiveValue(index)}
                 onMouseLeave={() => setActiveValue(null)}
               >
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{value.icon}</div>
+                <img 
+                  src={value.icon} 
+                  alt={value.title}
+                  style={{ 
+                    width: '80px', 
+                    height: '80px', 
+                    borderRadius: '8px', 
+                    objectFit: 'cover',
+                    marginBottom: '1rem',
+                    opacity: 0.9
+                  }} 
+                />
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '1rem' }}>{value.title}</h3>
                 <p style={{ color: activeValue === index ? '#f3e8ff' : '#d8b4fe', lineHeight: 1.6 }}>
                   {value.description}
@@ -135,7 +146,7 @@ const WhoWeAre = () => {
       <section id="team" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Our Leadership Team</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Leadership Team</h2>
             <p style={{ color: '#d8b4fe' }}>Experienced professionals dedicated to your success</p>
           </div>
 
@@ -150,7 +161,18 @@ const WhoWeAre = () => {
                   transition: `all 0.8s ease ${index * 0.1}s`
                 }}
               >
-                <div style={{ fontSize: '5rem', marginBottom: '1rem' }}>{member.image}</div>
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  style={{ 
+                    width: '150px', 
+                    height: '150px', 
+                    borderRadius: '50%', 
+                    objectFit: 'cover',
+                    marginBottom: '1rem',
+                    border: '3px solid #8b5cf6'
+                  }} 
+                />
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '0.5rem' }}>{member.name}</h3>
                 <p style={{ color: '#a78bfa', marginBottom: '0.5rem' }}>{member.role}</p>
                 <p style={{ fontSize: '0.875rem', color: '#d8b4fe', marginBottom: '0.25rem' }}>{member.expertise}</p>
@@ -165,7 +187,7 @@ const WhoWeAre = () => {
       <section id="history" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '1rem' }}>Our Journey</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Journey</h2>
             <p style={{ color: '#d8b4fe' }}>Building a legacy of legal excellence</p>
           </div>
 
@@ -220,19 +242,19 @@ const WhoWeAre = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>13+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>13+</div>
               <div style={{ fontSize: '0.875rem', color: '#a78bfa', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Years of Excellence</div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>25+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>25+</div>
               <div style={{ fontSize: '0.875rem', color: '#a78bfa', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Legal Experts</div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>1500+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>1500+</div>
               <div style={{ fontSize: '0.875rem', color: '#a78bfa', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Clients Served</div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '0.5rem' }}>10+</div>
+              <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>10+</div>
               <div style={{ fontSize: '0.875rem', color: '#a78bfa', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Industry Awards</div>
             </div>
           </div>
@@ -242,7 +264,7 @@ const WhoWeAre = () => {
       {/* CTA Section */}
       <section style={{ padding: '5rem 2rem' }}>
         <div style={{ ...containerStyle, textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem', fontWeight: 200, marginBottom: '2rem' }}>Ready to Work With Us?</h2>
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>Ready to Work With Us?</h2>
           <p style={{ color: '#d8b4fe', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
             Join hundreds of satisfied clients who trust us with their most important legal matters.
           </p>
