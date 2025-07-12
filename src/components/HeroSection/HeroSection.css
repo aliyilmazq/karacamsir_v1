@@ -117,9 +117,13 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
   .hero {
-    min-height: 50vh;
+    min-height: 60vh;
   }
-  
+  .hero__bg {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   .hero__content {
     padding: 3rem 1rem;
   }

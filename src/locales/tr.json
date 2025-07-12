@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "whoWeAre": "Biz Kimiz",
+    "whatWeAreDoing": "Ne Yapıyoruz",
+    "howWeAreDoing": "Nasıl Yapıyoruz",
+    "blog": "Blog",
+    "careers": "Kariyer",
+    "contactUs": "İletişim"
+  },
+  "home": {
+    "hero": {
+      "preservingValues": "Değerleri Koruyoruz",
+      "tailoredApproach": "Özel Yaklaşım",
+      "description": "Hukuki uzmanlığımızı derin iş içgörüleriyle harmanlayarak, müvekkillerimizin başarısını sağlamak ve temel değerlerini korumak için zamanında ve özel çözümler sunuyoruz.",
+      "cities": "İstanbul ● Londra ● Delaware ● Astana",
+      "getLegalConsultation": "Hukuki Danışmanlık Alın",
+      "learnAboutUs": "Hakkımızda"
+    },
+    "services": {
+      "title": "Uzmanlık Alanlarımız",
+      "subtitle": "Temel uzmanlık alanlarımızda uzmanlaşmış hizmetler",
+      "corporate": {
+        "title": "Kurumsal ve Ticari Hukuk",
+        "description": "Sınır ötesi uzmanlıkla birleşme ve devralma işlemleri, ortak girişimler ve kurumsal yeniden yapılandırma"
+      },
+      "epcf": {
+        "title": "EPC+F",
+        "description": "Altyapı projeleri, FIDIC sözleşmeleri ve proje finansmanı yapıları"
+      },
+      "technology": {
+        "title": "Teknoloji ve Girişimler",
+        "description": "Startup yatırımları, fikri mülkiyet stratejisi ve teknoloji şirketleri için düzenleyici uyumluluk"
+      },
+      "dispute": {
+        "title": "Uyuşmazlık Çözümü",
+        "description": "Uluslararası tahkim, ticari dava ve uzlaşma müzakereleri"
+      }
+    },
+    "stats": {
+      "transactionValue": "İşlem Değeri",
+      "corporateClients": "Kurumsal Müvekkil",
+      "jurisdictions": "Yargı Alanı",
+      "successRate": "Başarı Oranı"
+    },
+    "about": {
+      "title": "Neden",
+      "subtitle": "KARAÇAM & ŞİR",
+      "description": "Karmaşık kurumsal işlemler, altyapı geliştirme ve teknoloji girişimlerinde kurumsal müvekkillere danışmanlık veren uzmanlaşmış bir hukuk bürosuyuz. Entegre yaklaşımımız, ölçülebilir değer sunmak için sektör uzmanlığını yenilikçi hukuki çözümlerle birleştirir.",
+      "points": {
+        "crossBorder": "Sınır Ötesi Uzmanlık",
+        "sectorKnowledge": "Sektöre Özel Bilgi",
+        "innovative": "Yenilikçi Yapılandırma",
+        "integrated": "Entegre Çözümler"
+      },
+      "learnMore": "Hakkımızda Daha Fazla →"
+    },
+    "testimonials": {
+      "title": "Müvekkil Görüşü"
+    },
+    "cta": {
+      "title": "Hukuki Stratejinizi Dönüştürün",
+      "subtitle": "İşleminiz veya projeniz hakkında gizli bir danışmanlık görüşmesi planlayın.",
+      "scheduleConsultation": "Görüşme Planlayın",
+      "viewServices": "Hizmetlerimizi İnceleyin"
+    }
+  },
+  "whoWeAre": {
+    "hero": {
+      "title": "Biz",
+      "subtitle": "Kimiz",
+      "description": "Güven, uzmanlık ve müvekkillerimizin başarısına olan sarsılmaz bağlılık üzerine kurulu lider bir hukuk bürosu. 2010'dan beri Türkiye'nin hukuk ortamını şekillendiriyoruz."
+    },
+    "values": {
+      "title": "Temel Değerlerimiz",
+      "subtitle": "Yaptığımız her şeye rehberlik eden ilkeler",
+      "integrity": {
+        "title": "Dürüstlük",
+        "description": "Tüm profesyonel ilişkilerimizde en yüksek etik standartları koruyoruz"
+      },
+      "excellence": {
+        "title": "Mükemmellik",
+        "description": "Ele aldığımız her davada ve işlemde mükemmellik için çabalıyoruz"
+      },
+      "confidentiality": {
+        "title": "Gizlilik",
+        "description": "Tüm müvekkil konularında mutlak gizliliği koruyoruz"
+      },
+      "innovation": {
+        "title": "Yenilikçilik",
+        "description": "Karmaşık hukuki zorluklara yenilikçi çözümler getiriyoruz"
+      }
+    },
+    "team": {
+      "title": "Liderlik Ekibimiz",
+      "subtitle": "Başarınıza adanmış deneyimli profesyoneller",
+      "managingPartner": "Yönetici Ortak",
+      "seniorPartner": "Kıdemli Ortak",
+      "partner": "Ortak"
+    },
+    "journey": {
+      "title": "Yolculuğumuz",
+      "subtitle": "Hukuki mükemmellik mirası inşa ediyoruz",
+      "milestones": {
+        "founded": {
+          "title": "Büro Kuruldu",
+          "description": "Olağanüstü hukuki hizmetler sunma vizyonuyla kuruldu"
+        },
+        "expansion": {
+          "title": "Uluslararası Genişleme",
+          "description": "Sınır ötesi işlemler için ilk uluslararası masamızı açtık"
+        },
+        "award": {
+          "title": "Ödül Takdiri",
+          "description": "Türkiye Hukuk Ödülleri tarafından 'Yılın Hukuk Bürosu' seçildi"
+        },
+        "growth": {
+          "title": "25+ Ekip Üyesi",
+          "description": "Uzmanlaşmış uygulama gruplarıyla tam hizmet veren bir büroya büyüdük"
+        }
+      }
+    },
+    "stats": {
+      "title": "Rakamlarla",
+      "subtitle": "Hukuk sektöründeki etkimiz",
+      "foundingYear": "Kuruluş Yılı",
+      "teamMembers": "Ekip Üyesi",
+      "practiceAreas": "Uzmanlık Alanı",
+      "clientSatisfaction": "Müvekkil Memnuniyeti"
+    }
+  },
+  "footer": {
+    "quickLinks": "Hızlı Bağlantılar",
+    "contactInfo": "İletişim Bilgileri",
+    "followUs": "Bizi Takip Edin",
+    "newsletter": {
+      "title": "Bülten",
+      "subtitle": "Hukuki güncellemeler ve içgörüler için abone olun",
+      "placeholder": "E-posta adresinizi girin",
+      "button": "Abone Ol"
+    },
+    "copyright": "© 2025 KARAÇAM & ŞİR Hukuk Bürosu. Tüm hakları saklıdır.",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Hizmet Şartları"
+  }
+}

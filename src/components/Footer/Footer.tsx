@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__main">
           <div className="footer__block footer__block--contact">
-            <h4>Contact Us</h4>
+            <h4>{t('footer.contactInfo')}</h4>
             <div className="footer__contact-item">
               <span className="footer__icon">📞</span>
               <span>+90 212 000 00 00</span>
@@ -23,14 +25,14 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="footer__block footer__block--navigation">
-            <h4>Quick Links</h4>
+            <h4>{t('footer.quickLinks')}</h4>
             <nav className="footer__nav">
-              <Link to="/">Home</Link>
-              <Link to="/who-we-are">Who We Are</Link>
-              <Link to="/what-we-are-doing">Practice Areas</Link>
-              <Link to="/how-we-are-doing">Our Approach</Link>
-              <Link to="/blog">Blog & Insights</Link>
-              <Link to="/contact-us">Contact</Link>
+              <Link to="/">{t('nav.home', 'Home')}</Link>
+              <Link to="/who-we-are">{t('nav.whoWeAre')}</Link>
+              <Link to="/what-we-are-doing">{t('nav.whatWeAreDoing')}</Link>
+              <Link to="/how-we-are-doing">{t('nav.howWeAreDoing')}</Link>
+              <Link to="/blog">{t('nav.blog')}</Link>
+              <Link to="/contact-us">{t('nav.contactUs')}</Link>
             </nav>
           </div>
           <div className="footer__block footer__block--legal">
@@ -60,7 +62,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="footer__bottom">
           <div className="footer__bottom-content">
-            <p>© {new Date().getFullYear()} Karaçam & Şir Law Firm. All rights reserved.</p>
+            <p>{t('footer.copyright')}</p>
             <p className="footer__credits">Designed with excellence in mind</p>
           </div>
         </div>

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import istanbulBg from '../assets/istanbul_1.jpg';
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -23,35 +25,35 @@ const Home = () => {
   const services = [
     {
       icon: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop",
-      title: "Corporate & Commercial",
-      description: "M&A transactions, joint ventures, and corporate restructuring with cross-border expertise",
+      titleKey: 'home.services.corporate.title',
+      descriptionKey: 'home.services.corporate.description',
       link: "/what-we-are-doing"
     },
     {
       icon: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=400&fit=crop",
-      title: "EPC+F",
-      description: "Infrastructure projects, FIDIC contracts, and project finance structures",
+      titleKey: 'home.services.epcf.title',
+      descriptionKey: 'home.services.epcf.description',
       link: "/what-we-are-doing"
     },
     {
       icon: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=400&fit=crop",
-      title: "Technology & Ventures",
-      description: "Startup investments, IP strategy, and regulatory compliance for tech companies",
+      titleKey: 'home.services.technology.title',
+      descriptionKey: 'home.services.technology.description',
       link: "/what-we-are-doing"
     },
     {
       icon: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=400&h=400&fit=crop",
-      title: "Dispute Resolution",
-      description: "International arbitration, commercial litigation, and settlement negotiations",
+      titleKey: 'home.services.dispute.title',
+      descriptionKey: 'home.services.dispute.description',
       link: "/what-we-are-doing"
     }
   ];
 
   const stats = [
-    { number: "€7.5B+", label: "Transaction Value" },
-    { number: "800+", label: "Corporate Clients" },
-    { number: "45+", label: "Jurisdictions" },
-    { number: "97%", label: "Success Rate" }
+    { number: "€7.5B+", labelKey: "home.stats.transactionValue" },
+    { number: "800+", labelKey: "home.stats.corporateClients" },
+    { number: "45+", labelKey: "home.stats.jurisdictions" },
+    { number: "97%", labelKey: "home.stats.successRate" }
   ];
 
   const testimonials = [
@@ -110,7 +112,7 @@ const Home = () => {
             marginBottom: '1.5rem',
             letterSpacing: '0.15em'
           }}>
-            Preserving Values
+            {t('home.hero.preservingValues')}
           </h2>
           <h3 style={{ 
             fontSize: '1.25rem', 
@@ -119,7 +121,7 @@ const Home = () => {
             marginBottom: '2rem',
             letterSpacing: '0.1em'
           }}>
-            Tailored Approach
+            {t('home.hero.tailoredApproach')}
           </h3>
           <p style={{ 
             fontSize: '1rem', 
@@ -130,9 +132,12 @@ const Home = () => {
             marginBottom: '3rem',
             letterSpacing: '0.05em'
           }}>
-            We offer timely and tailored solutions,<br/>
-            blending our legal expertise with deep business insights<br/>
-            to ensure our clients' success and uphold their core values.
+            {t('home.hero.description').split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                {i < 2 && <br />}
+              </React.Fragment>
+            ))}
           </p>
           <p style={{ 
             fontSize: '1.25rem', 
@@ -141,7 +146,7 @@ const Home = () => {
             letterSpacing: '0.2em',
             marginBottom: '4rem'
           }}>
-            Istanbul ● London ● Delaware ● Astana
+            {t('home.hero.cities')}
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link to="/contact-us" style={{ textDecoration: 'none' }}>
@@ -162,7 +167,7 @@ const Home = () => {
                 e.currentTarget.style.backgroundColor = '#8b5cf6';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
-                Get Legal Consultation
+                {t('home.hero.getLegalConsultation')}
               </button>
             </Link>
             <Link to="/who-we-are" style={{ textDecoration: 'none' }}>
@@ -183,7 +188,7 @@ const Home = () => {
                 e.currentTarget.style.backgroundColor = 'transparent';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
-                Learn About Us
+                {t('home.hero.learnAboutUs')}
               </button>
             </Link>
           </div>
@@ -204,8 +209,8 @@ const Home = () => {
       <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
         <div style={containerStyle}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Practice Areas</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.25rem' }}>Specialized expertise across our core practice areas</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>{t('home.services.title')}</h2>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.25rem' }}>{t('home.services.subtitle')}</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -230,7 +235,7 @@ const Home = () => {
                 >
                   <img 
                     src={service.icon} 
-                    alt={service.title}
+                    alt={t(service.titleKey)}
                     style={{ 
                       width: '100px', 
                       height: '100px', 
@@ -241,9 +246,9 @@ const Home = () => {
                       transition: 'opacity 0.3s'
                     }} 
                   />
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '1rem' }}>{service.title}</h3>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '1rem' }}>{t(service.titleKey)}</h3>
                   <p style={{ color: hoveredService === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
-                    {service.description}
+                    {t(service.descriptionKey)}
                   </p>
                 </div>
               </Link>
@@ -272,7 +277,7 @@ const Home = () => {
                   {stat.number}
                 </div>
                 <div style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </div>
               </div>
             ))}

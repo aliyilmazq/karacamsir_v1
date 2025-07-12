@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "whoWeAre": "Who We Are",
+    "whatWeAreDoing": "What We Are Doing",
+    "howWeAreDoing": "How We Are Doing",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contactUs": "Contact Us"
+  },
+  "home": {
+    "hero": {
+      "preservingValues": "Preserving Values",
+      "tailoredApproach": "Tailored Approach",
+      "description": "We offer timely and tailored solutions, blending our legal expertise with deep business insights to ensure our clients' success and uphold their core values.",
+      "cities": "Istanbul ● London ● Delaware ● Astana",
+      "getLegalConsultation": "Get Legal Consultation",
+      "learnAboutUs": "Learn About Us"
+    },
+    "services": {
+      "title": "Our Practice Areas",
+      "subtitle": "Specialized expertise across our core practice areas",
+      "corporate": {
+        "title": "Corporate & Commercial",
+        "description": "M&A transactions, joint ventures, and corporate restructuring with cross-border expertise"
+      },
+      "epcf": {
+        "title": "EPC+F",
+        "description": "Infrastructure projects, FIDIC contracts, and project finance structures"
+      },
+      "technology": {
+        "title": "Technology & Ventures",
+        "description": "Startup investments, IP strategy, and regulatory compliance for tech companies"
+      },
+      "dispute": {
+        "title": "Dispute Resolution",
+        "description": "International arbitration, commercial litigation, and settlement negotiations"
+      }
+    },
+    "stats": {
+      "transactionValue": "Transaction Value",
+      "corporateClients": "Corporate Clients",
+      "jurisdictions": "Jurisdictions",
+      "successRate": "Success Rate"
+    },
+    "about": {
+      "title": "Why Choose",
+      "subtitle": "KARAÇAM & ŞİR",
+      "description": "We are a specialized law firm advising institutional clients on complex corporate transactions, infrastructure development, and technology ventures. Our integrated approach combines sector expertise with innovative legal solutions to deliver measurable value.",
+      "points": {
+        "crossBorder": "Cross-Border Expertise",
+        "sectorKnowledge": "Sector-Specific Knowledge",
+        "innovative": "Innovative Structuring",
+        "integrated": "Integrated Solutions"
+      },
+      "learnMore": "Learn More About Us →"
+    },
+    "testimonials": {
+      "title": "Client Testimonial"
+    },
+    "cta": {
+      "title": "Transform Your Legal Strategy",
+      "subtitle": "Schedule a confidential consultation to discuss your transaction or project.",
+      "scheduleConsultation": "Schedule Consultation",
+      "viewServices": "View Our Services"
+    }
+  },
+  "whoWeAre": {
+    "hero": {
+      "title": "Who We",
+      "subtitle": "Are",
+      "description": "A leading law firm built on trust, expertise, and an unwavering commitment to our clients' success. Since 2010, we've been shaping the legal landscape in Turkey."
+    },
+    "values": {
+      "title": "Our Core Values",
+      "subtitle": "The principles that guide everything we do",
+      "integrity": {
+        "title": "Integrity",
+        "description": "We uphold the highest ethical standards in all our professional dealings"
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for excellence in every case and transaction we handle"
+      },
+      "confidentiality": {
+        "title": "Confidentiality",
+        "description": "We maintain absolute confidentiality in all client matters"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We embrace innovative solutions to complex legal challenges"
+      }
+    },
+    "team": {
+      "title": "Our Leadership Team",
+      "subtitle": "Experienced professionals dedicated to your success",
+      "managingPartner": "Managing Partner",
+      "seniorPartner": "Senior Partner",
+      "partner": "Partner"
+    },
+    "journey": {
+      "title": "Our Journey",
+      "subtitle": "Building a legacy of legal excellence",
+      "milestones": {
+        "founded": {
+          "title": "Firm Founded",
+          "description": "Established with a vision to provide exceptional legal services"
+        },
+        "expansion": {
+          "title": "International Expansion",
+          "description": "Opened our first international desk for cross-border transactions"
+        },
+        "award": {
+          "title": "Award Recognition",
+          "description": "Named 'Law Firm of the Year' by Turkish Legal Awards"
+        },
+        "growth": {
+          "title": "25+ Team Members",
+          "description": "Grown to a full-service firm with specialized practice groups"
+        }
+      }
+    },
+    "stats": {
+      "title": "By the Numbers",
+      "subtitle": "Our impact in the legal industry",
+      "foundingYear": "Founding Year",
+      "teamMembers": "Team Members",
+      "practiceAreas": "Practice Areas",
+      "clientSatisfaction": "Client Satisfaction"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "followUs": "Follow Us",
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Subscribe to receive legal updates and insights",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    },
+    "copyright": "© 2025 KARAÇAM & ŞİR Law Firm. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  }
+}
