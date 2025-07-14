@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
+import istanbulImage from "../assets/istanbul_1.jpg";
 
 const Blog = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -118,325 +120,332 @@ const Blog = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
-      {/* Hero Section */}
-      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
-        <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
-            Blog &
-            <span style={{ display: 'block', color: '#666666' }}>Insights</span>
-          </h1>
-          <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
-          <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
-            Expert insights on complex corporate transactions, infrastructure projects, and technology 
-            ventures from our specialized legal teams across multiple jurisdictions.
-          </p>
-        </div>
-      </section>
+    <>
+      <PageHeaderSection
+        title="Çalışma Alanlarımız"
+        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        backgroundImage={istanbulImage}
+      />
+      <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
+        {/* Hero Section */}
+        <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
+          <div style={containerStyle}>
+            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
+              Blog &
+              <span style={{ display: 'block', color: '#666666' }}>Insights</span>
+            </h1>
+            <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+            <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
+              Expert insights on complex corporate transactions, infrastructure projects, and technology 
+              ventures from our specialized legal teams across multiple jurisdictions.
+            </p>
+          </div>
+        </section>
 
-      {/* Featured Post */}
-      <section style={{ padding: '2rem', borderTop: '1px solid #e0e0e0' }}>
-        <div style={containerStyle}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-            gap: '3rem',
-            alignItems: 'center',
-            padding: '3rem',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)',
-            boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-            border: '1px solid #e0e0e0',
-            borderRadius: '12px',
-            overflow: 'hidden',
-            position: 'relative'
-          }}>
+        {/* Featured Post */}
+        <section style={{ padding: '2rem', borderTop: '1px solid #e0e0e0' }}>
+          <div style={containerStyle}>
             <div style={{
-              height: '400px',
-              backgroundImage: `url(${featuredPost.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              borderRadius: '8px',
-              position: 'relative',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+              gap: '3rem',
+              alignItems: 'center',
+              padding: '3rem',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)',
+              boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+              border: '1px solid #e0e0e0',
+              borderRadius: '12px',
               overflow: 'hidden',
-              transform: hoveredCard === 0 ? 'scale(1.05)' : 'scale(1)',
-              transition: 'transform 0.5s'
-            }}
-            onMouseEnter={() => setHoveredCard(0)}
-            onMouseLeave={() => setHoveredCard(null)}>
+              position: 'relative'
+            }}>
               <div style={{
-                position: 'absolute',
-                top: '1rem',
-                left: '1rem',
-                backgroundColor: '#5D3FD3',
-                padding: '0.5rem 1rem',
-                borderRadius: '4px',
-                fontSize: '0.875rem',
-                fontWeight: 600
-              }}>
-                FEATURED
-              </div>
-            </div>
-            <div>
-              <div style={{ 
-                fontSize: '0.875rem', 
-                color: '#666666', 
-                marginBottom: '1rem',
-                display: 'flex',
-                gap: '1rem',
-                flexWrap: 'wrap'
-              }}>
-                <span>{featuredPost.category}</span>
-                <span>•</span>
-                <span>{featuredPost.date}</span>
-                <span>•</span>
-                <span>{featuredPost.readTime}</span>
-              </div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 300, marginBottom: '1rem', lineHeight: 1.2, color: '#333333' }}>
-                {featuredPost.title}
-              </h2>
-              <p style={{ fontSize: '1.125rem', color: '#666666', lineHeight: 1.6, marginBottom: '2rem' }}>
-                {featuredPost.excerpt}
-              </p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontSize: '0.875rem', color: '#666666' }}>
-                  By <span style={{ color: '#333333', fontWeight: 600 }}>{featuredPost.author}</span>
-                </div>
-                <button style={{
-                  padding: '0.75rem 2rem',
-                  backgroundColor: '#5D3FD3',
-                  color: 'white',
-                  border: 'none',
-                  fontSize: '1rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                  borderRadius: '4px'
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = '#333333';
-                  e.currentTarget.style.transform = 'translateX(5px)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = '#5D3FD3';
-                  e.currentTarget.style.transform = 'translateX(0)';
-                }}>
-                  Read More →
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section style={{ padding: '3rem 2rem 0' }}>
-        <div style={containerStyle}>
-          <div style={{ 
-            display: 'flex', 
-            gap: '1rem', 
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            marginBottom: '3rem'
-          }}>
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                style={{
-                  padding: '0.75rem 1.5rem',
-                  backgroundColor: selectedCategory === category ? '#8b5cf6' : 'transparent',
-                  color: 'white',
-                  border: `1px solid ${selectedCategory === category ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)'}`,
-                  fontSize: '0.875rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                  borderRadius: '25px',
-                  textTransform: 'capitalize'
-                }}
-                onMouseEnter={e => {
-                  if (selectedCategory !== category) {
-                    e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-                  }
-                }}
-                onMouseLeave={e => {
-                  if (selectedCategory !== category) {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }
-                }}>
-                {category === 'all' ? 'All Posts' : category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Grid */}
-      <section style={{ padding: '0 2rem 5rem' }}>
-        <div style={containerStyle}>
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', 
-            gap: '2rem' 
-          }}>
-            {filteredPosts.map((post, index) => (
-              <article
-                key={post.id}
-                style={{
-                  backgroundColor: hoveredCard === post.id ? 'rgba(0, 0, 0, 0.1)' : 'transparent',
-                  border: '1px solid #e0e0e0',
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s',
-                  cursor: 'pointer',
-                  transform: hoveredCard === post.id ? 'translateY(-10px)' : 'translateY(0)',
-                  opacity: scrollY > 200 + (index * 50) ? 1 : 0,
-                  animation: `fadeInUp 0.8s ease ${index * 0.1}s forwards`
-                }}
-                onMouseEnter={() => setHoveredCard(post.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
+                height: '400px',
+                backgroundImage: `url(${featuredPost.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                borderRadius: '8px',
+                position: 'relative',
+                overflow: 'hidden',
+                transform: hoveredCard === 0 ? 'scale(1.05)' : 'scale(1)',
+                transition: 'transform 0.5s'
+              }}
+              onMouseEnter={() => setHoveredCard(0)}
+              onMouseLeave={() => setHoveredCard(null)}>
                 <div style={{
-                  height: '250px',
-                  backgroundImage: `url(${post.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  position: 'relative',
-                  overflow: 'hidden'
+                  position: 'absolute',
+                  top: '1rem',
+                  left: '1rem',
+                  backgroundColor: '#5D3FD3',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '4px',
+                  fontSize: '0.875rem',
+                  fontWeight: 600
                 }}>
+                  FEATURED
+                </div>
+              </div>
+              <div>
+                <div style={{ 
+                  fontSize: '0.875rem', 
+                  color: '#666666', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  gap: '1rem',
+                  flexWrap: 'wrap'
+                }}>
+                  <span>{featuredPost.category}</span>
+                  <span>•</span>
+                  <span>{featuredPost.date}</span>
+                  <span>•</span>
+                  <span>{featuredPost.readTime}</span>
+                </div>
+                <h2 style={{ fontSize: '2.5rem', fontWeight: 300, marginBottom: '1rem', lineHeight: 1.2, color: '#333333' }}>
+                  {featuredPost.title}
+                </h2>
+                <p style={{ fontSize: '1.125rem', color: '#666666', lineHeight: 1.6, marginBottom: '2rem' }}>
+                  {featuredPost.excerpt}
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ fontSize: '0.875rem', color: '#666666' }}>
+                    By <span style={{ color: '#333333', fontWeight: 600 }}>{featuredPost.author}</span>
+                  </div>
+                  <button style={{
+                    padding: '0.75rem 2rem',
+                    backgroundColor: '#5D3FD3',
+                    color: 'white',
+                    border: 'none',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s',
+                    borderRadius: '4px'
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.backgroundColor = '#333333';
+                    e.currentTarget.style.transform = 'translateX(5px)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.backgroundColor = '#5D3FD3';
+                    e.currentTarget.style.transform = 'translateX(0)';
+                  }}>
+                    Read More →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Category Filter */}
+        <section style={{ padding: '3rem 2rem 0' }}>
+          <div style={containerStyle}>
+            <div style={{ 
+              display: 'flex', 
+              gap: '1rem', 
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              marginBottom: '3rem'
+            }}>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  style={{
+                    padding: '0.75rem 1.5rem',
+                    backgroundColor: selectedCategory === category ? '#8b5cf6' : 'transparent',
+                    color: 'white',
+                    border: `1px solid ${selectedCategory === category ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)'}`,
+                    fontSize: '0.875rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s',
+                    borderRadius: '25px',
+                    textTransform: 'capitalize'
+                  }}
+                  onMouseEnter={e => {
+                    if (selectedCategory !== category) {
+                      e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    if (selectedCategory !== category) {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    }
+                  }}>
+                  {category === 'all' ? 'All Posts' : category}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Grid */}
+        <section style={{ padding: '0 2rem 5rem' }}>
+          <div style={containerStyle}>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', 
+              gap: '2rem' 
+            }}>
+              {filteredPosts.map((post, index) => (
+                <article
+                  key={post.id}
+                  style={{
+                    backgroundColor: hoveredCard === post.id ? 'rgba(0, 0, 0, 0.1)' : 'transparent',
+                    border: '1px solid #e0e0e0',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    transition: 'all 0.3s',
+                    cursor: 'pointer',
+                    transform: hoveredCard === post.id ? 'translateY(-10px)' : 'translateY(0)',
+                    opacity: scrollY > 200 + (index * 50) ? 1 : 0,
+                    animation: `fadeInUp 0.8s ease ${index * 0.1}s forwards`
+                  }}
+                  onMouseEnter={() => setHoveredCard(post.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
                   <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to bottom, transparent 0%, rgba(82, 45, 114, 0.8) 100%)',
-                    opacity: hoveredCard === post.id ? 1 : 0.7,
-                    transition: 'opacity 0.3s'
-                  }}></div>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '1rem',
-                    left: '1rem',
-                    right: '1rem'
+                    height: '250px',
+                    backgroundImage: `url(${post.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
                     <div style={{
-                      fontSize: '0.75rem',
-                      color: 'rgba(255,255,255,0.7)',
-                      marginBottom: '0.5rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em'
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to bottom, transparent 0%, rgba(82, 45, 114, 0.8) 100%)',
+                      opacity: hoveredCard === post.id ? 1 : 0.7,
+                      transition: 'opacity 0.3s'
+                    }}></div>
+                    <div style={{
+                      position: 'absolute',
+                      bottom: '1rem',
+                      left: '1rem',
+                      right: '1rem'
                     }}>
-                      {post.category}
+                      <div style={{
+                        fontSize: '0.75rem',
+                        color: 'rgba(255,255,255,0.7)',
+                        marginBottom: '0.5rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em'
+                      }}>
+                        {post.category}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div style={{ padding: '2rem' }}>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: 400, 
-                    marginBottom: '1rem',
-                    lineHeight: 1.3
-                  }}>
-                    {post.title}
-                  </h3>
-                  <p style={{ 
-                    color: '#666666', 
-                    lineHeight: 1.6, 
-                    marginBottom: '1.5rem',
-                    fontSize: '0.875rem'
-                  }}>
-                    {post.excerpt}
-                  </p>
-                  <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center',
-                    fontSize: '0.75rem',
-                    color: 'rgba(255,255,255,0.7)'
-                  }}>
-                    <div style={{ display: 'flex', gap: '1rem' }}>
-                      <span>{post.author}</span>
-                      <span>•</span>
-                      <span>{post.date}</span>
+                  <div style={{ padding: '2rem' }}>
+                    <h3 style={{ 
+                      fontSize: '1.5rem', 
+                      fontWeight: 400, 
+                      marginBottom: '1rem',
+                      lineHeight: 1.3
+                    }}>
+                      {post.title}
+                    </h3>
+                    <p style={{ 
+                      color: '#666666', 
+                      lineHeight: 1.6, 
+                      marginBottom: '1.5rem',
+                      fontSize: '0.875rem'
+                    }}>
+                      {post.excerpt}
+                    </p>
+                    <div style={{ 
+                      display: 'flex', 
+                      justifyContent: 'space-between', 
+                      alignItems: 'center',
+                      fontSize: '0.75rem',
+                      color: 'rgba(255,255,255,0.7)'
+                    }}>
+                      <div style={{ display: 'flex', gap: '1rem' }}>
+                        <span>{post.author}</span>
+                        <span>•</span>
+                        <span>{post.date}</span>
+                      </div>
+                      <span>{post.readTime}</span>
                     </div>
-                    <span>{post.readTime}</span>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Newsletter Section */}
-      <section style={{ 
-        padding: '5rem 2rem',
-        background: 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%)',
-        textAlign: 'center'
-      }}>
-        <div style={{ ...containerStyle, maxWidth: '600px' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 200, marginBottom: '1rem' }}>
-            Legal Intelligence Updates
-          </h2>
-          <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.9)', marginBottom: '2rem' }}>
-            Receive curated insights on regulatory changes, market trends, and legal developments 
-            affecting corporate transactions and technology ventures.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', maxWidth: '500px', margin: '0 auto' }}>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              style={{
-                flex: 1,
-                padding: '1rem 1.5rem',
+        {/* Newsletter Section */}
+        <section style={{ 
+          padding: '5rem 2rem',
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%)',
+          textAlign: 'center'
+        }}>
+          <div style={{ ...containerStyle, maxWidth: '600px' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 200, marginBottom: '1rem' }}>
+              Legal Intelligence Updates
+            </h2>
+            <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.9)', marginBottom: '2rem' }}>
+              Receive curated insights on regulatory changes, market trends, and legal developments 
+              affecting corporate transactions and technology ventures.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', maxWidth: '500px', margin: '0 auto' }}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                style={{
+                  flex: 1,
+                  padding: '1rem 1.5rem',
+                  fontSize: '1rem',
+                  border: '2px solid rgba(255, 255, 255, 0.3)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  color: 'white',
+                  borderRadius: '4px',
+                  outline: 'none'
+                }}
+              />
+              <button style={{
+                padding: '1rem 2rem',
+                backgroundColor: 'white',
+                color: 'rgba(0,0,0,0.8)',
+                border: 'none',
                 fontSize: '1rem',
-                border: '2px solid rgba(255, 255, 255, 0.3)',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                color: 'white',
-                borderRadius: '4px',
-                outline: 'none'
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.3s',
+                borderRadius: '4px'
               }}
-            />
-            <button style={{
-              padding: '1rem 2rem',
-              backgroundColor: 'white',
-              color: 'rgba(0,0,0,0.8)',
-              border: 'none',
-              fontSize: '1rem',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.3s',
-              borderRadius: '4px'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              Subscribe
-            </button>
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
+                Subscribe
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <style>
-        {`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
+        <style>
+          {`
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translateY(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
             }
-            to {
-              opacity: 1;
-              transform: translateY(0);
+            
+            input::placeholder {
+              color: rgba(255, 255, 255, 0.5);
             }
-          }
-          
-          input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-          }
-        `}
-      </style>
-    </div>
+          `}
+        </style>
+      </div>
+    </>
   );
 };
 
