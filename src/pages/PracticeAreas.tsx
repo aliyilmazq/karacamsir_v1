@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
+import istanbulImage from "../assets/istanbul_1.jpg";
 
 const PracticeAreas: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -145,22 +147,12 @@ const PracticeAreas: React.FC = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
-      {/* Hero Section */}
-      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
-        <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
-            Practice Areas
-          </h1>
-          <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
-          <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
-            Specialized legal advisory for complex corporate transactions, infrastructure projects 
-            and technology ventures. We deliver sophisticated solutions for institutional clients 
-            navigating today's dynamic business landscape.
-          </p>
-        </div>
-      </section>
-
+    <>
+      <PageHeaderSection
+        title="Çalışma Alanlarımız"
+        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        backgroundImage={istanbulImage}
+      />
       {/* Services Section */}
       <section id="services" style={sectionStyle}>
         <div style={containerStyle}>
@@ -250,7 +242,7 @@ const PracticeAreas: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

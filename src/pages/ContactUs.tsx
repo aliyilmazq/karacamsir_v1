@@ -116,11 +116,6 @@ const ContactUs: React.FC = () => {
 
             <div className="contact-methods">
               <div className="method-card">
-                <div className="method-icon">✉</div>
-                <div className="method-label">{t('contact.email')}</div>
-                <div className="method-value">info@karacamsir.com</div>
-              </div>
-              <div className="method-card">
                 <div className="method-icon">⏰</div>
                 <div className="method-label">{t('contact.hours')}</div>
                 <div className="method-value">{t('contact.businessHours')}</div>
