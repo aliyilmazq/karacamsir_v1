@@ -250,6 +250,14 @@ const Team: React.FC = () => {
     }
   }, [modalMember]);
 
+  // Öncelikli üyeler anahtarları
+  const priorityKeys = ['furkan', 'cankat', 'ali'];
+  // Öncelikli üyeler başta olacak şekilde sıralama
+  const sortedTeamData = [
+    ...priorityKeys.map(key => teamData.find(member => member.key === key)).filter(Boolean),
+    ...teamData.filter(member => !priorityKeys.includes(member.key)),
+  ];
+
   return (
     <div className={styles.backgroundWrapper}>
       <div className={styles.bgPattern}></div>
@@ -260,39 +268,42 @@ const Team: React.FC = () => {
         </div>
         <section className={styles.teamSection}>
           <div className={styles.teamGrid}>
-            {teamData.map((member, idx) => (
-              <div
-                className={styles.teamMember}
-                style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
-                key={member.key}
-              >
+            {sortedTeamData.map((member, idx) => {
+              if (!member) return null;
+              return (
                 <div
-                  className={styles.memberCard}
-                  onClick={() => {
-                    console.log('Clicked member:', member);
-                    setModalMember(member);
-                  }}
-                  tabIndex={0}
-                  role="button"
-                  aria-label={member.name}
-                  onKeyDown={e => { if (e.key === 'Enter') setModalMember(member); }}
+                  className={styles.teamMember}
+                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
+                  key={member.key}
                 >
-                  <div className={styles.memberImageContainer}>
-                    <div className={styles.placeholderImage}>{member.initials}</div>
-                  </div>
-                  <div className={styles.memberInfo}>
-                    <h3 className={styles.memberName}>{member.name}</h3>
-                    <a
-                      href={`mailto:${member.email}`}
-                      className={styles.memberEmail}
-                      onClick={e => e.stopPropagation()}
-                    >
-                      {member.email}
-                    </a>
+                  <div
+                    className={styles.memberCard}
+                    onClick={() => {
+                      console.log('Clicked member:', member);
+                      setModalMember(member);
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={member.name}
+                    onKeyDown={e => { if (e.key === 'Enter') setModalMember(member); }}
+                  >
+                    <div className={styles.memberImageContainer}>
+                      <div className={styles.placeholderImage}>{member.initials}</div>
+                    </div>
+                    <div className={styles.memberInfo}>
+                      <h3 className={styles.memberName}>{member.name}</h3>
+                      <a
+                        href={`mailto:${member.email}`}
+                        className={styles.memberEmail}
+                        onClick={e => e.stopPropagation()}
+                      >
+                        {member.email}
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       </div>
@@ -301,25 +312,21 @@ const Team: React.FC = () => {
         <div
           className={styles.modal ? styles.modal + ' show' : ''}
           ref={modalRef}
-          style={
-            !styles.modal
-              ? {
-                  position: 'fixed',
-                  top: 0,
-                  left: 0,
-                  width: '100vw',
-                  height: '100vh',
-                  background: 'rgba(0,0,0,0.95)',
-                  zIndex: 2000,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  opacity: 1,
-                  padding: 40,
-                  overflowY: 'auto',
-                }
-              : undefined
-          }
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'rgba(0,0,0,0.95)',
+            zIndex: 99999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: 1,
+            padding: 40,
+            overflowY: 'auto',
+          }}
         >
           {!styles.modal && (
             <div style={{color: 'red', background: '#fff', padding: 16, zIndex: 3000}}>
