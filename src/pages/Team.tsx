@@ -263,15 +263,14 @@ const Team: React.FC = () => {
   return (
     <>
       <PageHeaderSection
-        title="Çalışma Alanlarımız"
-        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        title="Team"
+        breadcrumb="Home / Team"
         backgroundImage={istanbulImage}
       />
       <div className={styles.backgroundWrapper}>
         <div className={styles.bgPattern}></div>
         <div className={styles.mainContent}>
           <div className={styles.pageHeader}>
-            <h1 className={styles.pageTitle}>Our Team</h1>
             <p className={styles.pageSubtitle}>Excellence in Legal Practice</p>
           </div>
           <section className={styles.teamSection}>

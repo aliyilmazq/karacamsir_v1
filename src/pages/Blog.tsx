@@ -122,8 +122,8 @@ const Blog = () => {
   return (
     <>
       <PageHeaderSection
-        title="Çalışma Alanlarımız"
-        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        title="Blog"
+        breadcrumb="Ana Sayfa / Blog"
         backgroundImage={istanbulImage}
       />
       <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>

@@ -122,8 +122,8 @@ const HowWeAreDoing = () => {
   return (
     <>
       <PageHeaderSection
-        title="Çalışma Alanlarımız"
-        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        title="Nasıl Yapıyoruz"
+        breadcrumb="Ana Sayfa / Nasıl Yapıyoruz"
         backgroundImage={istanbulImage}
       />
       <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>

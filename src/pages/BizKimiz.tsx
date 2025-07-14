@@ -5,8 +5,8 @@ import istanbulImage from "../assets/istanbul_1.jpg";
 const BizKimiz: React.FC = () => (
   <>
     <PageHeaderSection
-      title="Çalışma Alanlarımız"
-      breadcrumb="Ana Sayfa / Hizmetlerimiz"
+      title="Biz Kimiz"
+      breadcrumb="Ana Sayfa / Biz Kimiz"
       backgroundImage={istanbulImage}
     />
     <section style={{ padding: '3rem 1rem', textAlign: 'center' }}>

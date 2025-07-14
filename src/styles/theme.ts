@@ -2,13 +2,13 @@
 
 export const theme = {
   colors: {
-    primary: '#522D72', // Ana mor
-    secondary: '#6A359C', // Açık mor
-    background: 'linear-gradient(135deg, #522D72 60%, #6A359C 100%)',
-    card: '#6A359C',
+    primary: '#702963', // Ana mor
+    secondary: '#702963', // Açık mor
+    background: 'linear-gradient(135deg, #702963 60%, #702963 100%)',
+    card: '#702963',
     text: '#fff',
     white: '#fff',
-    accent: '#fff',
+    accent: '#702963',
     error: '#fff',
   },
   fonts: {
