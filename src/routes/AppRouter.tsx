@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
-import WhoWeAre from '../pages/WhoWeAre';
 import PracticeAreas from '../pages/PracticeAreas';
 import HowWeAreDoing from '../pages/HowWeAreDoing';
 import ContactUs from '../pages/ContactUs';
@@ -12,13 +11,14 @@ import LegalInsightsQuarterly from '../pages/LegalInsightsQuarterly';
 import DeclarationCleanConduct from '../pages/DeclarationCleanConduct';
 import Compliance from '../pages/Compliance';
 import PrivacyNotice from '../pages/PrivacyNotice';
+import AboutUs from '../pages/AboutUs';
 
 const AppRouter: React.FC = () => (
   <BrowserRouter>
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about-us/*" element={<WhoWeAre />} />
+        <Route path="/about-us/*" element={<AboutUs />} />
         <Route path="/practice-areas/*" element={<PracticeAreas />} />
         <Route path="/what-we-are-doing/*" element={<PracticeAreas />} />
         <Route path="/how-we-are-doing/*" element={<HowWeAreDoing />} />
