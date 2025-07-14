@@ -71,9 +71,8 @@
 }
 .teamGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 50px;
-  margin-bottom: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 .teamMember {
   opacity: 0;
@@ -105,7 +104,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #8a2be2, transparent);
+  background: linear-gradient(90deg, transparent, #702963, transparent);
   transform: translateX(-100%);
   transition: transform 0.6s ease;
 }
@@ -114,14 +113,14 @@
 }
 .memberCard:hover {
   transform: translateY(-5px);
-  border-color: rgba(138, 43, 226, 0.3);
+  border-color: #702963;
   background: rgba(255, 255, 255, 0.04);
 }
 .memberImageContainer {
   position: relative;
   height: 350px;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0015, #1a0033);
+  background: linear-gradient(135deg, #702963, #702963);
 }
 .placeholderImage {
   width: 100%;
@@ -129,7 +128,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a0033, #2a0055);
+  background: linear-gradient(135deg, #702963, #702963);
   color: rgba(255, 255, 255, 0.3);
   font-size: 80px;
   font-weight: 300;
@@ -161,11 +160,11 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #8a2be2;
+  background: #702963;
   transition: width 0.3s ease;
 }
 .memberEmail:hover {
-  color: #e1bee7;
+  color: #702963;
 }
 .memberEmail:hover::after {
   width: 100%;
@@ -192,8 +191,8 @@
   opacity: 1;
 }
 .modalContent {
-  background: linear-gradient(135deg, #0a0015, #1a0033);
-  border: 1px solid rgba(138, 43, 226, 0.3);
+  background: linear-gradient(135deg, #702963, #702963);
+  border: 1px solid #702963;
   max-width: 900px;
   width: 100%;
   max-height: 90vh;
@@ -251,7 +250,7 @@
 .modalImageContainer {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #1a0033, #2a0055);
+  background: linear-gradient(135deg, #702963, #702963);
   margin-bottom: 30px;
   overflow: hidden;
 }
@@ -270,7 +269,7 @@
   text-align: center;
 }
 .modalEmail {
-  color: #e1bee7;
+  color: #702963;
   text-decoration: none;
   font-size: 16px;
   display: block;
@@ -295,7 +294,7 @@
 }
 .modalTitle {
   font-size: 18px;
-  color: #e1bee7;
+  color: #702963;
   margin-bottom: 30px;
   font-weight: 300;
 }
@@ -324,7 +323,7 @@
   left: 0;
   width: 30px;
   height: 1px;
-  background: #8a2be2;
+  background: #702963;
 }
 .modalList {
   list-style: none;
@@ -342,7 +341,7 @@
   content: '▸';
   position: absolute;
   left: 0;
-  color: #8a2be2;
+  color: #702963;
 }
 /* Responsive Modal */
 @media (max-width: 768px) {
@@ -372,12 +371,23 @@
     font-size: 40px;
   }
   .teamGrid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 @media (max-width: 480px) {
   .teamGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  .teamMember, .memberCard {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
   }
 } 

@@ -12,7 +12,7 @@ const PageHeaderSection: React.FC<PageHeaderSectionProps> = ({
   title,
   breadcrumb,
   backgroundImage,
-  slogan = "Your success. Our business.",
+  slogan = "Preserving Values",
 }) => {
   return (
     <div

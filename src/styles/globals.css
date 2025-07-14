@@ -3,14 +3,14 @@
 
 /* Global reset ve tema renkleri */
 :root {
-  --color-primary: #5D3FD3;
-  --color-secondary: #6A359C;
+  --color-primary: #702963;
+  --color-secondary: #702963;
   --color-background: #FFFFFF;
   --color-card: #ffffff;
   --color-text: #333333;
-  --color-heading: #5D3FD3;
+  --color-heading: #702963;
   --color-white: #fff;
-  --color-accent: #5D3FD3;
+  --color-accent: #702963;
   --color-error: #dc3545;
   --color-black: #000000;
   --color-gray: #f8f9fa;

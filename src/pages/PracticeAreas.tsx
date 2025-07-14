@@ -149,8 +149,8 @@ const PracticeAreas: React.FC = () => {
   return (
     <>
       <PageHeaderSection
-        title="Çalışma Alanlarımız"
-        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        title="Practice Areas"
+        breadcrumb="Home / Practice Areas"
         backgroundImage={istanbulImage}
       />
       {/* Services Section */}
