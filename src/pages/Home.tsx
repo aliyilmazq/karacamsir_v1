@@ -8,6 +8,23 @@ const Home = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const { t } = useTranslation();
 
+  const testimonials = [
+    {
+      text: "KARAÇAM & ŞİR expertly navigated our €500M cross-border acquisition, managing regulatory approvals across multiple jurisdictions with exceptional efficiency.",
+      author: "Michael Richardson",
+      position: "Managing Partner, Nordic Capital Partners"
+    },
+    {
+      text: "Their innovative structuring on our renewable energy project saved us significant time and costs. True experts in project finance and EPC contracts.",
+      author: "Elena Petrova",
+      position: "CEO, Green Energy Solutions EMEA"
+    },
+    {
+      text: "Outstanding counsel on our Series B funding. They understand the startup ecosystem and delivered practical, business-oriented legal solutions.",
+      author: "Can Yildirim",
+      position: "Founder & CEO, FinTech Innovations"
+    }
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,25 +60,6 @@ const Home = () => {
     }
   ];
 
-
-  const testimonials = [
-    {
-      text: "KARAÇAM & ŞİR expertly navigated our €500M cross-border acquisition, managing regulatory approvals across multiple jurisdictions with exceptional efficiency.",
-      author: "Michael Richardson",
-      position: "Managing Partner, Nordic Capital Partners"
-    },
-    {
-      text: "Their innovative structuring on our renewable energy project saved us significant time and costs. True experts in project finance and EPC contracts.",
-      author: "Elena Petrova",
-      position: "CEO, Green Energy Solutions EMEA"
-    },
-    {
-      text: "Outstanding counsel on our Series B funding. They understand the startup ecosystem and delivered practical, business-oriented legal solutions.",
-      author: "Can Yildirim",
-      position: "Founder & CEO, FinTech Innovations"
-    }
-  ];
-
   const containerStyle = {
     maxWidth: '80rem',
     margin: '0 auto',
@@ -69,7 +67,7 @@ const Home = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white' }}>
+    <div style={{ backgroundColor: '#ffffff', color: '#333' }}>
       {/* Hero Section */}
       <section style={{ 
         minHeight: '100vh', 
@@ -88,14 +86,14 @@ const Home = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(rgba(82, 45, 114, 0.25), rgba(82, 45, 114, 0.25))',
+          background: 'linear-gradient(rgba(93, 63, 211, 0.05), rgba(93, 63, 211, 0.05))',
           pointerEvents: 'none'
         }}></div>
         
         <div style={containerStyle}>
           <h2 style={{ 
             fontSize: '1.5rem', 
-            color: 'rgba(255,255,255,0.95)', 
+            color: '#333', 
             fontWeight: 300,
             marginBottom: '1.5rem',
             letterSpacing: '0.15em'
@@ -104,7 +102,7 @@ const Home = () => {
           </h2>
           <h3 style={{ 
             fontSize: '1.25rem', 
-            color: 'rgba(255,255,255,0.9)', 
+            color: '#555', 
             fontWeight: 400,
             marginBottom: '2rem',
             letterSpacing: '0.1em'
@@ -113,7 +111,7 @@ const Home = () => {
           </h3>
           <p style={{ 
             fontSize: '1rem', 
-            color: 'rgba(255,255,255,0.85)', 
+            color: '#666', 
             maxWidth: '90rem', 
             fontWeight: 300, 
             lineHeight: 1.8,
@@ -129,7 +127,7 @@ const Home = () => {
           </p>
           <p style={{ 
             fontSize: '1.25rem', 
-            color: 'rgba(255,255,255,0.9)', 
+            color: '#5D3FD3', 
             fontWeight: 400,
             letterSpacing: '0.2em',
             marginBottom: '4rem'
@@ -145,15 +143,15 @@ const Home = () => {
           transform: 'translateX(-50%)',
           animation: 'bounce 2s infinite'
         }}>
-          <div style={{ fontSize: '2rem', color: 'rgba(255,255,255,0.5)' }}>↓</div>
+          <div style={{ fontSize: '2rem', color: '#5D3FD3' }}>↓</div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
+      <section style={{ padding: '5rem 2rem', borderTop: '1px solid #e0e0e0', backgroundColor: '#ffffff' }}>
         <div style={containerStyle}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Expertise</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Our Expertise</h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -166,9 +164,7 @@ const Home = () => {
                 <div
                   style={{
                     position: 'relative',
-                    background: hoveredService === index 
-                      ? 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' 
-                      : 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%)',
+                    background: '#ffffff',
                     border: '2px solid',
                     borderColor: hoveredService === index ? '#8b5cf6' : 'rgba(139, 92, 246, 0.2)',
                     padding: '0',
@@ -178,7 +174,7 @@ const Home = () => {
                     transform: hoveredService === index ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
                     boxShadow: hoveredService === index 
                       ? '0 20px 40px rgba(139, 92, 246, 0.3), inset 0 0 0 1px rgba(139, 92, 246, 0.2)' 
-                      : '0 4px 12px rgba(0, 0, 0, 0.3)',
+                      : '0 4px 12px rgba(0, 0, 0, 0.1)',
                     clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)',
                     minHeight: '450px',
                     display: 'flex',
@@ -205,7 +201,7 @@ const Home = () => {
                     width: '100%',
                     height: '200px',
                     overflow: 'hidden',
-                    backgroundColor: '#000'
+                    backgroundColor: '#f5f5f5'
                   }}>
                     <img 
                       src={service.icon} 
@@ -227,7 +223,7 @@ const Home = () => {
                       left: 0,
                       right: 0,
                       height: '60%',
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)',
+                      background: 'linear-gradient(to top, rgba(255,255,255,0.9) 0%, transparent 100%)',
                       pointerEvents: 'none'
                     }} />
                   </div>
@@ -245,7 +241,7 @@ const Home = () => {
                       right: '2rem',
                       fontSize: '4rem',
                       fontWeight: '900',
-                      color: hoveredService === index ? '#8b5cf6' : 'rgba(139, 92, 246, 0.1)',
+                      color: hoveredService === index ? '#8b5cf6' : 'rgba(139, 92, 246, 0.2)',
                       transition: 'all 0.4s',
                       lineHeight: 1,
                       fontFamily: 'Arial, sans-serif'
@@ -258,7 +254,7 @@ const Home = () => {
                       fontWeight: 700, 
                       marginBottom: '1rem',
                       letterSpacing: '-0.02em',
-                      color: hoveredService === index ? '#fff' : 'rgba(255,255,255,0.95)',
+                      color: hoveredService === index ? '#333' : '#333',
                       transition: 'all 0.4s'
                     }}>
                       {t(service.titleKey)}
@@ -274,7 +270,7 @@ const Home = () => {
                     }} />
                     
                     <p style={{ 
-                      color: hoveredService === index ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.7)', 
+                      color: hoveredService === index ? '#555' : '#666', 
                       lineHeight: 1.6,
                       fontSize: '0.95rem',
                       transition: 'all 0.4s'
@@ -295,7 +291,7 @@ const Home = () => {
                       transform: hoveredService === index ? 'translateX(0)' : 'translateX(-10px)',
                       transition: 'all 0.4s'
                     }}>
-                      <span>Learn More</span>
+                      <span style={{ color: '#8b5cf6' }}>Learn More</span>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
@@ -310,7 +306,7 @@ const Home = () => {
 
 
       {/* About Section */}
-      <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
+      <section style={{ padding: '5rem 2rem', borderTop: '1px solid #e0e0e0', backgroundColor: '#ffffff' }}>
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
