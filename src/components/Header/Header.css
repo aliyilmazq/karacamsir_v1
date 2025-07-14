@@ -73,6 +73,14 @@
   opacity: 0.9;
 }
 
+.header__nav a.active {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  opacity: 1;
+}
+
 /* Tablet styles */
 @media (max-width: 992px) {
   .header__container {
