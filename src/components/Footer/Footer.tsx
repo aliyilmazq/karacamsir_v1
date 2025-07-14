@@ -5,46 +5,37 @@ import './Footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
+    <footer className="footer custom-dark-bg">
       <div className="footer__container">
-        <div className="footer__main">
-          <div className="footer__block">
-            <h4>Legal</h4>
-            <nav className="footer__nav">
-              <Link to="/privacy-policy">Privacy Policy</Link>
-              <Link to="/terms-of-service">Terms of Service</Link>
-              <Link to="/disclaimer">Disclaimer</Link>
-            </nav>
-          </div>
-          <div className="footer__block">
-            <h4>Contact</h4>
-            <div className="footer__contact">
-              <p>Karaçam & Şir Law Firm</p>
-              <p>Istanbul, Turkey</p>
-              <p>
-                <a href="mailto:info@karacam-sir.com">info@karacam-sir.com</a>
-              </p>
-              <p>+90 212 000 00 00</p>
-            </div>
-          </div>
-          <div className="footer__block">
-            <h4>Connect</h4>
-            <div className="footer__social">
-              <a 
-                href="https://linkedin.com/company/karacam-sir" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="LinkedIn"
-                className="footer__social-link"
-              >
-                <Linkedin size={20} />
-                <span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
+        <div className="footer__links-row">
+          <Link to="/legal-insights-quarterly" className="footer__link">
+            Legal Insights Quarterly
+          </Link>
+          <span className="footer__divider">|</span>
+          <Link to="/declaration-clean-conduct" className="footer__link">
+            Declaration on Promotion of Clean Conduct
+          </Link>
+          <span className="footer__divider">|</span>
+          <Link to="/compliance" className="footer__link">
+            Compliance
+          </Link>
+          <span className="footer__divider">|</span>
+          <Link to="/privacy-notice" className="footer__link">
+            Privacy Notice
+          </Link>
+          <span className="footer__divider">|</span>
+          <a
+            href="https://www.linkedin.com/company/karacamsir/posts/?feedView=all"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="footer__linkedin"
+          >
+            <Linkedin size={20} />
+          </a>
         </div>
-        <div className="footer__bottom">
-          <p>© 2024 Karaçam & Şir. All rights reserved.</p>
+        <div className="footer__bottom-text">
+          © 2025 KARAÇAM & ŞİR. All rights reserved
         </div>
       </div>
     </footer>

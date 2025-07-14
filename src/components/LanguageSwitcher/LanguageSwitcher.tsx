@@ -6,8 +6,8 @@ const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const languages = [
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'ru', name: 'Русский', flag: '🇷🇺' }
+    { code: 'en', name: 'EN' },
+    { code: 'ru', name: 'RU' }
   ];
   
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
@@ -43,7 +43,6 @@ const LanguageSwitcher: React.FC = () => {
           e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
         }}
       >
-        <span>{currentLanguage.flag}</span>
         <span>{currentLanguage.name}</span>
         <span style={{ fontSize: '0.8rem' }}>▼</span>
       </button>
@@ -88,7 +87,6 @@ const LanguageSwitcher: React.FC = () => {
               }}
               disabled={lang.code === currentLanguage.code}
             >
-              <span>{lang.flag}</span>
               <span>{lang.name}</span>
             </button>
           ))}

@@ -1,0 +1,383 @@
+/* Team.module.css */
+.backgroundWrapper {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+.bgPattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #000 0%, #0a0015 50%, #000 100%);
+}
+.bgPattern::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  background-image: 
+    linear-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  top: 0;
+  left: 0;
+}
+.mainContent {
+  margin-top: 0;
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+.pageHeader {
+  text-align: center;
+  margin-bottom: 80px;
+  opacity: 0;
+  animation: fadeInDown 1s ease forwards;
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.pageTitle {
+  font-size: 56px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+.pageSubtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+}
+.teamSection {
+  margin-bottom: 80px;
+}
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  margin-bottom: 100px;
+}
+.teamMember {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: var(--delay);
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.memberCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+.memberCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8a2be2, transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.memberCard:hover::before {
+  transform: translateX(100%);
+}
+.memberCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 43, 226, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+.memberImageContainer {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0015, #1a0033);
+}
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a0033, #2a0055);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 80px;
+  font-weight: 300;
+  font-family: 'Georgia', serif;
+}
+.memberInfo {
+  padding: 30px;
+  text-align: center;
+}
+.memberName {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.memberEmail {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+.memberEmail::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #8a2be2;
+  transition: width 0.3s ease;
+}
+.memberEmail:hover {
+  color: #e1bee7;
+}
+.memberEmail:hover::after {
+  width: 100%;
+}
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 40px;
+  overflow-y: auto;
+}
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+.modalContent {
+  background: linear-gradient(135deg, #0a0015, #1a0033);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+.modal.show .modalContent {
+  transform: translateY(0);
+}
+.modalClose {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.modalClose:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+.modalClose::before,
+.modalClose::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  background: #fff;
+}
+.modalClose::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.modalClose::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modalBody {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.modalImageSection {
+  position: sticky;
+  top: 0;
+}
+.modalImageContainer {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #1a0033, #2a0055);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.modalPlaceholderImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: 'Georgia', serif;
+}
+.modalContactInfo {
+  text-align: center;
+}
+.modalEmail {
+  color: #e1bee7;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+.modalEmail:hover {
+  color: #fff;
+}
+.modalPhone {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+.modalInfoSection {
+  color: #fff;
+}
+.modalName {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.modalTitle {
+  font-size: 18px;
+  color: #e1bee7;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+.modalBio {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  text-align: justify;
+}
+.modalSection {
+  margin-bottom: 35px;
+}
+.modalSectionTitle {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+.modalSectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 1px;
+  background: #8a2be2;
+}
+.modalList {
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  padding: 0;
+  margin: 0;
+}
+.modalList li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+.modalList li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #8a2be2;
+}
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .modalBody {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 30px;
+  }
+  .modalImageSection {
+    position: relative;
+  }
+  .modalImageContainer {
+    height: 300px;
+  }
+  .modalName {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1200px) {
+  .teamGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 40px;
+  }
+  .teamGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+} 

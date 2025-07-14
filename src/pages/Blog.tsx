@@ -118,16 +118,16 @@ const Blog = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white' }}>
+    <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
       {/* Hero Section */}
-      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
+      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
             Blog &
-            <span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>Insights</span>
+            <span style={{ display: 'block', color: '#666666' }}>Insights</span>
           </h1>
-          <div style={{ width: '6rem', height: '1px', backgroundColor: '#8b5cf6', marginBottom: '2rem' }}></div>
-          <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
+          <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+          <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
             Expert insights on complex corporate transactions, infrastructure projects, and technology 
             ventures from our specialized legal teams across multiple jurisdictions.
           </p>
@@ -135,7 +135,7 @@ const Blog = () => {
       </section>
 
       {/* Featured Post */}
-      <section style={{ padding: '2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
+      <section style={{ padding: '2rem', borderTop: '1px solid #e0e0e0' }}>
         <div style={containerStyle}>
           <div style={{
             display: 'grid',
@@ -143,8 +143,9 @@ const Blog = () => {
             gap: '3rem',
             alignItems: 'center',
             padding: '3rem',
-            background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.15) 100%)',
-            border: '1px solid rgba(0,0,0,0.3)',
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)',
+            boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+            border: '1px solid #e0e0e0',
             borderRadius: '12px',
             overflow: 'hidden',
             position: 'relative'
@@ -166,7 +167,7 @@ const Blog = () => {
                 position: 'absolute',
                 top: '1rem',
                 left: '1rem',
-                backgroundColor: '#8b5cf6',
+                backgroundColor: '#5D3FD3',
                 padding: '0.5rem 1rem',
                 borderRadius: '4px',
                 fontSize: '0.875rem',
@@ -178,7 +179,7 @@ const Blog = () => {
             <div>
               <div style={{ 
                 fontSize: '0.875rem', 
-                color: 'rgba(255,255,255,0.7)', 
+                color: '#666666', 
                 marginBottom: '1rem',
                 display: 'flex',
                 gap: '1rem',
@@ -190,19 +191,19 @@ const Blog = () => {
                 <span>•</span>
                 <span>{featuredPost.readTime}</span>
               </div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 300, marginBottom: '1rem', lineHeight: 1.2 }}>
+              <h2 style={{ fontSize: '2.5rem', fontWeight: 300, marginBottom: '1rem', lineHeight: 1.2, color: '#333333' }}>
                 {featuredPost.title}
               </h2>
-              <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '2rem' }}>
+              <p style={{ fontSize: '1.125rem', color: '#666666', lineHeight: 1.6, marginBottom: '2rem' }}>
                 {featuredPost.excerpt}
               </p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)' }}>
-                  By <span style={{ color: 'white', fontWeight: 600 }}>{featuredPost.author}</span>
+                <div style={{ fontSize: '0.875rem', color: '#666666' }}>
+                  By <span style={{ color: '#333333', fontWeight: 600 }}>{featuredPost.author}</span>
                 </div>
                 <button style={{
                   padding: '0.75rem 2rem',
-                  backgroundColor: '#8b5cf6',
+                  backgroundColor: '#5D3FD3',
                   color: 'white',
                   border: 'none',
                   fontSize: '1rem',
@@ -211,11 +212,11 @@ const Blog = () => {
                   borderRadius: '4px'
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                  e.currentTarget.style.backgroundColor = '#333333';
                   e.currentTarget.style.transform = 'translateX(5px)';
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = '#8b5cf6';
+                  e.currentTarget.style.backgroundColor = '#5D3FD3';
                   e.currentTarget.style.transform = 'translateX(0)';
                 }}>
                   Read More →
@@ -281,7 +282,7 @@ const Blog = () => {
                 key={post.id}
                 style={{
                   backgroundColor: hoveredCard === post.id ? 'rgba(0, 0, 0, 0.1)' : 'transparent',
-                  border: '1px solid rgba(0,0,0,0.3)',
+                  border: '1px solid #e0e0e0',
                   borderRadius: '8px',
                   overflow: 'hidden',
                   transition: 'all 0.3s',
@@ -335,7 +336,7 @@ const Blog = () => {
                     {post.title}
                   </h3>
                   <p style={{ 
-                    color: 'rgba(255,255,255,0.7)', 
+                    color: '#666666', 
                     lineHeight: 1.6, 
                     marginBottom: '1.5rem',
                     fontSize: '0.875rem'

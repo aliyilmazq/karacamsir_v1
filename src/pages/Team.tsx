@@ -1,252 +1,378 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import styles from './Team.module.css';
 
-interface TeamMember {
-  id: number;
+// Team member data (React objesi olarak)
+type TeamMember = {
+  key: string;
   name: string;
   title: string;
-  imageUrl: string;
-  details: string;
-  specialParagraph?: string;
-}
-
-interface TeamModalProps {
-  member: TeamMember | null;
-  onClose: () => void;
-}
-
-const TeamModal: React.FC<TeamModalProps> = ({ member, onClose }) => {
-  if (!member) return null;
-
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 9999,
-        padding: '2rem'
-      }}
-      onClick={onClose}
-    >
-      <div
-        style={{
-          backgroundColor: '#fff',
-          borderRadius: '12px',
-          maxWidth: '600px',
-          width: '100%',
-          maxHeight: '90vh',
-          overflow: 'auto',
-          padding: '3rem',
-          position: 'relative',
-          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          style={{
-            position: 'absolute',
-            top: '1.5rem',
-            right: '1.5rem',
-            background: 'transparent',
-            border: 'none',
-            fontSize: '2rem',
-            cursor: 'pointer',
-            color: '#666',
-            padding: '0.5rem',
-            lineHeight: 1
-          }}
-          onClick={onClose}
-        >
-          ×
-        </button>
-        
-        <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
-          <img
-            src={member.imageUrl}
-            alt={member.name}
-            style={{
-              width: '150px',
-              height: '150px',
-              borderRadius: '8px',
-              objectFit: 'cover'
-            }}
-          />
-          <div style={{ flex: 1 }}>
-            <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: '#333' }}>
-              {member.name}
-            </h2>
-            <p style={{ fontSize: '1.125rem', color: '#666', marginBottom: '1rem' }}>
-              {member.title}
-            </p>
-          </div>
-        </div>
-        
-        {member.specialParagraph && (
-          <div style={{
-            backgroundColor: '#f8f9fa',
-            padding: '1.5rem',
-            borderRadius: '8px',
-            marginBottom: '2rem',
-            borderLeft: '4px solid #5D3FD3'
-          }}>
-            <p style={{ color: '#333', lineHeight: 1.6, margin: 0 }}>
-              {member.specialParagraph}
-            </p>
-          </div>
-        )}
-        
-        <div style={{ color: '#333', lineHeight: 1.8 }}>
-          {member.details.split('\n').map((paragraph, index) => (
-            <p key={index} style={{ marginBottom: '1rem' }}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  email: string;
+  phone: string;
+  initials: string;
+  education: string[];
+  specializations: string[];
+  languages: string[];
+  bar: string;
+  bio?: string;
 };
 
+const teamData: TeamMember[] = [
+  {
+    key: 'ayse',
+    name: 'Ayşe Aydın',
+    title: 'Avukat',
+    email: 'ayse.aydin.av.tr',
+    phone: '+90 212 123 4567',
+    initials: 'AA',
+    education: [
+      'İstanbul Üniversitesi Hukuk Fakültesi (2010)',
+      'University of London, LLM in Commercial Law (2012)'
+    ],
+    specializations: [
+      'Ticaret Hukuku',
+      'Şirketler Hukuku',
+      'Birleşme ve Devralmalar',
+      'Sermaye Piyasası Hukuku'
+    ],
+    languages: ['Türkçe', 'İngilizce', 'Almanca'],
+    bar: 'İstanbul Barosu (2011)'
+  },
+  {
+    key: 'ali',
+    name: 'Ali Yılmaz',
+    title: 'Kıdemli Avukat',
+    email: 'ali.yilmaz.av.tr',
+    phone: '+90 212 123 4568',
+    initials: 'AY',
+    bio: 'Ali Yılmaz, 15 yılı aşkın deneyimi ile özellikle teknoloji hukuku ve fikri mülkiyet alanlarında uzmanlaşmıştır. Türkiye\'nin önde gelen teknoloji şirketlerine danışmanlık hizmeti vermekte ve startup ekosisteminde aktif rol almaktadır. Blockchain teknolojileri ve kripto varlıklar konusundaki uzmanlığı ile sektörde tanınmaktadır.',
+    education: [
+      'Ankara Üniversitesi Hukuk Fakültesi (2005)',
+      'Harvard Law School, LLM in Law and Technology (2008)'
+    ],
+    specializations: [
+      'Teknoloji Hukuku',
+      'Fikri Mülkiyet Hukuku',
+      'Veri Koruma Hukuku',
+      'Kripto Varlıklar ve Blockchain'
+    ],
+    languages: ['Türkçe', 'İngilizce'],
+    bar: 'İstanbul Barosu (2006)'
+  },
+  {
+    key: 'esin',
+    name: 'Esin Başaran',
+    title: 'Avukat',
+    email: 'esin.basaran.av.tr',
+    phone: '+90 212 123 4569',
+    initials: 'EB',
+    education: [
+      'Galatasaray Üniversitesi Hukuk Fakültesi (2013)',
+      'Université Paris 1 Panthéon-Sorbonne, Master 2 Droit des Affaires (2015)'
+    ],
+    specializations: [
+      'Gayrimenkul Hukuku',
+      'İnşaat Hukuku',
+      'Kira Hukuku',
+      'Kat Mülkiyeti Hukuku'
+    ],
+    languages: ['Türkçe', 'Fransızca', 'İngilizce'],
+    bar: 'İstanbul Barosu (2014)'
+  },
+  {
+    key: 'mehmet',
+    name: 'Mehmet Çelik',
+    title: 'Avukat',
+    email: 'mehmet.celik.av.tr',
+    phone: '+90 212 123 4570',
+    initials: 'MC',
+    education: [
+      'Marmara Üniversitesi Hukuk Fakültesi (2011)',
+      "King's College London, LLM in International Business Law (2013)"
+    ],
+    specializations: [
+      'Uluslararası Ticaret Hukuku',
+      'Denizcilik Hukuku',
+      'Sigorta Hukuku',
+      'Tahkim'
+    ],
+    languages: ['Türkçe', 'İngilizce', 'Arapça'],
+    bar: 'İstanbul Barosu (2012)'
+  },
+  {
+    key: 'selin',
+    name: 'Selin Demir',
+    title: 'Avukat',
+    email: 'selin.demir.av.tr',
+    phone: '+90 212 123 4571',
+    initials: 'SD',
+    education: [
+      'Bilkent Üniversitesi Hukuk Fakültesi (2014)',
+      'Georgetown University Law Center, LLM in Securities and Financial Regulation (2016)'
+    ],
+    specializations: [
+      'Bankacılık Hukuku',
+      'Sermaye Piyasası Hukuku',
+      'Proje Finansmanı',
+      'Yapılandırılmış Finansman'
+    ],
+    languages: ['Türkçe', 'İngilizce'],
+    bar: 'Ankara Barosu (2015)'
+  },
+  {
+    key: 'furkan',
+    name: 'Furkan Karaçam',
+    title: 'Kurucu Ortak',
+    email: 'furkan.karacam.av.tr',
+    phone: '+90 212 123 4567',
+    initials: 'FK',
+    bio: 'Furkan Karaçam, 20 yılı aşkın mesleki deneyimi ile Türkiye\'nin en saygın hukuk profesyonellerinden biridir. Kariyeri boyunca yüzlerce milyon dolarlık birleşme ve devralma işlemlerine danışmanlık yapmış, uluslararası tahkim davalarında Türk ve yabancı şirketleri temsil etmiştir. Karaçam & Şir\'in kurucu ortağı olarak, firmanın stratejik yönlendirmesinden ve kurumsal müvekkillerin üst düzey hukuki ihtiyaçlarından sorumludur.',
+    education: [
+      'İstanbul Üniversitesi Hukuk Fakültesi (2000)',
+      'University of Cambridge, LLM in Corporate Law (2002)',
+      'New York Bar Exam (2003)'
+    ],
+    specializations: [
+      'Birleşme ve Devralmalar',
+      'Kurumsal Finansman',
+      'Uluslararası Tahkim',
+      'Enerji ve Altyapı Projeleri'
+    ],
+    languages: ['Türkçe', 'İngilizce', 'Almanca'],
+    bar: 'İstanbul Barosu (2001), New York Bar (2003)'
+  },
+  {
+    key: 'ozan',
+    name: 'Ozan Kaya',
+    title: 'Avukat',
+    email: 'ozan.kaya.av.tr',
+    phone: '+90 212 123 4572',
+    initials: 'OK',
+    education: [
+      'Koç Üniversitesi Hukuk Fakültesi (2015)',
+      'Columbia Law School, LLM in Corporate Governance (2017)'
+    ],
+    specializations: [
+      'Start-up Hukuku',
+      'Risk Sermayesi',
+      'Teknoloji Transferi',
+      'Lisans Sözleşmeleri'
+    ],
+    languages: ['Türkçe', 'İngilizce', 'İspanyolca'],
+    bar: 'İstanbul Barosu (2016)'
+  },
+  {
+    key: 'cankat',
+    name: 'Cankat Şir',
+    title: 'Kurucu Ortak',
+    email: 'cankat.sir.av.tr',
+    phone: '+90 212 123 4573',
+    initials: 'CŞ',
+    bio: 'Cankat Şir, özellikle fikri mülkiyet hukuku ve teknoloji hukuku alanlarında Türkiye\'nin önde gelen uzmanlarından biridir. 18 yıllık kariyeri boyunca, Fortune 500 şirketlerinden yenilikçi startup\'lara kadar geniş bir müvekkil portföyüne hizmet vermiştir. Yapay zeka, blockchain ve biyoteknoloji gibi yeni nesil teknolojilerin hukuki boyutları konusundaki öncü çalışmaları ile tanınmaktadır.',
+    education: [
+      'Boğaziçi Üniversitesi Hukuk Fakültesi (2002)',
+      'Stanford Law School, LLM in Law, Science & Technology (2004)',
+      'WIPO Worldwide Academy, Advanced Course on IP (2005)'
+    ],
+    specializations: [
+      'Fikri Mülkiyet Hukuku',
+      'Teknoloji Transferi',
+      'Biyoteknoloji Hukuku',
+      'Yapay Zeka ve Veri Hukuku'
+    ],
+    languages: ['Türkçe', 'İngilizce', 'Fransızca'],
+    bar: 'İstanbul Barosu (2003)'
+  },
+  {
+    key: 'zeynep',
+    name: 'Zeynep Yılmaz',
+    title: 'Avukat',
+    email: 'zeynep.yilmaz.av.tr',
+    phone: '+90 212 123 4574',
+    initials: 'ZY',
+    education: [
+      'Yeditepe Üniversitesi Hukuk Fakültesi (2016)',
+      'Leiden University, Advanced LLM in European and International Business Law (2018)'
+    ],
+    specializations: [
+      'Rekabet Hukuku',
+      'Regülasyon ve Uyum',
+      'Tüketici Hukuku',
+      'E-Ticaret Hukuku'
+    ],
+    languages: ['Türkçe', 'İngilizce', 'Hollandaca'],
+    bar: 'İstanbul Barosu (2017)'
+  }
+];
+
 const Team: React.FC = () => {
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [modalMember, setModalMember] = useState<TeamMember | null>(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
-  // Sample team data - replace with actual data
-  const teamMembers: TeamMember[] = [
-    {
-      id: 1,
-      name: 'Cankat Karaçam',
-      title: 'Managing Partner',
-      imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop',
-      details: 'Cankat Karaçam is the Managing Partner at Karaçam & Şir Law Firm. With over 20 years of experience in corporate law and international transactions, he leads our firm\'s strategic initiatives and major client relationships.\n\nHis expertise spans mergers and acquisitions, project finance, and cross-border transactions. He has advised on transactions totaling over €5 billion in value.',
-      specialParagraph: 'Cankat has been recognized as a leading lawyer in Turkey by international legal directories and has been instrumental in shaping the firm\'s vision and growth strategy.'
-    },
-    {
-      id: 2,
-      name: 'Furkan Şir',
-      title: 'Senior Partner',
-      imageUrl: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop',
-      details: 'Furkan Şir is a Senior Partner specializing in litigation and dispute resolution. He has successfully represented clients in complex commercial disputes and international arbitrations.\n\nWith expertise in both civil and commercial litigation, Furkan has a track record of achieving favorable outcomes in high-stakes disputes.',
-      specialParagraph: 'Furkan is known for his strategic approach to dispute resolution and has been recognized for his advocacy skills in international arbitration forums.'
-    },
-    {
-      id: 3,
-      name: 'Ali Yılmaz',
-      title: 'Partner',
-      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-      details: 'Ali Yılmaz is a Partner in our Technology and Innovation practice. He advises technology companies, startups, and investors on corporate matters, intellectual property, and regulatory compliance.\n\nAli has extensive experience in venture capital transactions, technology licensing, and data protection matters.',
-      specialParagraph: 'Ali has been at the forefront of advising on emerging technology regulations and has helped numerous startups navigate complex legal landscapes.'
-    },
-    {
-      id: 4,
-      name: 'Zeynep Demir',
-      title: 'Senior Associate',
-      imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
-      details: 'Zeynep Demir is a Senior Associate in our Corporate and M&A practice. She has worked on numerous cross-border transactions and has expertise in private equity and capital markets.\n\nZeynep regularly advises on corporate restructurings, joint ventures, and regulatory compliance matters.'
-    },
-    {
-      id: 5,
-      name: 'Mehmet Kaya',
-      title: 'Associate',
-      imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
-      details: 'Mehmet Kaya is an Associate in our Energy and Infrastructure practice. He assists clients with project development, regulatory compliance, and financing arrangements.\n\nMehmet has worked on several renewable energy projects and public-private partnerships.'
-    },
-    {
-      id: 6,
-      name: 'Ayşe Özkan',
-      title: 'Associate',
-      imageUrl: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop',
-      details: 'Ayşe Özkan is an Associate specializing in employment law and regulatory compliance. She advises both domestic and international clients on Turkish labor law matters.\n\nAyşe has extensive experience in employment disputes, collective bargaining agreements, and workplace compliance issues.'
-    }
-  ];
-
-  // Sort team members alphabetically by name
-  const sortedMembers = [...teamMembers].sort((a, b) => a.name.localeCompare(b.name));
-
-  // Handle ESC key to close modal
-  React.useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setSelectedMember(null);
-      }
+  // ESC ile modal kapama
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setModalMember(null);
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
+  // Modal dışına tıklayınca kapama
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (modalRef.current && e.target === modalRef.current) setModalMember(null);
+    };
+    if (modalMember) document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [modalMember]);
+
+  // Animasyon için Intersection Observer
+  useEffect(() => {
+    const members = document.querySelectorAll(`.${styles.teamMember}`);
+    const observer = new window.IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    members.forEach(member => {
+      (member as HTMLElement).style.animationPlayState = 'paused';
+      observer.observe(member);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  // Modal açıldığında debug log
+  useEffect(() => {
+    if (modalMember) {
+      console.log('Modal open for:', modalMember);
+    }
+  }, [modalMember]);
+
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white', minHeight: '100vh', paddingTop: '2rem' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-        <h1 style={{ 
-          fontSize: '2.5rem', 
-          fontWeight: 200, 
-          marginBottom: '3rem', 
-          textAlign: 'center',
-          color: '#fff'
-        }}>
-          Our Team
-        </h1>
-        
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
-          gap: '2rem',
-          marginBottom: '4rem'
-        }}>
-          {sortedMembers.map((member) => (
-            <div
-              key={member.id}
-              style={{
-                background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%)',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                cursor: 'pointer',
-                transition: 'all 0.3s',
-                border: '2px solid transparent'
-              }}
-              onClick={() => setSelectedMember(member)}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.borderColor = '#8b5cf6';
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(139, 92, 246, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.borderColor = 'transparent';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              <div style={{ position: 'relative', paddingBottom: '100%', overflow: 'hidden' }}>
-                <img
-                  src={member.imageUrl}
-                  alt={member.name}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.3s'
+    <div className={styles.backgroundWrapper}>
+      <div className={styles.bgPattern}></div>
+      <div className={styles.mainContent}>
+        <div className={styles.pageHeader}>
+          <h1 className={styles.pageTitle}>Our Team</h1>
+          <p className={styles.pageSubtitle}>Excellence in Legal Practice</p>
+        </div>
+        <section className={styles.teamSection}>
+          <div className={styles.teamGrid}>
+            {teamData.map((member, idx) => (
+              <div
+                className={styles.teamMember}
+                style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
+                key={member.key}
+              >
+                <div
+                  className={styles.memberCard}
+                  onClick={() => {
+                    console.log('Clicked member:', member);
+                    setModalMember(member);
                   }}
-                />
+                  tabIndex={0}
+                  role="button"
+                  aria-label={member.name}
+                  onKeyDown={e => { if (e.key === 'Enter') setModalMember(member); }}
+                >
+                  <div className={styles.memberImageContainer}>
+                    <div className={styles.placeholderImage}>{member.initials}</div>
+                  </div>
+                  <div className={styles.memberInfo}>
+                    <h3 className={styles.memberName}>{member.name}</h3>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className={styles.memberEmail}
+                      onClick={e => e.stopPropagation()}
+                    >
+                      {member.email}
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div style={{ padding: '1.5rem', textAlign: 'center' }}>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 500, color: '#fff' }}>
-                  {member.name}
-                </h3>
+            ))}
+          </div>
+        </section>
+      </div>
+      {/* Modal */}
+      {modalMember && (
+        <div
+          className={styles.modal ? styles.modal + ' show' : ''}
+          ref={modalRef}
+          style={
+            !styles.modal
+              ? {
+                  position: 'fixed',
+                  top: 0,
+                  left: 0,
+                  width: '100vw',
+                  height: '100vh',
+                  background: 'rgba(0,0,0,0.95)',
+                  zIndex: 2000,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  opacity: 1,
+                  padding: 40,
+                  overflowY: 'auto',
+                }
+              : undefined
+          }
+        >
+          {!styles.modal && (
+            <div style={{color: 'red', background: '#fff', padding: 16, zIndex: 3000}}>
+              CSS modülü yüklenemedi! Modal fallback modda gösteriliyor.
+            </div>
+          )}
+          <div className={styles.modalContent || ''} style={!styles.modalContent ? {background: '#222', color: '#fff', padding: 40, borderRadius: 8, maxWidth: 900, width: '100%'} : undefined}>
+            <button className={styles.modalClose || ''} style={!styles.modalClose ? {position: 'absolute', top: 30, right: 30, width: 40, height: 40, background: 'rgba(255,255,255,0.1)', border: 'none', cursor: 'pointer', color: '#fff', fontSize: 32} : undefined} onClick={() => setModalMember(null)} aria-label="Close modal">{!styles.modalClose && '×'}</button>
+            <div className={styles.modalBody || ''} style={!styles.modalBody ? {display: 'flex', flexDirection: 'row', gap: 40, padding: 40} : undefined}>
+              <div className={styles.modalImageSection || ''}>
+                <div className={styles.modalImageContainer || ''} style={!styles.modalImageContainer ? {width: 300, height: 400, background: '#444', marginBottom: 30, display: 'flex', alignItems: 'center', justifyContent: 'center'} : undefined}>
+                  <div className={styles.modalPlaceholderImage || ''} style={!styles.modalPlaceholderImage ? {fontSize: 120, color: '#fff'} : undefined}>{modalMember.initials}</div>
+                </div>
+                <div className={styles.modalContactInfo || ''}>
+                  <a href={`mailto:${modalMember.email}`} className={styles.modalEmail || ''} style={!styles.modalEmail ? {color: '#e1bee7', fontSize: 16, display: 'block', marginBottom: 10} : undefined}>{modalMember.email}</a>
+                  <p className={styles.modalPhone || ''} style={!styles.modalPhone ? {color: '#fff', fontSize: 16} : undefined}>{modalMember.phone}</p>
+                </div>
+              </div>
+              <div className={styles.modalInfoSection || ''}>
+                <h2 className={styles.modalName || ''} style={!styles.modalName ? {fontSize: 36, color: '#fff'} : undefined}>{modalMember.name}</h2>
+                <p className={styles.modalTitle || ''} style={!styles.modalTitle ? {fontSize: 18, color: '#e1bee7'} : undefined}>{modalMember.title}</p>
+                {(modalMember.key === 'cankat' || modalMember.key === 'furkan' || modalMember.key === 'ali') && modalMember.bio && (
+                  <p className={styles.modalBio || ''} style={!styles.modalBio ? {fontSize: 16, color: '#fff', marginBottom: 40} : undefined}>{modalMember.bio}</p>
+                )}
+                <div className={styles.modalSection || ''}>
+                  <h3 className={styles.modalSectionTitle || ''}>Eğitim</h3>
+                  <ul className={styles.modalList || ''}>
+                    {modalMember.education.map((edu, i) => <li key={i}>{edu}</li>)}
+                  </ul>
+                </div>
+                <div className={styles.modalSection || ''}>
+                  <h3 className={styles.modalSectionTitle || ''}>Uzmanlık Alanları</h3>
+                  <ul className={styles.modalList || ''}>
+                    {modalMember.specializations.map((spec, i) => <li key={i}>{spec}</li>)}
+                  </ul>
+                </div>
+                <div className={styles.modalSection || ''}>
+                  <h3 className={styles.modalSectionTitle || ''}>Diller</h3>
+                  <ul className={styles.modalList || ''}>
+                    {modalMember.languages.map((lang, i) => <li key={i}>{lang}</li>)}
+                  </ul>
+                </div>
+                <div className={styles.modalSection || ''}>
+                  <h3 className={styles.modalSectionTitle || ''}>Baro Kaydı</h3>
+                  <ul className={styles.modalList || ''}>
+                    <li>{modalMember.bar}</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-      
-      <TeamModal member={selectedMember} onClose={() => setSelectedMember(null)} />
+      )}
     </div>
   );
 };
