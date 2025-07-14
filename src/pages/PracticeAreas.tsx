@@ -157,8 +157,6 @@ const PracticeAreas: React.FC = () => {
       <section id="services" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Our Practice Areas</h2>
-            <p style={{ color: '#666666' }}>Comprehensive legal solutions for modern businesses</p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
@@ -174,19 +172,19 @@ const PracticeAreas: React.FC = () => {
                     padding: '2rem',
                     transition: 'all 0.5s',
                     cursor: 'pointer',
-                    backgroundColor: hoveredCard === index ? '#5D3FD3' : '#ffffff'
+                    backgroundColor: hoveredCard === index ? '#702963' : '#ffffff',
                   }}
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '0.5rem' }}>
-                        <span style={{ fontSize: '2rem', color: hoveredCard === index ? '#ffffff' : '#5D3FD3', fontWeight: 300 }}>
+                        <span style={{ fontSize: '2rem', color: hoveredCard === index ? '#ffffff' : '#702963', fontWeight: 300 }}>
                           {service.number}
                         </span>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 300 }}>
+                        <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: hoveredCard === index ? '#ffffff' : '#333' }}>
                           {service.title}
-                          {service.subtitle && <span style={{ display: 'block', fontSize: '0.875rem', marginTop: '0.25rem' }}>{service.subtitle}</span>}
+                          {service.subtitle && <span style={{ display: 'block', fontSize: '0.875rem', marginTop: '0.25rem', color: hoveredCard === index ? '#ffffff' : '#333' }}>{service.subtitle}</span>}
                         </h3>
                       </div>
                       <p style={{ color: hoveredCard === index ? '#ffffff' : '#666666', margin: 0 }}>
@@ -195,8 +193,9 @@ const PracticeAreas: React.FC = () => {
                     </div>
                     <div style={{
                       fontSize: '1.5rem',
+                      color: hoveredCard === index ? '#ffffff' : '#702963',
                       transform: activeIndex === index ? 'rotate(180deg)' : 'rotate(0deg)',
-                      transition: 'transform 0.3s'
+                      transition: 'transform 0.3s, color 0.3s'
                     }}>
                       ▼
                     </div>

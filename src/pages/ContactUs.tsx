@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import './ContactUs.css';
 import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
 import istanbulImage from "../assets/istanbul_1.jpg";
 
@@ -17,6 +16,23 @@ const ContactUs: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+
+  // Responsive helper
+  const getResponsiveStyles = () => {
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+    return { isMobile, isTablet };
+  };
+
+  const [windowSize, setWindowSize] = useState(getResponsiveStyles());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(getResponsiveStyles());
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const offices = [
     {
@@ -82,36 +98,91 @@ const ContactUs: React.FC = () => {
         breadcrumb="Home / Contact"
         backgroundImage={istanbulImage}
       />
-      <div className="contact-page">
-        {/* Background */}
-        <div className="background-wrapper">
-          <div className="bg-pattern"></div>
-        </div>
-
+      <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
         {/* Main Content */}
-        <div className="main-content">
+        <div style={{ position: 'relative', zIndex: 10 }}>
           {/* Contact Content */}
-          <section className="contact-container">
-            {/* Contact Information */}
-            <div className="contact-info" style={{ gridColumn: '1 / -1', width: '100%' }}>
-              <div className="info-section">
-                <h2 className="info-title">{t('contact.ourOffices')}</h2>
+          <section style={{ 
+            maxWidth: '80rem',
+            margin: '0 auto',
+            padding: windowSize.isMobile ? '2rem 1rem' : '3rem 2rem'
+          }}>
+            {/* Office Information - Full Width */}
+            <div style={{ width: '100%', marginBottom: windowSize.isMobile ? '2rem' : '3rem' }}>
+              <div>
+                <h2 style={{ 
+                  fontSize: windowSize.isMobile ? '1.5rem' : '2rem',
+                  fontWeight: 300,
+                  marginBottom: windowSize.isMobile ? '1.5rem' : '2rem',
+                  color: '#5D3FD3',
+                  textAlign: 'center'
+                }}>
+                  {t('contact.ourOffices', 'Our Offices')}
+                </h2>
                 
                 <div style={{ 
                   display: 'grid', 
-                  gridTemplateColumns: 'repeat(4, 1fr)', 
-                  gap: '20px',
-                  marginBottom: '40px'
+                  gridTemplateColumns: windowSize.isMobile ? '1fr' : windowSize.isTablet ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', 
+                  gap: windowSize.isMobile ? '1rem' : '1.5rem',
+                  marginBottom: windowSize.isMobile ? '2rem' : '3rem'
                 }}>
                   {offices.map((office, index) => (
-                    <div key={index} className="office-card" style={{ marginBottom: 0 }}>
-                      <h3 className="office-name">{office.city}</h3>
-                      <div className="office-details">
+                    <div 
+                      key={index} 
+                      style={{
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #e0e0e0',
+                        padding: windowSize.isMobile ? '1.5rem' : '2rem',
+                        borderRadius: '8px',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer',
+                        position: 'relative',
+                        overflow: 'hidden'
+                      }}
+                      onMouseEnter={e => {
+                        if (!windowSize.isMobile) {
+                          e.currentTarget.style.transform = 'translateY(-4px)';
+                          e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)';
+                          e.currentTarget.style.borderColor = '#5D3FD3';
+                        }
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = 'none';
+                        e.currentTarget.style.borderColor = '#e0e0e0';
+                      }}
+                    >
+                      <h3 style={{ 
+                        fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
+                        fontWeight: 400,
+                        marginBottom: '1rem',
+                        color: '#5D3FD3',
+                        letterSpacing: '1px'
+                      }}>
+                        {office.city}
+                      </h3>
+                      <div style={{
+                        fontSize: windowSize.isMobile ? '0.875rem' : '0.9375rem',
+                        lineHeight: 1.8,
+                        color: '#666666'
+                      }}>
                         {office.address.map((line, i) => (
-                          <p key={i}>{line}</p>
+                          <p key={i} style={{ marginBottom: '0.5rem' }}>{line}</p>
                         ))}
-                        <p style={{ marginTop: '15px' }}>
-                          <a href={`tel:${office.phone}`}>{office.phone}</a>
+                        <p style={{ marginTop: '1rem' }}>
+                          <a 
+                            href={`tel:${office.phone}`}
+                            style={{
+                              color: '#5D3FD3',
+                              textDecoration: 'none',
+                              transition: 'color 0.3s ease',
+                              fontWeight: 500
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
+                            onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
+                          >
+                            {office.phone}
+                          </a>
                         </p>
                       </div>
                     </div>
@@ -120,21 +191,39 @@ const ContactUs: React.FC = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Contact Form - Full Width */}
             <div style={{
-              gridColumn: '1 / -1', 
+              width: '100%',
               background: '#f8f9fa', 
               border: '1px solid #e0e0e0',
-              padding: '30px 40px',
-              marginTop: '40px'
+              padding: windowSize.isMobile ? '1.5rem' : '2.5rem 3rem',
+              borderRadius: '8px'
             }}>
-              <div className="form-header" style={{marginBottom: 25}}>
-                <h2 style={{color: '#333', fontSize: 20, fontWeight: 500, marginBottom: 5}}>Get in Touch</h2>
-                <p style={{color: '#666', fontSize: 14}}>We'll respond within 24 hours</p>
+              <div style={{ marginBottom: windowSize.isMobile ? '1.5rem' : '2rem' }}>
+                <h2 style={{
+                  color: '#333', 
+                  fontSize: windowSize.isMobile ? '1.25rem' : '1.5rem', 
+                  fontWeight: 500, 
+                  marginBottom: '0.5rem'
+                }}>
+                  Get in Touch
+                </h2>
+                <p style={{
+                  color: '#666', 
+                  fontSize: windowSize.isMobile ? '0.875rem' : '1rem'
+                }}>
+                  We'll respond within 24 hours
+                </p>
               </div>
               <form id="contactForm" onSubmit={handleSubmit}>
-                <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 20}}>
-                  <div className="form-group">
+                {/* First Row - Name Fields */}
+                <div style={{
+                  display: 'grid', 
+                  gridTemplateColumns: windowSize.isMobile ? '1fr' : 'repeat(2, 1fr)', 
+                  gap: windowSize.isMobile ? '1rem' : '1.5rem', 
+                  marginBottom: windowSize.isMobile ? '1rem' : '1.5rem'
+                }}>
+                  <div>
                     <input 
                       type="text" 
                       id="firstName" 
@@ -145,17 +234,21 @@ const ContactUs: React.FC = () => {
                       required 
                       style={{
                         width: '100%', 
-                        padding: '12px 16px', 
+                        padding: windowSize.isMobile ? '12px 16px' : '14px 18px', 
                         border: '1px solid #ddd', 
-                        fontSize: 14, 
+                        borderRadius: '4px',
+                        fontSize: windowSize.isMobile ? '16px' : '1rem', 
                         color: '#333', 
                         backgroundColor: '#fff', 
                         transition: 'all 0.3s',
-                        outline: 'none'
-                      }} 
+                        outline: 'none',
+                        WebkitAppearance: 'none'
+                      }}
+                      onFocus={e => e.currentTarget.style.borderColor = '#5D3FD3'}
+                      onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
-                  <div className="form-group">
+                  <div>
                     <input 
                       type="text" 
                       id="lastName" 
@@ -166,17 +259,30 @@ const ContactUs: React.FC = () => {
                       required 
                       style={{
                         width: '100%', 
-                        padding: '12px 16px', 
+                        padding: windowSize.isMobile ? '12px 16px' : '14px 18px', 
                         border: '1px solid #ddd', 
-                        fontSize: 14, 
+                        borderRadius: '4px',
+                        fontSize: windowSize.isMobile ? '16px' : '1rem', 
                         color: '#333', 
                         backgroundColor: '#fff', 
                         transition: 'all 0.3s',
-                        outline: 'none'
-                      }} 
+                        outline: 'none',
+                        WebkitAppearance: 'none'
+                      }}
+                      onFocus={e => e.currentTarget.style.borderColor = '#5D3FD3'}
+                      onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
-                  <div className="form-group">
+                </div>
+
+                {/* Second Row - Contact Fields */}
+                <div style={{
+                  display: 'grid', 
+                  gridTemplateColumns: windowSize.isMobile ? '1fr' : 'repeat(2, 1fr)', 
+                  gap: windowSize.isMobile ? '1rem' : '1.5rem', 
+                  marginBottom: windowSize.isMobile ? '1rem' : '1.5rem'
+                }}>
+                  <div>
                     <input 
                       type="email" 
                       id="email" 
@@ -187,17 +293,21 @@ const ContactUs: React.FC = () => {
                       required 
                       style={{
                         width: '100%', 
-                        padding: '12px 16px', 
+                        padding: windowSize.isMobile ? '12px 16px' : '14px 18px', 
                         border: '1px solid #ddd', 
-                        fontSize: 14, 
+                        borderRadius: '4px',
+                        fontSize: windowSize.isMobile ? '16px' : '1rem', 
                         color: '#333', 
                         backgroundColor: '#fff', 
                         transition: 'all 0.3s',
-                        outline: 'none'
-                      }} 
+                        outline: 'none',
+                        WebkitAppearance: 'none'
+                      }}
+                      onFocus={e => e.currentTarget.style.borderColor = '#5D3FD3'}
+                      onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
-                  <div className="form-group">
+                  <div>
                     <input 
                       type="tel" 
                       id="phone" 
@@ -207,18 +317,24 @@ const ContactUs: React.FC = () => {
                       onChange={handleInputChange} 
                       style={{
                         width: '100%', 
-                        padding: '12px 16px', 
+                        padding: windowSize.isMobile ? '12px 16px' : '14px 18px', 
                         border: '1px solid #ddd', 
-                        fontSize: 14, 
+                        borderRadius: '4px',
+                        fontSize: windowSize.isMobile ? '16px' : '1rem', 
                         color: '#333', 
                         backgroundColor: '#fff', 
                         transition: 'all 0.3s',
-                        outline: 'none'
-                      }} 
+                        outline: 'none',
+                        WebkitAppearance: 'none'
+                      }}
+                      onFocus={e => e.currentTarget.style.borderColor = '#5D3FD3'}
+                      onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
                 </div>
-                <div style={{display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: 20, alignItems: 'start'}}>
+
+                {/* Third Row - Company */}
+                <div style={{ marginBottom: windowSize.isMobile ? '1rem' : '1.5rem' }}>
                   <input 
                     type="text" 
                     id="company" 
@@ -228,15 +344,23 @@ const ContactUs: React.FC = () => {
                     onChange={handleInputChange} 
                     style={{
                       width: '100%', 
-                      padding: '12px 16px', 
+                      padding: windowSize.isMobile ? '12px 16px' : '14px 18px', 
                       border: '1px solid #ddd', 
-                      fontSize: 14, 
+                      borderRadius: '4px',
+                      fontSize: windowSize.isMobile ? '16px' : '1rem', 
                       color: '#333', 
                       backgroundColor: '#fff', 
                       transition: 'all 0.3s',
-                      outline: 'none'
-                    }} 
+                      outline: 'none',
+                      WebkitAppearance: 'none'
+                    }}
+                    onFocus={e => e.currentTarget.style.borderColor = '#5D3FD3'}
+                    onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                   />
+                </div>
+
+                {/* Fourth Row - Message */}
+                <div style={{ marginBottom: windowSize.isMobile ? '1.5rem' : '2rem' }}>
                   <textarea 
                     id="message" 
                     name="message" 
@@ -244,51 +368,128 @@ const ContactUs: React.FC = () => {
                     value={formData.message} 
                     onChange={handleInputChange} 
                     required 
+                    rows={windowSize.isMobile ? 5 : 4}
                     style={{
                       width: '100%', 
-                      padding: '12px 16px', 
+                      padding: windowSize.isMobile ? '12px 16px' : '14px 18px', 
                       border: '1px solid #ddd', 
-                      fontSize: 14, 
+                      borderRadius: '4px',
+                      fontSize: windowSize.isMobile ? '16px' : '1rem', 
                       color: '#333', 
                       backgroundColor: '#fff', 
                       transition: 'all 0.3s', 
                       resize: 'vertical', 
-                      minHeight: 50,
-                      maxHeight: 100,
-                      outline: 'none'
-                    }} 
+                      minHeight: windowSize.isMobile ? '120px' : '100px',
+                      maxHeight: '300px',
+                      outline: 'none',
+                      WebkitAppearance: 'none',
+                      fontFamily: 'inherit'
+                    }}
+                    onFocus={e => e.currentTarget.style.borderColor = '#5D3FD3'}
+                    onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                   />
+                </div>
+
+                {/* Submit Button */}
+                <div style={{ 
+                  display: 'flex',
+                  flexDirection: windowSize.isMobile ? 'column' : 'row',
+                  justifyContent: windowSize.isMobile ? 'center' : 'space-between',
+                  alignItems: 'center',
+                  gap: windowSize.isMobile ? '1rem' : '2rem'
+                }}>
                   <button 
                     type="submit" 
                     disabled={isSubmitting} 
                     style={{
-                      width: '100%', 
-                      padding: '12px 30px', 
+                      width: windowSize.isMobile ? '100%' : 'auto',
+                      padding: windowSize.isMobile ? '14px 32px' : '14px 40px', 
                       background: '#5D3FD3', 
                       color: 'white', 
                       border: 'none', 
-                      fontSize: 14, 
-                      fontWeight: 500, 
+                      borderRadius: '4px',
+                      fontSize: windowSize.isMobile ? '16px' : '0.875rem', 
+                      fontWeight: 600, 
+                      letterSpacing: '1px',
+                      textTransform: 'uppercase',
                       cursor: 'pointer', 
                       transition: 'all 0.3s', 
                       opacity: isSubmitting ? 0.7 : 1,
-                      outline: 'none'
+                      outline: 'none',
+                      minHeight: '48px'
                     }}
                     onMouseEnter={e => {
-                      if (!isSubmitting) e.currentTarget.style.background = '#702963';
+                      if (!isSubmitting && !windowSize.isMobile) {
+                        e.currentTarget.style.background = '#702963';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 10px 30px rgba(93, 63, 211, 0.3)';
+                      }
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.background = '#5D3FD3';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
                     {isSubmitting ? 'Sending...' : submitMessage ? 'Sent ✓' : 'Send Message'}
                   </button>
+                  
+                  <p style={{
+                    fontSize: windowSize.isMobile ? '0.75rem' : '0.8125rem',
+                    color: '#666666',
+                    margin: 0,
+                    textAlign: windowSize.isMobile ? 'center' : 'left',
+                    maxWidth: windowSize.isMobile ? '100%' : '300px'
+                  }}>
+                    By submitting this form, you agree to our{' '}
+                    <a href="/privacy" style={{ color: '#5D3FD3', textDecoration: 'none' }}>
+                      Privacy Policy
+                    </a>
+                  </p>
                 </div>
               </form>
             </div>
           </section>
         </div>
       </div>
+
+      <style>
+        {`
+          /* Prevent horizontal scroll on mobile */
+          body {
+            overflow-x: hidden;
+          }
+          
+          /* Smooth scrolling */
+          html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+          }
+          
+          /* Remove tap highlight on mobile */
+          * {
+            -webkit-tap-highlight-color: transparent;
+          }
+          
+          /* Better focus states for accessibility */
+          input:focus,
+          textarea:focus,
+          button:focus {
+            outline: 2px solid #5D3FD3;
+            outline-offset: 2px;
+          }
+          
+          /* Fix iOS zoom on input focus */
+          @media screen and (max-width: 768px) {
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea {
+              font-size: 16px !important;
+            }
+          }
+        `}
+      </style>
     </>
   );
 };

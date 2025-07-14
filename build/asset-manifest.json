@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b4a95525.css",
-    "main.js": "/static/js/main.6872df06.js",
+    "main.css": "/static/css/main.911c2719.css",
+    "main.js": "/static/js/main.0fa74d00.js",
     "static/media/istanbul_1.jpg": "/static/media/istanbul_1.4b5aa0620b4e1c82f8c0.jpg",
     "index.html": "/index.html",
-    "main.b4a95525.css.map": "/static/css/main.b4a95525.css.map",
-    "main.6872df06.js.map": "/static/js/main.6872df06.js.map"
+    "main.911c2719.css.map": "/static/css/main.911c2719.css.map",
+    "main.0fa74d00.js.map": "/static/js/main.0fa74d00.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4a95525.css",
-    "static/js/main.6872df06.js"
+    "static/css/main.911c2719.css",
+    "static/js/main.0fa74d00.js"
   ]
 }
