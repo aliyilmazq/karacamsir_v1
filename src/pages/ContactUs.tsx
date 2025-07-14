@@ -27,7 +27,6 @@ const ContactUs = () => {
       street: "Büyükdere Caddesi No: 123",
       postal: "34330 Beşiktaş, Istanbul",
       phone: "+90 212 555 00 00",
-      email: "istanbul@karacam-sir.com",
       timezone: "GMT+3",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.8639!2d29.0!3d41.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA2JzAwLjAiTiAyOcKwMDAnMDAuMCJF!5e0!3m2!1sen!2str!4v1234567890",
       flag: "https://images.unsplash.com/photo-1564410267841-915d8e4d71ea?w=400&h=300&fit=crop",
@@ -41,7 +40,6 @@ const ContactUs = () => {
       street: "1 Poultry, Bank",
       postal: "EC2R 8EJ London",
       phone: "+44 20 7123 4567",
-      email: "london@karacam-sir.com",
       timezone: "GMT+0",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.0!2d-0.1!3d51.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzAwLjAiTiAwwrAwNicwMC4wIlc!5e0!3m2!1sen!2suk!4v1234567890",
       flag: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=400&h=300&fit=crop"
@@ -54,7 +52,6 @@ const ContactUs = () => {
       street: "Mangilik El Avenue 55/20",
       postal: "010000 Astana",
       phone: "+7 7172 123 456",
-      email: "astana@karacam-sir.com",
       timezone: "GMT+6",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.0!2d71.4!3d51.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA2JzAwLjAiTiA3McKwMjQnMDAuMCJF!5e0!3m2!1sen!2skz!4v1234567890",
       flag: "https://images.unsplash.com/photo-1578645635737-6a88e706e0f1?w=400&h=300&fit=crop"
@@ -67,7 +64,6 @@ const ContactUs = () => {
       street: "590 Madison Avenue",
       postal: "New York, NY 10022",
       phone: "+1 212 555 0123",
-      email: "newyork@karacam-sir.com",
       timezone: "GMT-5",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.0!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzAwLjAiTiA3M8KwNTgnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890",
       flag: "https://images.unsplash.com/photo-1485470733090-0aae1788d5af?w=400&h=300&fit=crop"
@@ -196,11 +192,6 @@ const ContactUs = () => {
                        onMouseLeave={e => e.currentTarget.style.color = '#a78bfa'}>
                       📞 {office.phone}
                     </a>
-                    <a href={`mailto:${office.email}`} style={{ color: '#a78bfa', textDecoration: 'none', transition: 'color 0.3s' }}
-                       onMouseEnter={e => e.currentTarget.style.color = 'white'}
-                       onMouseLeave={e => e.currentTarget.style.color = '#a78bfa'}>
-                      ✉️ {office.email}
-                    </a>
                   </div>
                 </div>
               </div>
@@ -216,6 +207,7 @@ const ContactUs = () => {
               border: '1px solid rgba(0,0,0,0.3)'
             }}>
               <iframe
+                title={`${offices[activeOffice].city} Office Location`}
                 src={offices[activeOffice].mapUrl}
                 width="100%"
                 height="100%"
@@ -240,47 +232,6 @@ const ContactUs = () => {
                 your business globally, our team is ready to help.
               </p>
               
-              <div style={{ marginBottom: '3rem' }}>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Response Times</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', color: '#d8b4fe' }}>
-                    ⏱️ Urgent matters: Within 2 hours
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#d8b4fe' }}>
-                    📧 General inquiries: Within 24 hours
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#d8b4fe' }}>
-                    🌍 International cases: Coordinated response
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>24/7 Emergency Line</h3>
-                <a href="tel:+902125550099" style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '1rem 2rem',
-                  backgroundColor: '#8b5cf6',
-                  color: 'white',
-                  textDecoration: 'none',
-                  borderRadius: '4px',
-                  fontSize: '1.125rem',
-                  fontWeight: 600,
-                  transition: 'all 0.3s'
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.5)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = '#8b5cf6';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}>
-                  🚨 +90 212 555 00 99
-                </a>
-              </div>
             </div>
 
             <form onSubmit={handleSubmit} style={{
@@ -288,7 +239,7 @@ const ContactUs = () => {
               padding: '2.5rem',
               borderRadius: '8px',
               border: '1px solid rgba(0,0,0,0.3)',
-              minWidth: '0'
+              width: '100%'
             }}>
               <div style={{ display: 'grid', gap: '1.5rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>

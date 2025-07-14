@@ -7,7 +7,6 @@ const LanguageSwitcher: React.FC = () => {
   
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
     { code: 'ru', name: 'Русский', flag: '🇷🇺' }
   ];
   
@@ -55,7 +54,7 @@ const LanguageSwitcher: React.FC = () => {
           top: '100%',
           right: 0,
           marginTop: '0.5rem',
-          backgroundColor: '#522d72',
+          backgroundColor: '#5D3FD3',
           border: '1px solid rgba(255, 255, 255, 0.2)',
           borderRadius: '4px',
           overflow: 'hidden',

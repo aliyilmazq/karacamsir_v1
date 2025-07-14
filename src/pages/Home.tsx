@@ -4,23 +4,17 @@ import { useTranslation } from 'react-i18next';
 import istanbulBg from '../assets/istanbul_1.jpg';
 
 const Home = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   const services = [
     {
@@ -49,12 +43,6 @@ const Home = () => {
     }
   ];
 
-  const stats = [
-    { number: "€7.5B+", labelKey: "home.stats.transactionValue" },
-    { number: "800+", labelKey: "home.stats.corporateClients" },
-    { number: "45+", labelKey: "home.stats.jurisdictions" },
-    { number: "97%", labelKey: "home.stats.successRate" }
-  ];
 
   const testimonials = [
     {
@@ -148,50 +136,6 @@ const Home = () => {
           }}>
             {t('home.hero.cities')}
           </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link to="/contact-us" style={{ textDecoration: 'none' }}>
-              <button style={{
-                padding: '1.5rem 3rem',
-                backgroundColor: '#8b5cf6',
-                color: 'white',
-                border: 'none',
-                fontSize: '1.125rem',
-                cursor: 'pointer',
-                transition: 'all 0.3s'
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.5)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = '#8b5cf6';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}>
-                {t('home.hero.getLegalConsultation')}
-              </button>
-            </Link>
-            <Link to="/who-we-are" style={{ textDecoration: 'none' }}>
-              <button style={{
-                padding: '1.5rem 3rem',
-                backgroundColor: 'transparent',
-                color: 'white',
-                border: '2px solid #8b5cf6',
-                fontSize: '1.125rem',
-                cursor: 'pointer',
-                transition: 'all 0.3s'
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = '#8b5cf6';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}>
-                {t('home.hero.learnAboutUs')}
-              </button>
-            </Link>
-          </div>
         </div>
 
         <div style={{
@@ -209,8 +153,7 @@ const Home = () => {
       <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
         <div style={containerStyle}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>{t('home.services.title')}</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.25rem' }}>{t('home.services.subtitle')}</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Expertise</h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -236,7 +179,10 @@ const Home = () => {
                     boxShadow: hoveredService === index 
                       ? '0 20px 40px rgba(139, 92, 246, 0.3), inset 0 0 0 1px rgba(139, 92, 246, 0.2)' 
                       : '0 4px 12px rgba(0, 0, 0, 0.3)',
-                    clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)'
+                    clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)',
+                    minHeight: '450px',
+                    display: 'flex',
+                    flexDirection: 'column'
                   }}
                   onMouseEnter={() => setHoveredService(index)}
                   onMouseLeave={() => setHoveredService(null)}
@@ -362,33 +308,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section style={{ 
-        padding: '5rem 2rem', 
-        background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%)'
-      }}>
-        <div style={containerStyle}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', textAlign: 'center' }}>
-            {stats.map((stat, index) => (
-              <div 
-                key={index}
-                style={{
-                  opacity: scrollY > 400 ? 1 : 0,
-                  transform: scrollY > 400 ? 'scale(1)' : 'scale(0.8)',
-                  transition: `all 0.8s ease ${index * 0.1}s`
-                }}
-              >
-                <div style={{ fontSize: '3.5rem', fontWeight: 200, marginBottom: '0.5rem' }}>
-                  {stat.number}
-                </div>
-                <div style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.9)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                  {t(stat.labelKey)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* About Section */}
       <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(0,0,0,0.3)' }}>
@@ -486,61 +405,87 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Office Locations Section */}
       <section style={{ 
         padding: '5rem 2rem',
-        background: 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%)',
-        textAlign: 'center'
+        background: 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%)'
       }}>
         <div style={containerStyle}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>
-            Transform Your Legal Strategy
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '3rem', textAlign: 'center' }}>
+            Office Locations
           </h2>
-          <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
-            Schedule a confidential consultation to discuss your transaction or project.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact-us" style={{ textDecoration: 'none' }}>
-              <button style={{
-                padding: '1.5rem 3rem',
-                backgroundColor: 'white',
-                color: 'rgba(0,0,0,0.8)',
-                border: 'none',
-                fontSize: '1.125rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'all 0.3s'
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            <div style={{
+              background: 'rgba(0,0,0,0.4)',
+              padding: '2.5rem',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '8px'
+            }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#fff' }}>Istanbul</h3>
+              <p style={{ marginBottom: '0.5rem', color: 'rgba(255,255,255,0.9)' }}>Karaçam & Şir Law Firm</p>
+              <p style={{ marginBottom: '0.5rem', color: 'rgba(255,255,255,0.8)' }}>Example Business Center</p>
+              <p style={{ marginBottom: '0.5rem', color: 'rgba(255,255,255,0.8)' }}>Example Street No: 123</p>
+              <p style={{ marginBottom: '1rem', color: 'rgba(255,255,255,0.8)' }}>Levent, Istanbul 34330</p>
+              <p style={{ color: 'rgba(255,255,255,0.8)' }}>Tel: +90 212 000 00 00</p>
+            </div>
+            <div style={{
+              background: 'rgba(0,0,0,0.4)',
+              padding: '2.5rem',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '8px'
+            }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#fff' }}>Ankara</h3>
+              <p style={{ marginBottom: '0.5rem', color: 'rgba(255,255,255,0.9)' }}>Karaçam & Şir Law Firm</p>
+              <p style={{ marginBottom: '0.5rem', color: 'rgba(255,255,255,0.8)' }}>Capital Business Tower</p>
+              <p style={{ marginBottom: '0.5rem', color: 'rgba(255,255,255,0.8)' }}>Kızılırmak Street No: 456</p>
+              <p style={{ marginBottom: '1rem', color: 'rgba(255,255,255,0.8)' }}>Çankaya, Ankara 06680</p>
+              <p style={{ color: 'rgba(255,255,255,0.8)' }}>Tel: +90 312 000 00 00</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legal Intelligence Updates Section */}
+      <section style={{ 
+        padding: '5rem 2rem',
+        borderTop: '1px solid rgba(0,0,0,0.3)'
+      }}>
+        <div style={containerStyle}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '3rem', textAlign: 'center', color: '#fff' }}>
+            Legal Intelligence Updates
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            {[1, 2, 3].map((_, index) => (
+              <article key={index} style={{
+                background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%)',
+                padding: '2rem',
+                borderRadius: '8px',
+                border: '1px solid rgba(139, 92, 246, 0.2)',
+                transition: 'all 0.3s',
+                cursor: 'pointer'
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = '#8b5cf6';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.2)';
               }}>
-                Schedule Consultation
-              </button>
-            </Link>
-            <button style={{
-              padding: '1.5rem 3rem',
-              backgroundColor: 'transparent',
-              color: 'white',
-              border: '2px solid white',
-              fontSize: '1.125rem',
-              cursor: 'pointer',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.backgroundColor = 'white';
-              e.currentTarget.style.color = 'rgba(0,0,0,0.8)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = 'white';
-            }}>
-              📞 +90 212 000 00 00
-            </button>
+                <div style={{ fontSize: '0.875rem', color: '#8b5cf6', marginBottom: '1rem' }}>
+                  {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </div>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#fff' }}>
+                  Legal Update Title {index + 1}
+                </h3>
+                <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <span style={{ color: '#8b5cf6', fontSize: '0.875rem', fontWeight: 500 }}>
+                  Read more →
+                </span>
+              </article>
+            ))}
           </div>
         </div>
       </section>

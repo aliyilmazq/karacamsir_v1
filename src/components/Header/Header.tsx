@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import './Header.css';
 import logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { Link, NavLink } from 'react-router-dom';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -35,12 +33,11 @@ const Header: React.FC = () => {
           <span></span>
         </button>
         <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
-          <Link to="/who-we-are" onClick={closeMenu}>{t('nav.whoWeAre')}</Link>
-          <Link to="/what-we-are-doing" onClick={closeMenu}>{t('nav.whatWeAreDoing')}</Link>
-          <Link to="/how-we-are-doing" onClick={closeMenu}>{t('nav.howWeAreDoing')}</Link>
-          <Link to="/blog" onClick={closeMenu}>{t('nav.blog')}</Link>
-          <Link to="/careers" onClick={closeMenu}>{t('nav.careers')}</Link>
-          <Link to="/contact-us" onClick={closeMenu}>{t('nav.contactUs')}</Link>
+          <NavLink to="/" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+          <NavLink to="/practice-areas" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>Practice Areas</NavLink>
+          <NavLink to="/about-us" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>About Us</NavLink>
+          <NavLink to="/team" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>Team</NavLink>
+          <NavLink to="/contact-us" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
           <div style={{ marginLeft: '2rem' }}>
             <LanguageSwitcher />
           </div>
