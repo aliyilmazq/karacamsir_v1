@@ -271,7 +271,7 @@ const Team: React.FC = () => {
         <div className={styles.bgPattern}></div>
         <div className={styles.mainContent}>
           <div className={styles.pageHeader}>
-            <p className={styles.pageSubtitle}>Excellence in Legal Practice</p>
+            {/* <p className={styles.pageSubtitle}>Excellence in Legal Practice</p> */}
           </div>
           <section className={styles.teamSection}>
             <div className={styles.teamGrid}>
