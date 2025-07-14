@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import istanbulBg from '../assets/istanbul_1.jpg';
+import SubscriptionBox from "../components/SubscriptionBox/SubscriptionBox";
 
 const Home = () => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -352,65 +353,25 @@ const Home = () => {
                 </button>
               </Link>
             </div>
-            <div style={{ 
-              padding: windowSize.isMobile ? '2rem 1.5rem' : '3rem',
-              background: '#ffffff',
-              border: '1px solid #e0e0e0',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
-              borderRadius: '8px',
-              marginTop: windowSize.isMobile ? '2rem' : '0'
-            }}>
-              <h3 style={{ 
-                fontSize: windowSize.isMobile ? '1.25rem' : '1.5rem', 
-                fontWeight: 400, 
-                marginBottom: windowSize.isMobile ? '1.5rem' : '2rem', 
-                color: '#333' 
-              }}>
-                Client Testimonial
-              </h3>
-              <blockquote style={{ 
-                fontSize: windowSize.isMobile ? '0.875rem' : '1.125rem', 
-                lineHeight: 1.8, 
-                fontStyle: 'italic',
-                marginBottom: windowSize.isMobile ? '1.5rem' : '2rem'
-              }}>
-                "{testimonials[activeTestimonial].text}"
-              </blockquote>
-              <div>
-                <div style={{ 
-                  fontWeight: 600,
-                  fontSize: windowSize.isMobile ? '0.875rem' : '1rem'
-                }}>{testimonials[activeTestimonial].author}</div>
-                <div style={{ 
-                  color: '#666', 
-                  fontSize: windowSize.isMobile ? '0.75rem' : '0.875rem' 
-                }}>{testimonials[activeTestimonial].position}</div>
-              </div>
-              <div style={{ 
-                display: 'flex', 
-                gap: '0.5rem', 
-                marginTop: windowSize.isMobile ? '1.5rem' : '2rem',
-                justifyContent: 'center'
-              }}>
-                {testimonials.map((_, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      width: windowSize.isMobile ? '6px' : '8px',
-                      height: windowSize.isMobile ? '6px' : '8px',
-                      borderRadius: '50%',
-                      backgroundColor: activeTestimonial === index ? '#702963' : 'rgba(112,41,99,0.3)',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s'
-                    }}
-                    onClick={() => setActiveTestimonial(index)}
-                  ></div>
-                ))}
-              </div>
-            </div>
+            {/* Testimonial card removed as requested */}
           </div>
         </div>
       </section>
+
+      {/* SubscriptionBox Band */}
+      <div style={{
+        width: '100%',
+        background: 'linear-gradient(90deg, #f3e6f7 0%, #f8f9fa 100%)',
+        padding: windowSize.isMobile ? '2rem 0.5rem' : '2.5rem 0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderTop: '1px solid #eee',
+        borderBottom: '1px solid #eee',
+        margin: 0
+      }}>
+        <SubscriptionBox />
+      </div>
 
       {/* Practice Areas/Services Section - Mobile Optimized */}
       <section id="practice-areas" style={{ 
