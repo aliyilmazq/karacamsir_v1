@@ -90,16 +90,6 @@ const ContactUs: React.FC = () => {
 
         {/* Main Content */}
         <div className="main-content">
-          {/* Hero Section */}
-          <section className="contact-hero">
-            <div className="hero-content">
-              <h1 className="page-title">{t('contact.title')}</h1>
-              <p className="page-subtitle">
-                {t('contact.subtitle')}
-              </p>
-            </div>
-          </section>
-
           {/* Contact Content */}
           <section className="contact-container">
             {/* Contact Information */}
@@ -121,159 +111,64 @@ const ContactUs: React.FC = () => {
                   </div>
                 ))}
               </div>
-
-              <div className="contact-methods">
-                <div className="method-card">
-                  <div className="method-icon">⏰</div>
-                  <div className="method-label">{t('contact.hours')}</div>
-                  <div className="method-value">{t('contact.businessHours')}</div>
-                </div>
-              </div>
             </div>
 
             {/* Contact Form */}
-            <div className="contact-form-wrapper">
-              <div className="form-header">
-                <h2 className="form-title">{t('contact.formTitle')}</h2>
-                <p className="form-description">
-                  {t('contact.formDescription')}
-                </p>
+            <div className="contact-container" style={{background: '#fff', borderRadius: 0, boxShadow: '0 10px 30px rgba(0,0,0,0.2)', maxWidth: 600, margin: '0 auto', padding: 40, animation: 'slideUp 0.6s ease-out'}}>
+              <div className="form-header" style={{textAlign: 'center', marginBottom: 35}}>
+                <h2 style={{color: '#8B5CF6', fontSize: 28, fontWeight: 700, marginBottom: 10}}>Bize Ulaşın</h2>
+                <p style={{color: '#666', fontSize: 15, lineHeight: 1.6}}>Formu doldurun, 24 saat içinde size dönüş yapalım.</p>
               </div>
-
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="form-row">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-input"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      placeholder=" "
-                      required
-                    />
-                    <label className="form-label" htmlFor="firstName">{t('contact.firstName')}</label>
+              <form id="contactForm" onSubmit={handleSubmit}>
+                <div className="form-row" style={{display: 'flex', gap: 20, marginBottom: 20}}>
+                  <div className="form-group" style={{flex: 1, marginBottom: 20}}>
+                    <label htmlFor="firstName" style={{display: 'block', color: '#444', fontSize: 14, fontWeight: 600, marginBottom: 8, letterSpacing: 0.3}}>Ad *</label>
+                    <input type="text" id="firstName" name="firstName" className="form-control" placeholder="Adınız" value={formData.firstName} onChange={handleInputChange} required style={{width: '100%', padding: '12px 16px', border: '2px solid #e1e4e8', borderRadius: 0, fontSize: 15, color: '#333', backgroundColor: '#f8f9fa', transition: 'all 0.3s', fontFamily: 'inherit'}} />
                   </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-input"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      placeholder=" "
-                      required
-                    />
-                    <label className="form-label" htmlFor="lastName">{t('contact.lastName')}</label>
+                  <div className="form-group" style={{flex: 1, marginBottom: 20}}>
+                    <label htmlFor="lastName" style={{display: 'block', color: '#444', fontSize: 14, fontWeight: 600, marginBottom: 8, letterSpacing: 0.3}}>Soyad *</label>
+                    <input type="text" id="lastName" name="lastName" className="form-control" placeholder="Soyadınız" value={formData.lastName} onChange={handleInputChange} required style={{width: '100%', padding: '12px 16px', border: '2px solid #e1e4e8', borderRadius: 0, fontSize: 15, color: '#333', backgroundColor: '#f8f9fa', transition: 'all 0.3s', fontFamily: 'inherit'}} />
                   </div>
                 </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      className="form-input"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder=" "
-                      required
-                    />
-                    <label className="form-label" htmlFor="email">{t('contact.emailAddress')}</label>
+                <div className="form-row" style={{display: 'flex', gap: 20, marginBottom: 20}}>
+                  <div className="form-group" style={{flex: 1, marginBottom: 20}}>
+                    <label htmlFor="email" style={{display: 'block', color: '#444', fontSize: 14, fontWeight: 600, marginBottom: 8, letterSpacing: 0.3}}>E-posta *</label>
+                    <input type="email" id="email" name="email" className="form-control" placeholder="ornek@email.com" value={formData.email} onChange={handleInputChange} required style={{width: '100%', padding: '12px 16px', border: '2px solid #e1e4e8', borderRadius: 0, fontSize: 15, color: '#333', backgroundColor: '#f8f9fa', transition: 'all 0.3s', fontFamily: 'inherit'}} />
                   </div>
-                  <div className="form-group">
-                    <input
-                      type="tel"
-                      className="form-input"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder=" "
-                      required
-                    />
-                    <label className="form-label" htmlFor="phone">{t('contact.phoneNumber')}</label>
+                  <div className="form-group" style={{flex: 1, marginBottom: 20}}>
+                    <label htmlFor="phone" style={{display: 'block', color: '#444', fontSize: 14, fontWeight: 600, marginBottom: 8, letterSpacing: 0.3}}>Telefon</label>
+                    <input type="tel" id="phone" name="phone" className="form-control" placeholder="+90 555 123 4567" value={formData.phone} onChange={handleInputChange} style={{width: '100%', padding: '12px 16px', border: '2px solid #e1e4e8', borderRadius: 0, fontSize: 15, color: '#333', backgroundColor: '#f8f9fa', transition: 'all 0.3s', fontFamily: 'inherit'}} />
                   </div>
                 </div>
-
-                <div className="form-group full-width">
-                  <input
-                    type="text"
-                    className="form-input"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder=" "
-                    required
-                  />
-                  <label className="form-label" htmlFor="company">{t('contact.company')}</label>
+                <div className="form-group" style={{marginBottom: 20}}>
+                  <label htmlFor="company" style={{display: 'block', color: '#444', fontSize: 14, fontWeight: 600, marginBottom: 8, letterSpacing: 0.3}}>Şirket / Kurum</label>
+                  <input type="text" id="company" name="company" className="form-control" placeholder="Şirket adınız" value={formData.company} onChange={handleInputChange} style={{width: '100%', padding: '12px 16px', border: '2px solid #e1e4e8', borderRadius: 0, fontSize: 15, color: '#333', backgroundColor: '#f8f9fa', transition: 'all 0.3s', fontFamily: 'inherit'}} />
                 </div>
-
-                <div className="form-group full-width">
-                  <select
-                    className="form-select"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="" disabled>{t('contact.selectSubject')}</option>
-                    <option value="corporate">{t('contact.subjects.corporate')}</option>
-                    <option value="ma">{t('contact.subjects.ma')}</option>
-                    <option value="ip">{t('contact.subjects.ip')}</option>
-                    <option value="realestate">{t('contact.subjects.realestate')}</option>
-                    <option value="litigation">{t('contact.subjects.litigation')}</option>
-                    <option value="other">{t('contact.subjects.other')}</option>
+                <div className="form-group" style={{marginBottom: 20}}>
+                  <label htmlFor="subject" style={{display: 'block', color: '#444', fontSize: 14, fontWeight: 600, marginBottom: 8, letterSpacing: 0.3}}>Konu *</label>
+                  <select id="subject" name="subject" className="form-control" value={formData.subject} onChange={handleInputChange} required style={{width: '100%', padding: '12px 16px', border: '2px solid #e1e4e8', borderRadius: 0, fontSize: 15, color: '#333', backgroundColor: '#f8f9fa', transition: 'all 0.3s', fontFamily: 'inherit', cursor: 'pointer', appearance: 'none', backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%23667eea\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'%3E%3C/path%3E%3C/svg%3E')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: 20, paddingRight: 40}}>
+                    <option value="">Bir konu seçin</option>
+                    <option value="general">Genel Bilgi</option>
+                    <option value="support">Teknik Destek</option>
+                    <option value="sales">Satış</option>
+                    <option value="partnership">İş Ortaklığı</option>
+                    <option value="other">Diğer</option>
                   </select>
                 </div>
-
-                <div className="form-group full-width">
-                  <textarea
-                    className="form-textarea"
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder=" "
-                    required
-                  ></textarea>
-                  <label className="form-label" htmlFor="message">{t('contact.yourMessage')}</label>
+                <div className="form-group" style={{marginBottom: 20}}>
+                  <label htmlFor="message" style={{display: 'block', color: '#444', fontSize: 14, fontWeight: 600, marginBottom: 8, letterSpacing: 0.3}}>Mesajınız *</label>
+                  <textarea id="message" name="message" className="form-control" placeholder="Mesajınızı buraya yazın..." value={formData.message} onChange={handleInputChange} required style={{width: '100%', padding: '12px 16px', border: '2px solid #e1e4e8', borderRadius: 0, fontSize: 15, color: '#333', backgroundColor: '#f8f9fa', transition: 'all 0.3s', fontFamily: 'inherit', resize: 'vertical', minHeight: 120, lineHeight: 1.5}} />
                 </div>
-
-                <div className="submit-section">
-                  <button 
-                    type="submit" 
-                    className="submit-btn"
-                    disabled={isSubmitting}
-                    style={{
-                      opacity: isSubmitting ? 0.7 : 1,
-                      background: submitMessage ? 'linear-gradient(135deg, #1a1a1a, #2a2a2a)' : ''
-                    }}
-                  >
-                    {isSubmitting ? t('contact.sending') : submitMessage || t('contact.sendMessage')}
-                  </button>
-                  <p className="privacy-note">
-                    {t('contact.privacyNote.text')} 
-                    <a href="/privacy">{t('contact.privacyNote.privacy')}</a> {t('contact.privacyNote.and')} 
-                    <a href="/terms">{t('contact.privacyNote.terms')}</a>.
-                  </p>
+                <div className="checkbox-group" style={{display: 'flex', alignItems: 'flex-start', marginBottom: 25, gap: 10}}>
+                  <input type="checkbox" id="privacy" required style={{marginTop: 5, width: 18, height: 18, cursor: 'pointer', accentColor: '#667eea'}} />
+                  <label htmlFor="privacy" style={{color: '#555', fontSize: 14, lineHeight: 1.5, cursor: 'pointer'}}>
+                    <a href="#" style={{color: '#667eea', textDecoration: 'none', fontWeight: 600, transition: 'color 0.3s'}}>Gizlilik Politikası</a> ve <a href="#" style={{color: '#667eea', textDecoration: 'none', fontWeight: 600, transition: 'color 0.3s'}}>Kullanım Şartları</a>'nı okudum, kabul ediyorum.
+                  </label>
                 </div>
+                <button type="submit" className="submit-btn" disabled={isSubmitting} style={{width: '100%', padding: '14px 30px', background: 'linear-gradient(135deg, #667eea, #764ba2)', color: 'white', border: 'none', borderRadius: 10, fontSize: 16, fontWeight: 600, letterSpacing: 0.5, cursor: 'pointer', transition: 'all 0.3s', textTransform: 'uppercase', boxShadow: '0 4px 15px rgba(102,126,234,0.3)', opacity: isSubmitting ? 0.7 : 1}}>
+                  {isSubmitting ? 'Gönderiliyor...' : submitMessage ? 'Başarıyla Gönderildi ✓' : 'Mesaj Gönder'}
+                </button>
               </form>
-            </div>
-          </section>
-
-          {/* Map Section */}
-          <section className="map-section">
-            <div className="map-container">
-              <div className="map-placeholder">
-                <div className="map-overlay"></div>
-                <span>Interactive Map</span>
-              </div>
             </div>
           </section>
         </div>
