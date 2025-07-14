@@ -19,127 +19,81 @@ type TeamMember = {
 
 const teamData: TeamMember[] = [
   {
-    key: 'ayse',
-    name: 'Ayşe Aydın',
+    key: 'ozlem',
+    name: 'Özlem Albayrak',
     title: 'Avukat',
-    email: 'ayse.aydin@karacamsir.com',
-    phone: '+90 212 123 4567',
-    initials: 'AA',
-    education: [
-      'İstanbul Üniversitesi Hukuk Fakültesi (2010)',
-      'University of London, LLM in Commercial Law (2012)'
-    ],
-    specializations: [
-      'Ticaret Hukuku',
-      'Şirketler Hukuku',
-      'Birleşme ve Devralmalar',
-      'Sermaye Piyasası Hukuku'
-    ],
-    languages: ['Türkçe', 'İngilizce', 'Almanca'],
-    bar: 'İstanbul Barosu (2011)'
-  },
-  {
-    key: 'ali',
-    name: 'Ali Yılmaz',
-    title: 'Kıdemli Avukat',
-    email: 'ali.yilmaz@karacamsir.com',
-    phone: '+90 212 123 4568',
-    initials: 'AY',
-    bio: 'Ali Yılmaz, 15 yılı aşkın deneyimi ile özellikle teknoloji hukuku ve fikri mülkiyet alanlarında uzmanlaşmıştır. Türkiye\'nin önde gelen teknoloji şirketlerine danışmanlık hizmeti vermekte ve startup ekosisteminde aktif rol almaktadır. Blockchain teknolojileri ve kripto varlıklar konusundaki uzmanlığı ile sektörde tanınmaktadır.',
-    education: [
-      'Ankara Üniversitesi Hukuk Fakültesi (2005)',
-      'Harvard Law School, LLM in Technology Law (2008)'
-    ],
-    specializations: [
-      'Teknoloji Hukuku',
-      'Fikri Mülkiyet Hukuku',
-      'Startup Danışmanlığı',
-      'Blockchain ve Kripto Varlıklar'
-    ],
+    email: 'ozlem.albayrak@karacamsir.com',
+    phone: '+90 212 123 4501',
+    initials: 'ÖA',
+    education: ['İstanbul Üniversitesi Hukuk Fakültesi'],
+    specializations: ['Ticaret Hukuku'],
     languages: ['Türkçe', 'İngilizce'],
-    bar: 'Ankara Barosu (2006)'
+    bar: 'İstanbul Barosu'
   },
   {
-    key: 'mehmet',
-    name: 'Mehmet Demir',
+    key: 'bahadir',
+    name: 'Bahadır İşgören',
     title: 'Avukat',
-    email: 'mehmet.demir@karacamsir.com',
-    phone: '+90 212 123 4569',
-    initials: 'MD',
-    education: [
-      'Galatasaray Üniversitesi Hukuk Fakültesi (2012)',
-      'Sorbonne Üniversitesi, Master 2 Droit des Affaires (2014)'
-    ],
-    specializations: [
-      'Uluslararası Ticaret Hukuku',
-      'Tahkim',
-      'Proje Finansmanı',
-      'Enerji Hukuku'
-    ],
-    languages: ['Türkçe', 'İngilizce', 'Fransızca'],
-    bar: 'İstanbul Barosu (2013)'
+    email: 'bahadir.isgoren@karacamsir.com',
+    phone: '+90 212 123 4503',
+    initials: 'Bİ',
+    education: ['Ankara Üniversitesi Hukuk Fakültesi'],
+    specializations: ['Ceza Hukuku'],
+    languages: ['Türkçe', 'İngilizce'],
+    bar: 'Ankara Barosu'
   },
   {
-    key: 'zeynep',
-    name: 'Zeynep Kaya',
+    key: 'furkan',
+    name: 'Furkan Karaçam',
     title: 'Avukat',
-    email: 'zeynep.kaya@karacamsir.com',
-    phone: '+90 212 123 4570',
-    initials: 'ZK',
-    education: [
-      'Koç Üniversitesi Hukuk Fakültesi (2015)',
-      'Oxford University, MSc in Law and Finance (2017)'
-    ],
-    specializations: [
-      'Bankacılık Hukuku',
-      'Sermaye Piyasaları',
-      'Finansal Düzenlemeler',
-      'Fintech'
-    ],
-    languages: ['Türkçe', 'İngilizce', 'İspanyolca'],
-    bar: 'İstanbul Barosu (2016)'
+    email: 'furkan.karacam@karacamsir.com',
+    phone: '+90 212 123 4506',
+    initials: 'FK',
+    education: ['İstanbul Bilgi Üniversitesi Hukuk Fakültesi'],
+    specializations: ['Vergi Hukuku'],
+    languages: ['Türkçe', 'İngilizce'],
+    bar: 'İstanbul Barosu'
   },
   {
-    key: 'can',
-    name: 'Can Öztürk',
+    key: 'kerem',
+    name: 'Kerem Seber',
     title: 'Avukat',
-    email: 'can.ozturk@karacamsir.com',
-    phone: '+90 212 123 4571',
-    initials: 'CÖ',
-    education: [
-      'Bilkent Üniversitesi Hukuk Fakültesi (2016)',
-      'Columbia Law School, LLM (2019)'
-    ],
-    specializations: [
-      'Vergi Hukuku',
-      'Kurumsal Yeniden Yapılandırma',
-      'Transfer Fiyatlandırması',
-      'Uluslararası Vergi Planlaması'
-    ],
-    languages: ['Türkçe', 'İngilizce', 'Almanca'],
-    bar: 'Ankara Barosu (2017)'
+    email: 'kerem.seber@karacamsir.com',
+    phone: '+90 212 123 4504',
+    initials: 'KS',
+    education: ['Galatasaray Üniversitesi Hukuk Fakültesi'],
+    specializations: ['Şirketler Hukuku'],
+    languages: ['Türkçe', 'İngilizce'],
+    bar: 'İstanbul Barosu'
   },
   {
-    key: 'elif',
-    name: 'Elif Yıldız',
+    key: 'cankat',
+    name: 'Cankat Şir',
     title: 'Avukat',
-    email: 'elif.yildiz@karacamsir.com',
-    phone: '+90 212 123 4572',
-    initials: 'EY',
-    education: [
-      'Marmara Üniversitesi Hukuk Fakültesi (2014)',
-      'Leiden University, LLM in International Business Law (2016)'
-    ],
-    specializations: [
-      'İş Hukuku',
-      'Sosyal Güvenlik Hukuku',
-      'Kişisel Verilerin Korunması',
-      'Uyum ve Regülasyon'
-    ],
-    languages: ['Türkçe', 'İngilizce', 'Hollandaca'],
-    bar: 'İstanbul Barosu (2015)'
+    email: 'cankat.sir@karacamsir.com',
+    phone: '+90 212 123 4505',
+    initials: 'CŞ',
+    education: ['Bilkent Üniversitesi Hukuk Fakültesi'],
+    specializations: ['Fikri Mülkiyet Hukuku'],
+    languages: ['Türkçe', 'İngilizce'],
+    bar: 'Ankara Barosu'
+  },
+  {
+    key: 'burcu',
+    name: 'Burcu Uman',
+    title: 'Avukat',
+    email: 'burcu.uman@karacamsir.com',
+    phone: '+90 212 123 4502',
+    initials: 'BU',
+    education: ['Marmara Üniversitesi Hukuk Fakültesi'],
+    specializations: ['İş Hukuku'],
+    languages: ['Türkçe', 'İngilizce'],
+    bar: 'İstanbul Barosu'
   }
-];
+].sort((a, b) => {
+  const getLastName = (name: string) => name.trim().split(' ').slice(-1)[0].toLocaleLowerCase('tr');
+  return getLastName(a.name).localeCompare(getLastName(b.name), 'tr');
+});
 
 const Team: React.FC = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
@@ -211,27 +165,7 @@ const Team: React.FC = () => {
           padding: windowSize.isMobile ? '3rem 1rem' : '5rem 2rem'
         }}>
           {/* Page Header */}
-          <div style={{ 
-            textAlign: 'center', 
-            marginBottom: windowSize.isMobile ? '3rem' : '5rem' 
-          }}>
-            <h1 style={{ 
-              fontSize: windowSize.isMobile ? '2rem' : '3.5rem',
-              fontWeight: 200,
-              letterSpacing: '3px',
-              marginBottom: '1rem',
-              color: '#333'
-            }}>
-              Meet Our Team
-            </h1>
-            <p style={{ 
-              fontSize: windowSize.isMobile ? '1rem' : '1.125rem',
-              color: '#666',
-              letterSpacing: '1px'
-            }}>
-              Experienced legal professionals dedicated to your success
-            </p>
-          </div>
+          {/* Removed: <div> with 'Meet Our Team' and subtitle */}
 
           {/* Team Grid */}
           <div style={{ 
