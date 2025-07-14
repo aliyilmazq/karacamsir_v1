@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './Team.module.css';
+import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
+import istanbulImage from "../assets/istanbul_1.jpg";
 
 // Team member data (React objesi olarak)
 type TeamMember = {
@@ -259,53 +261,60 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <div className={styles.backgroundWrapper}>
-      <div className={styles.bgPattern}></div>
-      <div className={styles.mainContent}>
-        <div className={styles.pageHeader}>
-          <h1 className={styles.pageTitle}>Our Team</h1>
-          <p className={styles.pageSubtitle}>Excellence in Legal Practice</p>
-        </div>
-        <section className={styles.teamSection}>
-          <div className={styles.teamGrid}>
-            {sortedTeamData.map((member, idx) => {
-              if (!member) return null;
-              return (
-                <div
-                  className={styles.teamMember}
-                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
-                  key={member.key}
-                >
+    <>
+      <PageHeaderSection
+        title="Çalışma Alanlarımız"
+        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        backgroundImage={istanbulImage}
+      />
+      <div className={styles.backgroundWrapper}>
+        <div className={styles.bgPattern}></div>
+        <div className={styles.mainContent}>
+          <div className={styles.pageHeader}>
+            <h1 className={styles.pageTitle}>Our Team</h1>
+            <p className={styles.pageSubtitle}>Excellence in Legal Practice</p>
+          </div>
+          <section className={styles.teamSection}>
+            <div className={styles.teamGrid}>
+              {sortedTeamData.map((member, idx) => {
+                if (!member) return null;
+                return (
                   <div
-                    className={styles.memberCard}
-                    onClick={() => {
-                      console.log('Clicked member:', member);
-                      setModalMember(member);
-                    }}
-                    tabIndex={0}
-                    role="button"
-                    aria-label={member.name}
-                    onKeyDown={e => { if (e.key === 'Enter') setModalMember(member); }}
+                    className={styles.teamMember}
+                    style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
+                    key={member.key}
                   >
-                    <div className={styles.memberImageContainer}>
-                      <div className={styles.placeholderImage}>{member.initials}</div>
-                    </div>
-                    <div className={styles.memberInfo}>
-                      <h3 className={styles.memberName}>{member.name}</h3>
-                      <a
-                        href={`mailto:${member.email}`}
-                        className={styles.memberEmail}
-                        onClick={e => e.stopPropagation()}
-                      >
-                        {member.email}
-                      </a>
+                    <div
+                      className={styles.memberCard}
+                      onClick={() => {
+                        console.log('Clicked member:', member);
+                        setModalMember(member);
+                      }}
+                      tabIndex={0}
+                      role="button"
+                      aria-label={member.name}
+                      onKeyDown={e => { if (e.key === 'Enter') setModalMember(member); }}
+                    >
+                      <div className={styles.memberImageContainer}>
+                        <div className={styles.placeholderImage}>{member.initials}</div>
+                      </div>
+                      <div className={styles.memberInfo}>
+                        <h3 className={styles.memberName}>{member.name}</h3>
+                        <a
+                          href={`mailto:${member.email}`}
+                          className={styles.memberEmail}
+                          onClick={e => e.stopPropagation()}
+                        >
+                          {member.email}
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+                );
+              })}
+            </div>
+          </section>
+        </div>
       </div>
       {/* Modal */}
       {modalMember && (
@@ -380,7 +389,7 @@ const Team: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

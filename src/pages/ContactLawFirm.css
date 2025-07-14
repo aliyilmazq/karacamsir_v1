@@ -1,0 +1,624 @@
+/* Law Firm Contact Page Styles */
+.contact-law-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Hero Section */
+.law-hero {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* Quick Contact Bar */
+.quick-contact-bar {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 10;
+  margin-top: -40px;
+}
+
+.quick-contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.quick-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quick-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #f0f4f8;
+  border-radius: 8px;
+}
+
+.quick-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quick-label {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+.quick-value {
+  font-size: 15px;
+  color: #1a1a2e;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.quick-value:hover {
+  color: #c9302c;
+}
+
+/* Main Content */
+.contact-main {
+  padding: 60px 0;
+}
+
+.contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-title {
+  font-size: 24px;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* Form Styles */
+.law-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label-static {
+  font-size: 13px;
+  color: #2c3e50;
+  font-weight: 500;
+  font-family: -apple-system, system-ui, sans-serif;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #2c3e50;
+  font-family: -apple-system, system-ui, sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  background: #ffffff;
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%232c3e50" d="M6 9L1 4h10z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  appearance: none;
+}
+
+/* Form Footer */
+.form-footer {
+  margin-top: 20px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px 28px;
+  background: #1a1a2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background: #16213e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(26, 26, 46, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-message {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  animation: fadeIn 0.5s ease;
+}
+
+.submit-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.privacy-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+.privacy-text a {
+  color: #1a1a2e;
+  text-decoration: underline;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-title {
+  font-size: 20px;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+/* Office Card */
+.office-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.office-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.office-name {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 12px;
+}
+
+.office-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  font-size: 18px;
+  color: #666;
+  min-width: 24px;
+}
+
+.info-content {
+  flex: 1;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+.info-content p {
+  margin: 0 0 4px 0;
+  line-height: 1.5;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.info-content a {
+  color: #1a1a2e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.info-content a:hover {
+  color: #c9302c;
+  text-decoration: underline;
+}
+
+/* Services Card */
+.services-card {
+  background: #1a1a2e;
+  color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-title {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.services-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: -apple-system, system-ui, sans-serif;
+  padding-left: 20px;
+  position: relative;
+}
+
+.services-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4ade80;
+}
+
+/* Map Card */
+.map-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.map-title {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 250px;
+  background: #f0f4f8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* CTA Section */
+.contact-cta {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 60px 0;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
+  opacity: 0.5;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.cta-subtitle {
+  font-size: 16px;
+  margin-bottom: 32px;
+  opacity: 0.9;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-family: -apple-system, system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.cta-btn.primary {
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.cta-btn.secondary:hover {
+  background: #ffffff;
+  color: #1a1a2e;
+  transform: translateY(-3px);
+}
+
+.btn-icon {
+  font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contact-info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .law-hero {
+    height: 300px;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .quick-contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-form-section {
+    padding: 30px 20px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  
+  .form-title {
+    font-size: 24px;
+  }
+  
+  .quick-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .quick-label {
+    font-size: 12px;
+  }
+  
+  .quick-value {
+    font-size: 16px;
+  }
+}

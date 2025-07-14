@@ -83,10 +83,10 @@
 .contact-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 40px;
   align-items: start;
 }
 
@@ -236,38 +236,39 @@
   position: relative;
   z-index: 20;
   background: #ffffff;
-  padding: 40px;
+  padding: 30px;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
 }
 
 .form-header {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .form-title {
-  font-size: 24px;
-  font-weight: 300;
-  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
   color: #5D3FD3;
 }
 
 .form-description {
-  font-size: 16px;
+  font-size: 14px;
   color: #666666;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 20px;
 }
 
 .form-group {
@@ -281,28 +282,28 @@
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 15px 0;
+  padding: 12px 0;
   background: transparent;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   color: #333333;
-  font-size: 16px;
+  font-size: 14px;
   font-family: inherit;
   transition: all 0.3s ease;
   outline: none;
 }
 
 .form-textarea {
-  min-height: 120px;
+  min-height: 100px;
   resize: vertical;
 }
 
 .form-label {
   position: absolute;
-  top: 15px;
+  top: 12px;
   left: 0;
   color: #999999;
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.3s ease;
   pointer-events: none;
 }
@@ -311,8 +312,8 @@
 .form-input:not(:placeholder-shown) ~ .form-label,
 .form-textarea:focus ~ .form-label,
 .form-textarea:not(:placeholder-shown) ~ .form-label {
-  top: -20px;
-  font-size: 14px;
+  top: -18px;
+  font-size: 12px;
   color: #5D3FD3;
 }
 
@@ -323,12 +324,12 @@
 
 .form-select {
   width: 100%;
-  padding: 15px 0;
+  padding: 12px 0;
   background: transparent;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   color: #333333;
-  font-size: 16px;
+  font-size: 14px;
   font-family: inherit;
   cursor: pointer;
   outline: none;
@@ -352,18 +353,19 @@
 }
 
 .submit-btn {
-  padding: 18px 60px;
+  padding: 14px 40px;
   background: #5D3FD3;
   border: none;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 .submit-btn::before {
@@ -392,7 +394,7 @@
 }
 
 .privacy-note {
-  font-size: 14px;
+  font-size: 12px;
   color: #666666;
   max-width: 300px;
 }
@@ -500,7 +502,7 @@
 /* Fix for form inputs to show placeholder */
 .form-input:placeholder-shown ~ .form-label,
 .form-textarea:placeholder-shown ~ .form-label {
-  top: 15px;
-  font-size: 16px;
+  top: 12px;
+  font-size: 14px;
   color: #999999;
 }

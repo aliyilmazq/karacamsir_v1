@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './ContactUs.css';
+import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
+import istanbulImage from "../assets/istanbul_1.jpg";
 
 const ContactUs: React.FC = () => {
   const { t } = useTranslation();
@@ -74,202 +76,209 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <div className="contact-page">
-      {/* Background */}
-      <div className="background-wrapper">
-        <div className="bg-pattern"></div>
-      </div>
+    <>
+      <PageHeaderSection
+        title="Çalışma Alanlarımız"
+        breadcrumb="Ana Sayfa / Hizmetlerimiz"
+        backgroundImage={istanbulImage}
+      />
+      <div className="contact-page">
+        {/* Background */}
+        <div className="background-wrapper">
+          <div className="bg-pattern"></div>
+        </div>
 
-      {/* Main Content */}
-      <div className="main-content">
-        {/* Hero Section */}
-        <section className="contact-hero">
-          <div className="hero-content">
-            <h1 className="page-title">{t('contact.title')}</h1>
-            <p className="page-subtitle">
-              {t('contact.subtitle')}
-            </p>
-          </div>
-        </section>
-
-        {/* Contact Content */}
-        <section className="contact-container">
-          {/* Contact Information */}
-          <div className="contact-info">
-            <div className="info-section">
-              <h2 className="info-title">{t('contact.ourOffices')}</h2>
-              
-              {offices.map((office, index) => (
-                <div key={index} className="office-card">
-                  <h3 className="office-name">{office.city}</h3>
-                  <div className="office-details">
-                    {office.address.map((line, i) => (
-                      <p key={i}>{line}</p>
-                    ))}
-                    <p style={{ marginTop: '15px' }}>
-                      <a href={`tel:${office.phone}`}>{office.phone}</a>
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="contact-methods">
-              <div className="method-card">
-                <div className="method-icon">⏰</div>
-                <div className="method-label">{t('contact.hours')}</div>
-                <div className="method-value">{t('contact.businessHours')}</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="contact-form-wrapper">
-            <div className="form-header">
-              <h2 className="form-title">{t('contact.formTitle')}</h2>
-              <p className="form-description">
-                {t('contact.formDescription')}
+        {/* Main Content */}
+        <div className="main-content">
+          {/* Hero Section */}
+          <section className="contact-hero">
+            <div className="hero-content">
+              <h1 className="page-title">{t('contact.title')}</h1>
+              <p className="page-subtitle">
+                {t('contact.subtitle')}
               </p>
             </div>
+          </section>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-input"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    placeholder=" "
-                    required
-                  />
-                  <label className="form-label" htmlFor="firstName">{t('contact.firstName')}</label>
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-input"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    placeholder=" "
-                    required
-                  />
-                  <label className="form-label" htmlFor="lastName">{t('contact.lastName')}</label>
-                </div>
+          {/* Contact Content */}
+          <section className="contact-container">
+            {/* Contact Information */}
+            <div className="contact-info">
+              <div className="info-section">
+                <h2 className="info-title">{t('contact.ourOffices')}</h2>
+                
+                {offices.map((office, index) => (
+                  <div key={index} className="office-card">
+                    <h3 className="office-name">{office.city}</h3>
+                    <div className="office-details">
+                      {office.address.map((line, i) => (
+                        <p key={i}>{line}</p>
+                      ))}
+                      <p style={{ marginTop: '15px' }}>
+                        <a href={`tel:${office.phone}`}>{office.phone}</a>
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className="form-input"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder=" "
-                    required
-                  />
-                  <label className="form-label" htmlFor="email">{t('contact.emailAddress')}</label>
-                </div>
-                <div className="form-group">
-                  <input
-                    type="tel"
-                    className="form-input"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder=" "
-                    required
-                  />
-                  <label className="form-label" htmlFor="phone">{t('contact.phoneNumber')}</label>
+              <div className="contact-methods">
+                <div className="method-card">
+                  <div className="method-icon">⏰</div>
+                  <div className="method-label">{t('contact.hours')}</div>
+                  <div className="method-value">{t('contact.businessHours')}</div>
                 </div>
               </div>
+            </div>
 
-              <div className="form-group full-width">
-                <input
-                  type="text"
-                  className="form-input"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  placeholder=" "
-                  required
-                />
-                <label className="form-label" htmlFor="company">{t('contact.company')}</label>
-              </div>
-
-              <div className="form-group full-width">
-                <select
-                  className="form-select"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <option value="" disabled>{t('contact.selectSubject')}</option>
-                  <option value="corporate">{t('contact.subjects.corporate')}</option>
-                  <option value="ma">{t('contact.subjects.ma')}</option>
-                  <option value="ip">{t('contact.subjects.ip')}</option>
-                  <option value="realestate">{t('contact.subjects.realestate')}</option>
-                  <option value="litigation">{t('contact.subjects.litigation')}</option>
-                  <option value="other">{t('contact.subjects.other')}</option>
-                </select>
-              </div>
-
-              <div className="form-group full-width">
-                <textarea
-                  className="form-textarea"
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder=" "
-                  required
-                ></textarea>
-                <label className="form-label" htmlFor="message">{t('contact.yourMessage')}</label>
-              </div>
-
-              <div className="submit-section">
-                <button 
-                  type="submit" 
-                  className="submit-btn"
-                  disabled={isSubmitting}
-                  style={{
-                    opacity: isSubmitting ? 0.7 : 1,
-                    background: submitMessage ? 'linear-gradient(135deg, #1a1a1a, #2a2a2a)' : ''
-                  }}
-                >
-                  {isSubmitting ? t('contact.sending') : submitMessage || t('contact.sendMessage')}
-                </button>
-                <p className="privacy-note">
-                  {t('contact.privacyNote.text')} 
-                  <a href="/privacy">{t('contact.privacyNote.privacy')}</a> {t('contact.privacyNote.and')} 
-                  <a href="/terms">{t('contact.privacyNote.terms')}</a>.
+            {/* Contact Form */}
+            <div className="contact-form-wrapper">
+              <div className="form-header">
+                <h2 className="form-title">{t('contact.formTitle')}</h2>
+                <p className="form-description">
+                  {t('contact.formDescription')}
                 </p>
               </div>
-            </form>
-          </div>
-        </section>
 
-        {/* Map Section */}
-        <section className="map-section">
-          <div className="map-container">
-            <div className="map-placeholder">
-              <div className="map-overlay"></div>
-              <span>Interactive Map</span>
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-input"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      placeholder=" "
+                      required
+                    />
+                    <label className="form-label" htmlFor="firstName">{t('contact.firstName')}</label>
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-input"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      placeholder=" "
+                      required
+                    />
+                    <label className="form-label" htmlFor="lastName">{t('contact.lastName')}</label>
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      className="form-input"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder=" "
+                      required
+                    />
+                    <label className="form-label" htmlFor="email">{t('contact.emailAddress')}</label>
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="tel"
+                      className="form-input"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder=" "
+                      required
+                    />
+                    <label className="form-label" htmlFor="phone">{t('contact.phoneNumber')}</label>
+                  </div>
+                </div>
+
+                <div className="form-group full-width">
+                  <input
+                    type="text"
+                    className="form-input"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder=" "
+                    required
+                  />
+                  <label className="form-label" htmlFor="company">{t('contact.company')}</label>
+                </div>
+
+                <div className="form-group full-width">
+                  <select
+                    className="form-select"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled>{t('contact.selectSubject')}</option>
+                    <option value="corporate">{t('contact.subjects.corporate')}</option>
+                    <option value="ma">{t('contact.subjects.ma')}</option>
+                    <option value="ip">{t('contact.subjects.ip')}</option>
+                    <option value="realestate">{t('contact.subjects.realestate')}</option>
+                    <option value="litigation">{t('contact.subjects.litigation')}</option>
+                    <option value="other">{t('contact.subjects.other')}</option>
+                  </select>
+                </div>
+
+                <div className="form-group full-width">
+                  <textarea
+                    className="form-textarea"
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder=" "
+                    required
+                  ></textarea>
+                  <label className="form-label" htmlFor="message">{t('contact.yourMessage')}</label>
+                </div>
+
+                <div className="submit-section">
+                  <button 
+                    type="submit" 
+                    className="submit-btn"
+                    disabled={isSubmitting}
+                    style={{
+                      opacity: isSubmitting ? 0.7 : 1,
+                      background: submitMessage ? 'linear-gradient(135deg, #1a1a1a, #2a2a2a)' : ''
+                    }}
+                  >
+                    {isSubmitting ? t('contact.sending') : submitMessage || t('contact.sendMessage')}
+                  </button>
+                  <p className="privacy-note">
+                    {t('contact.privacyNote.text')} 
+                    <a href="/privacy">{t('contact.privacyNote.privacy')}</a> {t('contact.privacyNote.and')} 
+                    <a href="/terms">{t('contact.privacyNote.terms')}</a>.
+                  </p>
+                </div>
+              </form>
             </div>
-          </div>
-        </section>
+          </section>
+
+          {/* Map Section */}
+          <section className="map-section">
+            <div className="map-container">
+              <div className="map-placeholder">
+                <div className="map-overlay"></div>
+                <span>Interactive Map</span>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
