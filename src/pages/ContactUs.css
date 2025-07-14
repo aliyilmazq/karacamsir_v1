@@ -13,7 +13,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
   background: #ffffff;
 }
 
@@ -33,7 +33,7 @@
   margin-top: 80px;
   min-height: calc(100vh - 80px);
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Hero Section */
@@ -186,9 +186,10 @@
 /* Contact Methods */
 .contact-methods {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   margin-top: 40px;
+  max-width: 300px;
 }
 
 .method-card {
@@ -232,6 +233,12 @@
 .contact-form-wrapper {
   opacity: 0;
   animation: fadeInUp 1s ease 0.5s forwards;
+  position: relative;
+  z-index: 20;
+  background: #ffffff;
+  padding: 40px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .form-header {
