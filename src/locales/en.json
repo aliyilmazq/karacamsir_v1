@@ -141,5 +141,38 @@
     "copyright": "© 2025 KARAÇAM & ŞİR Law Firm. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We look forward to discussing how we can assist with your legal needs. Please reach out to any of our offices or use the form below.",
+    "ourOffices": "Our Offices",
+    "email": "Email",
+    "hours": "Hours",
+    "businessHours": "Mon-Fri 9:00-18:00",
+    "formTitle": "Send Us a Message",
+    "formDescription": "Fill out the form below and we will get back to you within 24 hours.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "company": "Company / Organization",
+    "selectSubject": "Select Subject",
+    "subjects": {
+      "corporate": "Corporate Law",
+      "ma": "Mergers & Acquisitions",
+      "ip": "Intellectual Property",
+      "realestate": "Real Estate",
+      "litigation": "Litigation",
+      "other": "Other"
+    },
+    "yourMessage": "Your Message",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "privacyNote": {
+      "text": "By submitting this form, you agree to our ",
+      "privacy": "Privacy Policy",
+      "and": " and ",
+      "terms": "Terms of Service"
+    }
   }
 }

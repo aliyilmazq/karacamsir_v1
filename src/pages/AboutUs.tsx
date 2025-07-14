@@ -8,7 +8,7 @@ const AboutUs: React.FC = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#ffffff', color: '#333333', minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{ padding: '8rem 2rem 5rem' }}>
         <div style={containerStyle}>
@@ -17,21 +17,21 @@ const AboutUs: React.FC = () => {
             fontWeight: 200, 
             lineHeight: 1.1, 
             marginBottom: '3rem',
-            color: '#fff'
+            color: '#5D3FD3'
           }}>
             About Us
           </h1>
           
           {/* Placeholder for accordion */}
           <div style={{
-            background: 'rgba(0,0,0,0.3)',
+            background: 'rgba(240,240,240,0.5)',
             padding: '3rem',
             borderRadius: '8px',
-            border: '1px solid rgba(255,255,255,0.1)'
+            border: '1px solid #e0e0e0'
           }}>
             <p style={{ 
               fontSize: '1.125rem', 
-              color: 'rgba(255,255,255,0.8)', 
+              color: '#666666', 
               textAlign: 'center',
               margin: 0
             }}>

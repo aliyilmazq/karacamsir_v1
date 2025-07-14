@@ -146,7 +146,7 @@ const WhatWeAreDoing = () => {
 
   const sectionStyle = {
     padding: '5rem 2rem',
-    borderTop: '1px solid rgba(0,0,0,0.3)'
+    borderTop: '1px solid #e0e0e0'
   };
 
   const containerStyle = {
@@ -155,16 +155,16 @@ const WhatWeAreDoing = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white' }}>
+    <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
       {/* Hero Section */}
-      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
+      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
             What We
-            <span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>Are Doing</span>
+            <span style={{ display: 'block', color: '#666666' }}>Are Doing</span>
           </h1>
-          <div style={{ width: '6rem', height: '1px', backgroundColor: '#8b5cf6', marginBottom: '2rem' }}></div>
-          <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
+          <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+          <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
             Specialized legal advisory for complex corporate transactions, infrastructure projects 
             and technology ventures. We deliver sophisticated solutions for institutional clients 
             navigating today's dynamic business landscape.
@@ -176,8 +176,8 @@ const WhatWeAreDoing = () => {
       <section id="services" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Practice Areas</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)' }}>Comprehensive legal solutions for modern businesses</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Our Practice Areas</h2>
+            <p style={{ color: '#666666' }}>Comprehensive legal solutions for modern businesses</p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
@@ -189,11 +189,11 @@ const WhatWeAreDoing = () => {
               >
                 <div 
                   style={{
-                    border: '1px solid rgba(0,0,0,0.3)',
+                    border: '1px solid #e0e0e0',
                     padding: '2rem',
                     transition: 'all 0.5s',
                     cursor: 'pointer',
-                    backgroundColor: hoveredCard === index ? '#8b5cf6' : '#522d72'
+                    backgroundColor: hoveredCard === index ? '#5D3FD3' : '#ffffff'
                   }}
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 >
@@ -203,21 +203,21 @@ const WhatWeAreDoing = () => {
                         <span style={{ 
                           fontSize: '2.5rem', 
                           fontWeight: 100,
-                          color: hoveredCard === index ? 'rgba(255,255,255,0.9)' : '#9333ea'
+                          color: hoveredCard === index ? '#ffffff' : '#5D3FD3'
                         }}>
                           {service.number}
                         </span>
                         <div>
                           <h3 style={{ fontSize: '2rem', fontWeight: 300 }}>{service.title}</h3>
                           {service.subtitle && (
-                            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.25rem' }}>{service.subtitle}</p>
+                            <p style={{ fontSize: '1rem', color: '#666666', marginTop: '0.25rem' }}>{service.subtitle}</p>
                           )}
                         </div>
                       </div>
                       <p style={{ 
                         fontSize: '1.125rem', 
                         lineHeight: 1.6,
-                        color: hoveredCard === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)'
+                        color: hoveredCard === index ? '#ffffff' : '#666666'
                       }}>
                         {service.description}
                       </p>
@@ -227,7 +227,7 @@ const WhatWeAreDoing = () => {
                       padding: '0.5rem',
                       background: 'none',
                       border: 'none',
-                      color: 'white',
+                      color: '#333333',
                       cursor: 'pointer',
                       fontSize: '1.5rem'
                     }}>
@@ -239,7 +239,7 @@ const WhatWeAreDoing = () => {
                     <div style={{ 
                       marginTop: '2rem', 
                       paddingTop: '2rem', 
-                      borderTop: '1px solid rgba(255,255,255,0.7)' 
+                      borderTop: '1px solid #e0e0e0' 
                     }}>
                       <div style={{ 
                         display: 'grid', 
@@ -253,7 +253,7 @@ const WhatWeAreDoing = () => {
                               fontSize: '1.25rem', 
                               fontWeight: 500,
                               marginBottom: '1rem',
-                              color: hoveredCard === index ? 'white' : 'rgba(255,255,255,0.9)'
+                              color: hoveredCard === index ? '#ffffff' : '#333333'
                             }}>
                               {subcat.name}
                             </h4>
@@ -267,12 +267,12 @@ const WhatWeAreDoing = () => {
                                 <li key={itemIdx} style={{ 
                                   paddingLeft: '1rem',
                                   position: 'relative',
-                                  color: hoveredCard === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)'
+                                  color: hoveredCard === index ? '#ffffff' : '#666666'
                                 }}>
                                   <span style={{ 
                                     position: 'absolute', 
                                     left: 0,
-                                    color: 'rgba(255,255,255,0.7)'
+                                    color: '#666666'
                                   }}>•</span>
                                   {item}
                                 </li>
@@ -286,11 +286,11 @@ const WhatWeAreDoing = () => {
                         gap: '2rem', 
                         flexWrap: 'wrap',
                         paddingTop: '1.5rem',
-                        borderTop: '1px solid rgba(0,0,0,0.3)'
+                        borderTop: '1px solid #e0e0e0'
                       }}>
                         {service.metrics.map((metric, idx) => (
                           <div key={idx} style={{ fontSize: '0.875rem' }}>
-                            <div style={{ fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>{metric}</div>
+                            <div style={{ fontWeight: 600, color: '#666666' }}>{metric}</div>
                           </div>
                         ))}
                       </div>
@@ -308,17 +308,17 @@ const WhatWeAreDoing = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
             <div>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>Legal Expertise</h2>
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', lineHeight: 1.6, marginBottom: '3rem' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#5D3FD3' }}>Legal Expertise</h2>
+              <p style={{ color: '#666666', fontSize: '1.125rem', lineHeight: 1.6, marginBottom: '3rem' }}>
                 Our expertise spans across critical legal domains, ensuring comprehensive 
                 coverage of your legal needs. We maintain industry-leading 
                 proficiency levels through continuous education and practice.
               </p>
               <button style={{
-                border: '1px solid #8b5cf6',
+                border: '1px solid #5D3FD3',
                 padding: '1rem 2rem',
                 backgroundColor: 'transparent',
-                color: 'white',
+                color: '#5D3FD3',
                 cursor: 'pointer',
                 transition: 'all 0.3s',
                 fontSize: '1rem',
@@ -327,10 +327,12 @@ const WhatWeAreDoing = () => {
                 gap: '0.5rem'
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = '#8b5cf6';
+                e.currentTarget.style.backgroundColor = '#5D3FD3';
+                e.currentTarget.style.color = 'white';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#5D3FD3';
               }}>
                 View All Services <span>↗</span>
               </button>
@@ -341,16 +343,16 @@ const WhatWeAreDoing = () => {
                 <div key={index}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
                     <span style={{ fontSize: '1.125rem' }}>{cap.area}</span>
-                    <span style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)' }}>{cap.percentage}%</span>
+                    <span style={{ fontSize: '0.875rem', color: '#666666' }}>{cap.percentage}%</span>
                   </div>
-                  <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(0,0,0,0.3)', position: 'relative' }}>
+                  <div style={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', position: 'relative' }}>
                     <div 
                       style={{ 
                         position: 'absolute',
                         left: 0,
                         top: 0,
                         height: '100%',
-                        backgroundColor: '#8b5cf6',
+                        backgroundColor: '#5D3FD3',
                         transition: 'width 1s',
                         transitionDelay: `${index * 100}ms`,
                         width: scrollY > 600 ? `${cap.percentage}%` : '0%'
@@ -365,24 +367,24 @@ const WhatWeAreDoing = () => {
       </section>
 
       {/* Stats Section */}
-      <section style={{ ...sectionStyle, borderBottom: '1px solid rgba(0,0,0,0.3)' }}>
+      <section style={{ ...sectionStyle, borderBottom: '1px solid #e0e0e0' }}>
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             <div>
               <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>€7.5B+</div>
-              <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Transaction Value</div>
+              <div style={{ fontSize: '0.875rem', color: '#666666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Transaction Value</div>
             </div>
             <div>
               <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>800+</div>
-              <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Corporate Clients</div>
+              <div style={{ fontSize: '0.875rem', color: '#666666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Corporate Clients</div>
             </div>
             <div>
               <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>45+</div>
-              <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Jurisdictions</div>
+              <div style={{ fontSize: '0.875rem', color: '#666666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Jurisdictions</div>
             </div>
             <div>
               <div style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '0.5rem' }}>30+</div>
-              <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Specialized Lawyers</div>
+              <div style={{ fontSize: '0.875rem', color: '#666666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Specialized Lawyers</div>
             </div>
           </div>
         </div>
@@ -393,30 +395,32 @@ const WhatWeAreDoing = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
             <div>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>Let's Discuss Your Legal Needs</h2>
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', marginBottom: '2rem' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#5D3FD3' }}>Let's Discuss Your Legal Needs</h2>
+              <p style={{ color: '#666666', fontSize: '1.125rem', marginBottom: '2rem' }}>
                 Connect with our expert legal team to explore how we can protect your interests and help you achieve your goals.
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: 'rgba(255,255,255,0.7)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: '#666666' }}>
                 <p>Main Office</p>
-                <p style={{ color: 'white', fontSize: '1.25rem' }}>Istanbul, Turkey</p>
+                <p style={{ color: '#333333', fontSize: '1.25rem' }}>Istanbul, Turkey</p>
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' }}>
               <button style={{
-                border: '1px solid #8b5cf6',
+                border: '1px solid #5D3FD3',
                 padding: '1.5rem 3rem',
                 backgroundColor: 'transparent',
-                color: 'white',
+                color: '#5D3FD3',
                 cursor: 'pointer',
                 transition: 'all 0.3s',
                 fontSize: '1.125rem'
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = '#8b5cf6';
+                e.currentTarget.style.backgroundColor = '#5D3FD3';
+                e.currentTarget.style.color = 'white';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#5D3FD3';
               }}>
                 Schedule Consultation
               </button>

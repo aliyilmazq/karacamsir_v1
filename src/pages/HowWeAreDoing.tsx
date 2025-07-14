@@ -109,7 +109,7 @@ const HowWeAreDoing = () => {
 
   const sectionStyle = {
     padding: '5rem 2rem',
-    borderTop: '1px solid rgba(0,0,0,0.3)'
+    borderTop: '1px solid #e0e0e0'
   };
 
   const containerStyle = {
@@ -118,16 +118,16 @@ const HowWeAreDoing = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white' }}>
+    <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
       {/* Hero Section */}
-      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
+      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
             How We Are
-            <span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>Doing</span>
+            <span style={{ display: 'block', color: '#666666' }}>Doing</span>
           </h1>
-          <div style={{ width: '6rem', height: '1px', backgroundColor: '#8b5cf6', marginBottom: '2rem' }}></div>
-          <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
+          <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+          <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
             Our integrated approach combines deep sector expertise with innovative legal 
             solutions, delivering measurable value in complex corporate transactions, 
             infrastructure projects, and technology ventures.
@@ -139,8 +139,8 @@ const HowWeAreDoing = () => {
       <section id="approach" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Methodology</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)' }}>Four pillars that drive exceptional legal outcomes</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Our Methodology</h2>
+            <p style={{ color: '#666666' }}>Four pillars that drive exceptional legal outcomes</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -148,11 +148,11 @@ const HowWeAreDoing = () => {
               <div
                 key={index}
                 style={{
-                  border: '1px solid rgba(0,0,0,0.3)',
+                  border: '1px solid #e0e0e0',
                   padding: '2rem',
                   transition: 'all 0.3s',
                   cursor: 'pointer',
-                  backgroundColor: hoveredApproach === index ? '#8b5cf6' : 'transparent',
+                  backgroundColor: hoveredApproach === index ? '#5D3FD3' : 'transparent',
                   transform: hoveredApproach === index ? 'translateY(-5px)' : 'translateY(0)'
                 }}
                 onMouseEnter={() => setHoveredApproach(index)}
@@ -173,7 +173,7 @@ const HowWeAreDoing = () => {
                   }} 
                 />
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '1rem' }}>{approach.title}</h3>
-                <p style={{ color: hoveredApproach === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                <p style={{ color: hoveredApproach === index ? '#ffffff' : '#666666', lineHeight: 1.6, marginBottom: '1rem' }}>
                   {approach.description}
                 </p>
                 {activeStep === index && (
@@ -201,8 +201,8 @@ const HowWeAreDoing = () => {
       <section id="process" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Transaction Lifecycle</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)' }}>From strategic planning to value realization</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Transaction Lifecycle</h2>
+            <p style={{ color: '#666666' }}>From strategic planning to value realization</p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -214,8 +214,8 @@ const HowWeAreDoing = () => {
                   gridTemplateColumns: 'auto 1fr',
                   gap: '3rem',
                   padding: '2rem',
-                  border: '1px solid rgba(0,0,0,0.3)',
-                  backgroundColor: activeStep === index ? '#8b5cf6' : 'transparent',
+                  border: '1px solid #e0e0e0',
+                  backgroundColor: activeStep === index ? '#5D3FD3' : 'transparent',
                   cursor: 'pointer',
                   transition: 'all 0.3s',
                   opacity: scrollY > 200 + (index * 100) ? 1 : 0,
@@ -226,7 +226,7 @@ const HowWeAreDoing = () => {
                 <div style={{ 
                   fontSize: '2.5rem', 
                   fontWeight: 100, 
-                  color: activeStep === index ? 'rgba(255,255,255,0.9)' : '#9333ea' 
+                  color: activeStep === index ? '#ffffff' : '#5D3FD3' 
                 }}>
                   {step.step}
                 </div>
@@ -235,13 +235,13 @@ const HowWeAreDoing = () => {
                     {step.title}
                   </h3>
                   <p style={{ 
-                    color: activeStep === index ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.7)', 
+                    color: activeStep === index ? '#ffffff' : '#666666', 
                     marginBottom: '1rem',
                     lineHeight: 1.6 
                   }}>
                     {step.description}
                   </p>
-                  <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '0.875rem', color: '#666666', marginBottom: '1rem' }}>
                     Duration: {step.duration}
                   </div>
                   {activeStep === index && (
@@ -270,11 +270,11 @@ const HowWeAreDoing = () => {
       </section>
 
       {/* Metrics Section */}
-      <section style={{ ...sectionStyle, borderBottom: '1px solid rgba(0,0,0,0.3)' }}>
+      <section style={{ ...sectionStyle, borderBottom: '1px solid #e0e0e0' }}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Performance Metrics</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)' }}>Delivering measurable value across every engagement</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Performance Metrics</h2>
+            <p style={{ color: '#666666' }}>Delivering measurable value across every engagement</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem' }}>
@@ -284,7 +284,7 @@ const HowWeAreDoing = () => {
                 style={{
                   textAlign: 'center',
                   padding: '2rem',
-                  border: '1px solid rgba(0,0,0,0.3)',
+                  border: '1px solid #e0e0e0',
                   borderRadius: '8px',
                   transition: 'all 0.3s',
                   transform: scrollY > 800 ? 'scale(1)' : 'scale(0.9)',
@@ -294,7 +294,7 @@ const HowWeAreDoing = () => {
                 <div style={{ 
                   fontSize: '2.5rem', 
                   fontWeight: 200, 
-                  color: '#8b5cf6',
+                  color: '#5D3FD3',
                   marginBottom: '0.5rem' 
                 }}>
                   {metric.value}
@@ -302,7 +302,7 @@ const HowWeAreDoing = () => {
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: '0.5rem' }}>
                   {metric.label}
                 </h3>
-                <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)' }}>
+                <p style={{ fontSize: '0.875rem', color: '#666666' }}>
                   {metric.description}
                 </p>
               </div>
@@ -315,8 +315,8 @@ const HowWeAreDoing = () => {
       <section id="case-studies" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Recent Successes</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)' }}>Representative matters across our practice areas</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Recent Successes</h2>
+            <p style={{ color: '#666666' }}>Representative matters across our practice areas</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
@@ -324,10 +324,11 @@ const HowWeAreDoing = () => {
               <div
                 key={index}
                 style={{
-                  border: '1px solid rgba(0,0,0,0.3)',
+                  border: '1px solid #e0e0e0',
                   padding: '2rem',
                   borderRadius: '8px',
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.08) 100%)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                   transition: 'all 0.3s',
                   cursor: 'pointer',
                   transform: hoveredApproach === index + 10 ? 'translateY(-5px)' : 'translateY(0)'
@@ -337,7 +338,7 @@ const HowWeAreDoing = () => {
               >
                 <div style={{ 
                   fontSize: '0.875rem', 
-                  color: 'rgba(255,255,255,0.7)', 
+                  color: '#666666', 
                   marginBottom: '1rem',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em'
@@ -350,13 +351,13 @@ const HowWeAreDoing = () => {
                 <div style={{ 
                   fontSize: '2.5rem', 
                   fontWeight: 200, 
-                  color: '#8b5cf6',
+                  color: '#5D3FD3',
                   marginBottom: '1rem' 
                 }}>
                   {study.value}
                 </div>
                 <p style={{ 
-                  color: 'rgba(255,255,255,0.7)', 
+                  color: '#666666', 
                   lineHeight: 1.6, 
                   marginBottom: '1.5rem',
                   fontSize: '0.875rem'
@@ -364,10 +365,10 @@ const HowWeAreDoing = () => {
                   {study.description}
                 </p>
                 <div style={{
-                  borderTop: '1px solid rgba(0,0,0,0.3)',
+                  borderTop: '1px solid #e0e0e0',
                   paddingTop: '1rem',
                   fontSize: '0.875rem',
-                  color: 'rgba(255,255,255,0.9)',
+                  color: '#333333',
                   fontWeight: 600
                 }}>
                   ✓ {study.outcome}
@@ -381,10 +382,10 @@ const HowWeAreDoing = () => {
       {/* CTA Section */}
       <section style={{ padding: '5rem 2rem' }}>
         <div style={{ ...containerStyle, textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#5D3FD3' }}>
             Ready to Transform Your Legal Strategy?
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
+          <p style={{ color: '#666666', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
             Discover how our integrated approach delivers superior outcomes for complex 
             transactions and strategic initiatives.
           </p>

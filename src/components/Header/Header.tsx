@@ -20,7 +20,7 @@ const Header: React.FC = () => {
       <div className="header__container">
         <div className="header__logo">
           <Link to="/" onClick={closeMenu}>
-            <img src={logo} alt="KARAÇAM & ŞİR" style={{ height: 44 }} />
+            <img src={logo} alt="KARAÇAM & ŞİR" />
           </Link>
         </div>
         <button 

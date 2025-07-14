@@ -136,7 +136,7 @@ const PracticeAreas: React.FC = () => {
 
   const sectionStyle = {
     padding: '5rem 2rem',
-    borderTop: '1px solid rgba(0,0,0,0.3)'
+    borderTop: '1px solid #e0e0e0'
   };
 
   const containerStyle = {
@@ -145,15 +145,15 @@ const PracticeAreas: React.FC = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white' }}>
+    <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
       {/* Hero Section */}
-      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
+      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
             Practice Areas
           </h1>
-          <div style={{ width: '6rem', height: '1px', backgroundColor: '#8b5cf6', marginBottom: '2rem' }}></div>
-          <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
+          <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+          <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
             Specialized legal advisory for complex corporate transactions, infrastructure projects 
             and technology ventures. We deliver sophisticated solutions for institutional clients 
             navigating today's dynamic business landscape.
@@ -165,8 +165,8 @@ const PracticeAreas: React.FC = () => {
       <section id="services" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Our Practice Areas</h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)' }}>Comprehensive legal solutions for modern businesses</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Our Practice Areas</h2>
+            <p style={{ color: '#666666' }}>Comprehensive legal solutions for modern businesses</p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
@@ -178,18 +178,18 @@ const PracticeAreas: React.FC = () => {
               >
                 <div 
                   style={{
-                    border: '1px solid rgba(0,0,0,0.3)',
+                    border: '1px solid #e0e0e0',
                     padding: '2rem',
                     transition: 'all 0.5s',
                     cursor: 'pointer',
-                    backgroundColor: hoveredCard === index ? '#8b5cf6' : '#522d72'
+                    backgroundColor: hoveredCard === index ? '#5D3FD3' : '#ffffff'
                   }}
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '0.5rem' }}>
-                        <span style={{ fontSize: '2rem', color: hoveredCard === index ? 'white' : 'rgba(0,0,0,0.6)', fontWeight: 300 }}>
+                        <span style={{ fontSize: '2rem', color: hoveredCard === index ? '#ffffff' : '#5D3FD3', fontWeight: 300 }}>
                           {service.number}
                         </span>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: 300 }}>
@@ -197,7 +197,7 @@ const PracticeAreas: React.FC = () => {
                           {service.subtitle && <span style={{ display: 'block', fontSize: '0.875rem', marginTop: '0.25rem' }}>{service.subtitle}</span>}
                         </h3>
                       </div>
-                      <p style={{ color: hoveredCard === index ? 'white' : 'rgba(255,255,255,0.9)', margin: 0 }}>
+                      <p style={{ color: hoveredCard === index ? '#ffffff' : '#666666', margin: 0 }}>
                         {service.description}
                       </p>
                     </div>
@@ -213,14 +213,14 @@ const PracticeAreas: React.FC = () => {
 
                 {activeIndex === index && (
                   <div style={{
-                    backgroundColor: 'rgba(0,0,0,0.4)',
+                    backgroundColor: 'rgba(240,240,240,0.8)',
                     padding: '3rem 2rem',
-                    borderTop: '1px solid rgba(0,0,0,0.5)'
+                    borderTop: '1px solid #e0e0e0'
                   }}>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
                       {service.subcategories.map((sub, subIndex) => (
                         <div key={subIndex}>
-                          <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#8b5cf6' }}>
+                          <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#5D3FD3' }}>
                             {sub.name}
                           </h4>
                           <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -229,12 +229,12 @@ const PracticeAreas: React.FC = () => {
                                 marginBottom: '0.75rem', 
                                 paddingLeft: '1.5rem',
                                 position: 'relative',
-                                color: 'rgba(255,255,255,0.9)'
+                                color: '#333333'
                               }}>
                                 <span style={{ 
                                   position: 'absolute', 
                                   left: 0, 
-                                  color: '#8b5cf6'
+                                  color: '#5D3FD3'
                                 }}>•</span>
                                 {item}
                               </li>

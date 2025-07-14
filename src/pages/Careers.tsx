@@ -121,7 +121,7 @@ const Careers = () => {
 
   const sectionStyle = {
     padding: '5rem 2rem',
-    borderTop: '1px solid rgba(0,0,0,0.3)'
+    borderTop: '1px solid #e0e0e0'
   };
 
   const containerStyle = {
@@ -130,16 +130,16 @@ const Careers = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#522d72', color: 'white' }}>
+    <div style={{ backgroundColor: '#ffffff', color: '#333333' }}>
       {/* Hero Section */}
-      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#522d72' }}>
+      <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#f8f9fa' }}>
         <div style={containerStyle}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
             Join Our
-            <span style={{ display: 'block', color: '#a78bfa' }}>Team</span>
+            <span style={{ display: 'block', color: '#6A359C' }}>Team</span>
           </h1>
-          <div style={{ width: '6rem', height: '1px', backgroundColor: '#8b5cf6', marginBottom: '2rem' }}></div>
-          <p style={{ fontSize: '1.25rem', color: '#d8b4fe', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
+          <div style={{ width: '6rem', height: '2px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+          <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
             Build your career with one of Turkey's leading law firms. We're always looking for 
             talented individuals who share our commitment to legal excellence.
           </p>
@@ -151,8 +151,8 @@ const Careers = () => {
         <div style={containerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>Why KARAÇAM & ŞİR?</h2>
-              <p style={{ fontSize: '1.125rem', color: '#d8b4fe', lineHeight: 1.8, marginBottom: '2rem' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#5D3FD3' }}>Why KARAÇAM & ŞİR?</h2>
+              <p style={{ fontSize: '1.125rem', color: '#666666', lineHeight: 1.8, marginBottom: '2rem' }}>
                 At KARAÇAM & ŞİR, we believe our people are our greatest asset. We foster an environment 
                 where legal professionals can thrive, grow, and make a meaningful impact on our clients' success.
               </p>
@@ -163,25 +163,26 @@ const Careers = () => {
                     transform: scrollY > 200 ? 'translateY(0)' : 'translateY(20px)',
                     transition: `all 0.8s ease ${index * 0.1}s`
                   }}>
-                    <h3 style={{ color: '#a78bfa', marginBottom: '0.5rem' }}>{value.title}</h3>
-                    <p style={{ fontSize: '0.875rem', color: '#d8b4fe' }}>{value.description}</p>
+                    <h3 style={{ color: '#5D3FD3', marginBottom: '0.5rem' }}>{value.title}</h3>
+                    <p style={{ fontSize: '0.875rem', color: '#666666' }}>{value.description}</p>
                   </div>
                 ))}
               </div>
             </div>
             <div style={{ 
               padding: '3rem',
-              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.15) 100%)',
-              border: '1px solid rgba(0,0,0,0.3)',
+              background: '#f8f9fa',
+              border: '1px solid #e0e0e0',
               borderRadius: '8px',
-              textAlign: 'center'
+              textAlign: 'center',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
             }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>25+</div>
-              <div style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Legal Professionals</div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>15</div>
-              <div style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Years of Excellence</div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#8b5cf6', marginBottom: '1rem' }}>95%</div>
-              <div style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>Employee Satisfaction</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#5D3FD3', marginBottom: '1rem' }}>25+</div>
+              <div style={{ fontSize: '1.25rem', marginBottom: '2rem', color: '#333333' }}>Legal Professionals</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#5D3FD3', marginBottom: '1rem' }}>15</div>
+              <div style={{ fontSize: '1.25rem', marginBottom: '2rem', color: '#333333' }}>Years of Excellence</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 200, color: '#5D3FD3', marginBottom: '1rem' }}>95%</div>
+              <div style={{ fontSize: '1.25rem', marginBottom: '2rem', color: '#333333' }}>Employee Satisfaction</div>
               <a 
                 href="https://www.linkedin.com/company/karacam-sir-law-firm/" 
                 target="_blank" 
@@ -191,7 +192,7 @@ const Careers = () => {
                 <button style={{
                   marginTop: '1rem',
                   padding: '0.75rem 1.5rem',
-                  backgroundColor: '#8b5cf6',
+                  backgroundColor: '#5D3FD3',
                   color: 'white',
                   border: 'none',
                   fontSize: '1rem',
@@ -200,10 +201,10 @@ const Careers = () => {
                   borderRadius: '4px'
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                  e.currentTarget.style.backgroundColor = '#6A359C';
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = '#8b5cf6';
+                  e.currentTarget.style.backgroundColor = '#5D3FD3';
                 }}>
                   Follow us on LinkedIn →
                 </button>
@@ -217,8 +218,8 @@ const Careers = () => {
       <section id="benefits" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Benefits & Perks</h2>
-            <p style={{ color: '#d8b4fe' }}>We take care of our team so they can take care of our clients</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Benefits & Perks</h2>
+            <p style={{ color: '#666666' }}>We take care of our team so they can take care of our clients</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
@@ -226,12 +227,15 @@ const Careers = () => {
               <div
                 key={index}
                 style={{
-                  border: '1px solid rgba(0,0,0,0.3)',
+                  border: '1px solid #e0e0e0',
                   padding: '2rem',
                   transition: 'all 0.3s',
                   cursor: 'pointer',
-                  backgroundColor: hoveredBenefit === index ? '#8b5cf6' : 'transparent',
-                  transform: hoveredBenefit === index ? 'translateY(-5px)' : 'translateY(0)'
+                  backgroundColor: hoveredBenefit === index ? '#5D3FD3' : '#ffffff',
+                  transform: hoveredBenefit === index ? 'translateY(-5px)' : 'translateY(0)',
+                  boxShadow: hoveredBenefit === index ? '0 8px 20px rgba(93, 63, 211, 0.2)' : '0 2px 8px rgba(0, 0, 0, 0.05)',
+                  borderRadius: '8px',
+                  color: hoveredBenefit === index ? '#ffffff' : '#333333'
                 }}
                 onMouseEnter={() => setHoveredBenefit(index)}
                 onMouseLeave={() => setHoveredBenefit(null)}
@@ -250,7 +254,7 @@ const Careers = () => {
                   }} 
                 />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: '0.5rem' }}>{benefit.title}</h3>
-                <p style={{ color: hoveredBenefit === index ? '#f3e8ff' : '#d8b4fe', fontSize: '0.875rem', lineHeight: 1.6 }}>
+                <p style={{ color: hoveredBenefit === index ? '#f0f0f0' : '#666666', fontSize: '0.875rem', lineHeight: 1.6 }}>
                   {benefit.description}
                 </p>
               </div>
@@ -263,8 +267,8 @@ const Careers = () => {
       <section id="positions" style={sectionStyle}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Open Positions</h2>
-            <p style={{ color: '#d8b4fe' }}>Explore current opportunities to join our team</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Open Positions</h2>
+            <p style={{ color: '#666666' }}>Explore current opportunities to join our team</p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -272,42 +276,45 @@ const Careers = () => {
               <div
                 key={position.id}
                 style={{
-                  border: '1px solid rgba(0,0,0,0.3)',
+                  border: '1px solid #e0e0e0',
                   padding: '2rem',
                   cursor: 'pointer',
                   transition: 'all 0.3s',
-                  backgroundColor: activePosition === index ? '#8b5cf6' : 'transparent'
+                  backgroundColor: activePosition === index ? '#f8f9fa' : '#ffffff',
+                  borderRadius: '8px',
+                  boxShadow: activePosition === index ? '0 4px 12px rgba(0, 0, 0, 0.08)' : '0 2px 8px rgba(0, 0, 0, 0.05)'
                 }}
                 onClick={() => setActivePosition(activePosition === index ? null : index)}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '0.5rem' }}>{position.title}</h3>
-                    <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', fontSize: '0.875rem', color: '#d8b4fe' }}>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '0.5rem', color: '#5D3FD3' }}>{position.title}</h3>
+                    <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', fontSize: '0.875rem', color: '#666666' }}>
                       <span>📍 {position.location}</span>
                       <span>🏢 {position.department}</span>
                       <span>⏰ {position.type}</span>
                       <span>📊 {position.experience}</span>
                     </div>
                   </div>
-                  <div style={{ fontSize: '1.5rem', color: '#a78bfa' }}>
+                  <div style={{ fontSize: '1.5rem', color: '#5D3FD3' }}>
                     {activePosition === index ? '−' : '+'}
                   </div>
                 </div>
 
                 {activePosition === index && (
-                  <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid #a78bfa' }}>
-                    <p style={{ marginBottom: '1.5rem', lineHeight: 1.6 }}>{position.description}</p>
-                    <h4 style={{ marginBottom: '1rem' }}>Requirements:</h4>
+                  <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid #e0e0e0' }}>
+                    <p style={{ marginBottom: '1.5rem', lineHeight: 1.6, color: '#333333' }}>{position.description}</p>
+                    <h4 style={{ marginBottom: '1rem', color: '#5D3FD3' }}>Requirements:</h4>
                     <ul style={{ listStyle: 'none', padding: 0 }}>
                       {position.requirements.map((req, idx) => (
                         <li key={idx} style={{ 
                           marginBottom: '0.5rem',
                           paddingLeft: '1.5rem',
                           position: 'relative',
-                          fontSize: '0.875rem'
+                          fontSize: '0.875rem',
+                          color: '#666666'
                         }}>
-                          <span style={{ position: 'absolute', left: 0 }}>•</span>
+                          <span style={{ position: 'absolute', left: 0, color: '#5D3FD3' }}>•</span>
                           {req}
                         </li>
                       ))}
@@ -321,8 +328,8 @@ const Careers = () => {
                       <button style={{
                         marginTop: '2rem',
                         padding: '1rem 2rem',
-                        backgroundColor: 'white',
-                        color: 'rgba(0,0,0,0.8)',
+                        backgroundColor: '#5D3FD3',
+                        color: 'white',
                         border: 'none',
                         fontSize: '1rem',
                         fontWeight: 600,
@@ -330,13 +337,16 @@ const Careers = () => {
                         transition: 'all 0.3s',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '0.5rem'
+                        gap: '0.5rem',
+                        borderRadius: '4px'
                       }}
                       onMouseEnter={e => {
+                        e.currentTarget.style.backgroundColor = '#6A359C';
                         e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+                        e.currentTarget.style.boxShadow = '0 5px 15px rgba(93, 63, 211, 0.3)';
                       }}
                       onMouseLeave={e => {
+                        e.currentTarget.style.backgroundColor = '#5D3FD3';
                         e.currentTarget.style.transform = 'translateY(0)';
                         e.currentTarget.style.boxShadow = 'none';
                       }}>
@@ -352,11 +362,11 @@ const Careers = () => {
       </section>
 
       {/* Application Process Section */}
-      <section style={{ ...sectionStyle, borderBottom: '1px solid rgba(0,0,0,0.3)' }}>
+      <section style={{ ...sectionStyle, borderBottom: '1px solid #e0e0e0' }}>
         <div style={containerStyle}>
           <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem' }}>Application Process</h2>
-            <p style={{ color: '#d8b4fe' }}>Simple, transparent, and efficient</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Application Process</h2>
+            <p style={{ color: '#666666' }}>Simple, transparent, and efficient</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
@@ -376,18 +386,19 @@ const Careers = () => {
                   width: '80px', 
                   height: '80px', 
                   borderRadius: '50%', 
-                  backgroundColor: '#8b5cf6',
+                  backgroundColor: '#5D3FD3',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto 1rem',
                   fontSize: '2rem',
-                  fontWeight: 200
+                  fontWeight: 200,
+                  color: '#ffffff'
                 }}>
                   {item.step}
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: '0.5rem' }}>{item.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: '#d8b4fe' }}>{item.desc}</p>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: '0.5rem', color: '#333333' }}>{item.title}</h3>
+                <p style={{ fontSize: '0.875rem', color: '#666666' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -395,12 +406,12 @@ const Careers = () => {
       </section>
 
       {/* CTA Section */}
-      <section style={{ padding: '5rem 2rem' }}>
+      <section style={{ padding: '5rem 2rem', backgroundColor: '#f8f9fa' }}>
         <div style={{ ...containerStyle, textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#5D3FD3' }}>
             Ready to Make an Impact?
           </h2>
-          <p style={{ color: '#d8b4fe', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
+          <p style={{ color: '#666666', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
             Join our team and be part of shaping the future of legal services in Turkey.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -412,7 +423,7 @@ const Careers = () => {
             >
               <button style={{
                 padding: '1.5rem 3rem',
-                backgroundColor: '#8b5cf6',
+                backgroundColor: '#5D3FD3',
                 color: 'white',
                 border: 'none',
                 fontSize: '1.125rem',
@@ -420,14 +431,15 @@ const Careers = () => {
                 transition: 'all 0.3s',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.5rem'
+                gap: '0.5rem',
+                borderRadius: '4px'
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                e.currentTarget.style.backgroundColor = '#6A359C';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = '#8b5cf6';
+                e.currentTarget.style.backgroundColor = '#5D3FD3';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <span style={{ fontSize: '1.25rem' }}>in</span> View LinkedIn Jobs
@@ -440,19 +452,22 @@ const Careers = () => {
               <button style={{
                 padding: '1.5rem 3rem',
                 backgroundColor: 'transparent',
-                color: 'white',
-                border: '2px solid #8b5cf6',
+                color: '#5D3FD3',
+                border: '2px solid #5D3FD3',
                 fontSize: '1.125rem',
                 cursor: 'pointer',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                borderRadius: '4px'
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = '#8b5cf6';
+                e.currentTarget.style.backgroundColor = '#5D3FD3';
+                e.currentTarget.style.color = 'white';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#5D3FD3';
               }}>
-                📧 Send CV via Email
+                Email HR Department
               </button>
             </a>
           </div>
