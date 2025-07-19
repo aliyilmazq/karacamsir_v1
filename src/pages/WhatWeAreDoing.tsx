@@ -167,11 +167,11 @@ const WhatWeAreDoing = () => {
         {/* Hero Section */}
         <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
           <div style={containerStyle}>
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#702963' }}>
               What We
               <span style={{ display: 'block', color: '#666666' }}>Are Doing</span>
             </h1>
-            <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+            <div style={{ width: '6rem', height: '1px', backgroundColor: '#702963', marginBottom: '2rem' }}></div>
             <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
               Specialized legal advisory for complex corporate transactions, infrastructure projects 
               and technology ventures. We deliver sophisticated solutions for institutional clients 
@@ -184,7 +184,7 @@ const WhatWeAreDoing = () => {
         <section id="services" style={sectionStyle}>
           <div style={containerStyle}>
             <div style={{ marginBottom: '4rem' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#5D3FD3' }}>Our Practice Areas</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#702963' }}>Our Practice Areas</h2>
               <p style={{ color: '#666666' }}>Comprehensive legal solutions for modern businesses</p>
             </div>
 
@@ -201,7 +201,7 @@ const WhatWeAreDoing = () => {
                       padding: '2rem',
                       transition: 'all 0.5s',
                       cursor: 'pointer',
-                      backgroundColor: hoveredCard === index ? '#5D3FD3' : '#ffffff'
+                      backgroundColor: hoveredCard === index ? '#702963' : '#ffffff'
                     }}
                     onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                   >
@@ -211,7 +211,7 @@ const WhatWeAreDoing = () => {
                           <span style={{ 
                             fontSize: '2.5rem', 
                             fontWeight: 100,
-                            color: hoveredCard === index ? '#ffffff' : '#5D3FD3'
+                            color: hoveredCard === index ? '#ffffff' : '#702963'
                           }}>
                             {service.number}
                           </span>
@@ -316,17 +316,17 @@ const WhatWeAreDoing = () => {
           <div style={containerStyle}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
               <div>
-                <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#5D3FD3' }}>Legal Expertise</h2>
+                <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#702963' }}>Legal Expertise</h2>
                 <p style={{ color: '#666666', fontSize: '1.125rem', lineHeight: 1.6, marginBottom: '3rem' }}>
                   Our expertise spans across critical legal domains, ensuring comprehensive 
                   coverage of your legal needs. We maintain industry-leading 
                   proficiency levels through continuous education and practice.
                 </p>
                 <button style={{
-                  border: '1px solid #5D3FD3',
+                  border: '1px solid #702963',
                   padding: '1rem 2rem',
                   backgroundColor: 'transparent',
-                  color: '#5D3FD3',
+                  color: '#702963',
                   cursor: 'pointer',
                   transition: 'all 0.3s',
                   fontSize: '1rem',
@@ -335,12 +335,12 @@ const WhatWeAreDoing = () => {
                   gap: '0.5rem'
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = '#5D3FD3';
+                  e.currentTarget.style.backgroundColor = '#702963';
                   e.currentTarget.style.color = 'white';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#5D3FD3';
+                  e.currentTarget.style.color = '#702963';
                 }}>
                   View All Services <span>↗</span>
                 </button>
@@ -360,7 +360,7 @@ const WhatWeAreDoing = () => {
                           left: 0,
                           top: 0,
                           height: '100%',
-                          backgroundColor: '#5D3FD3',
+                          backgroundColor: '#702963',
                           transition: 'width 1s',
                           transitionDelay: `${index * 100}ms`,
                           width: scrollY > 600 ? `${cap.percentage}%` : '0%'
@@ -403,7 +403,7 @@ const WhatWeAreDoing = () => {
           <div style={containerStyle}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
               <div>
-                <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#5D3FD3' }}>Let's Discuss Your Legal Needs</h2>
+                <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#702963' }}>Let's Discuss Your Legal Needs</h2>
                 <p style={{ color: '#666666', fontSize: '1.125rem', marginBottom: '2rem' }}>
                   Connect with our expert legal team to explore how we can protect your interests and help you achieve your goals.
                 </p>
@@ -414,21 +414,21 @@ const WhatWeAreDoing = () => {
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' }}>
                 <button style={{
-                  border: '1px solid #5D3FD3',
+                  border: '1px solid #702963',
                   padding: '1.5rem 3rem',
                   backgroundColor: 'transparent',
-                  color: '#5D3FD3',
+                  color: '#702963',
                   cursor: 'pointer',
                   transition: 'all 0.3s',
                   fontSize: '1.125rem'
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = '#5D3FD3';
+                  e.currentTarget.style.backgroundColor = '#702963';
                   e.currentTarget.style.color = 'white';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#5D3FD3';
+                  e.currentTarget.style.color = '#702963';
                 }}>
                   Schedule Consultation
                 </button>

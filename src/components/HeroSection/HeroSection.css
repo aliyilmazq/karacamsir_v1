@@ -45,14 +45,14 @@
   font-weight: 700;
   margin-bottom: 0.7rem;
   letter-spacing: 0.04em;
-  color: #5D3FD3;
+  color: #702963;
   text-shadow: none;
 }
 
 .hero__subtitle {
   font-size: 2rem;
   font-weight: 600;
-  color: #5D3FD3;
+  color: #702963;
   margin-bottom: 1.2rem;
   letter-spacing: 0.03em;
   text-shadow: none;
@@ -77,24 +77,24 @@
 
 .hero__cta {
   display: inline-block;
-  background: #5D3FD3;
+  background: #702963;
   color: #ffffff;
   font-weight: bold;
   padding: 0.9rem 2.2rem;
   border-radius: var(--border-radius);
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.3);
-  border: 2px solid #5D3FD3;
+  box-shadow: 0 4px 12px rgba(112, 41, 99, 0.3);
+  border: 2px solid #702963;
   text-decoration: none;
 }
 
 .hero__cta:hover {
-  background: #6A359C;
+  background: #702963;
   color: #ffffff;
-  box-shadow: 0 6px 20px rgba(93, 63, 211, 0.4);
+  box-shadow: 0 6px 20px rgba(112, 41, 99, 0.4);
   transform: translateY(-2px);
-  border-color: #6A359C;
+  border-color: #702963;
   text-decoration: none;
 }
 
