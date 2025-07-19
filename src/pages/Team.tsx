@@ -489,12 +489,7 @@ const Team: React.FC = () => {
                       >
                         {selectedMember.email}
                       </a>
-                      <p style={{
-                        color: '#666',
-                        fontSize: windowSize.isMobile ? '0.875rem' : '1rem'
-                      }}>
-                        {selectedMember.phone}
-                      </p>
+                      {/* Telefon numarası kaldırıldı */}
                     </div>
                   </div>
 
