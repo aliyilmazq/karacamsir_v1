@@ -223,8 +223,8 @@ const Team: React.FC = () => {
                   onMouseEnter={e => {
                     if (!windowSize.isMobile) {
                       e.currentTarget.style.transform = 'translateY(-5px)';
-                      e.currentTarget.style.borderColor = '#702963';
-                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(112, 41, 99, 0.2)';
+                      e.currentTarget.style.borderColor = '#2e0d50';
+                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(46, 13, 80, 0.2)';
                     }
                   }}
                   onMouseLeave={e => {
@@ -239,7 +239,7 @@ const Team: React.FC = () => {
                     width: '100%',
                     paddingTop: '100%', // Kare oranı
                     overflow: 'hidden',
-                    background: 'linear-gradient(135deg, #702963, #702963)',
+                    background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
                     borderRadius: '8px'
                   }}>
                     {member.photo ? (
@@ -254,7 +254,7 @@ const Team: React.FC = () => {
                           height: '100%',
                           objectFit: 'cover',
                           display: 'block',
-                          background: '#702963',
+                          background: '#2e0d50',
                           borderRadius: '8px'
                         }}
                       />
@@ -272,7 +272,7 @@ const Team: React.FC = () => {
                         fontWeight: 300,
                         color: 'rgba(255, 255, 255, 0.9)',
                         fontFamily: 'Georgia, serif',
-                        background: 'linear-gradient(135deg, #702963, #702963)',
+                        background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
                         borderRadius: '8px'
                       }}>
                         {member.initials}
@@ -296,33 +296,11 @@ const Team: React.FC = () => {
                     </h3>
                     <p style={{
                       fontSize: windowSize.isMobile ? '0.875rem' : '1rem',
-                      color: '#702963',
+                      color: '#2e0d50',
                       marginBottom: '1rem'
                     }}>
                       {member.title}
                     </p>
-                    <a
-                      href={`mailto:${member.email}`}
-                      onClick={(e) => e.stopPropagation()}
-                      style={{
-                        fontSize: windowSize.isMobile ? '0.75rem' : '0.875rem',
-                        color: '#666',
-                        textDecoration: 'none',
-                        transition: 'color 0.3s ease',
-                        display: 'inline-block',
-                        wordBreak: 'break-word'
-                      }}
-                      onMouseEnter={e => {
-                        e.currentTarget.style.color = '#702963';
-                        e.currentTarget.style.textDecoration = 'underline';
-                      }}
-                      onMouseLeave={e => {
-                        e.currentTarget.style.color = '#666';
-                        e.currentTarget.style.textDecoration = 'none';
-                      }}
-                    >
-                      {member.email}
-                    </a>
                   </div>
                 </div>
               </div>
@@ -415,7 +393,7 @@ const Team: React.FC = () => {
                       width: '100%',
                       paddingTop: '100%', // Kare oranı
                       overflow: 'hidden',
-                      background: 'linear-gradient(135deg, #702963, #702963)',
+                      background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
                       borderRadius: '8px',
                       marginBottom: '2rem'
                     }}>
@@ -431,7 +409,7 @@ const Team: React.FC = () => {
                             height: '100%',
                             objectFit: 'cover',
                             display: 'block',
-                            background: '#702963',
+                            background: '#2e0d50',
                             borderRadius: '8px'
                           }}
                         />
@@ -449,7 +427,7 @@ const Team: React.FC = () => {
                           fontWeight: 300,
                           color: 'rgba(255, 255, 255, 0.9)',
                           fontFamily: 'Georgia, serif',
-                          background: 'linear-gradient(135deg, #702963, #702963)',
+                          background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
                           borderRadius: '8px'
                         }}>
                           {selectedMember.initials}
@@ -460,12 +438,18 @@ const Team: React.FC = () => {
                       <a
                         href={`mailto:${selectedMember.email}`}
                         style={{
-                          color: '#702963',
+                          color: '#2e0d50',
                           textDecoration: 'none',
-                          fontSize: windowSize.isMobile ? '0.875rem' : '1rem',
+                          fontSize: windowSize.isMobile ? '0.75rem' : '1rem',
                           display: 'block',
                           marginBottom: '0.5rem',
-                          transition: 'color 0.3s ease'
+                          transition: 'color 0.3s ease',
+                          wordBreak: 'break-all',
+                          overflowWrap: 'anywhere',
+                          hyphens: 'auto',
+                          lineHeight: '1.4',
+                          maxWidth: '100%',
+                          padding: windowSize.isMobile ? '0 0.5rem' : '0'
                         }}
                         onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
                         onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
@@ -493,7 +477,7 @@ const Team: React.FC = () => {
                     </h2>
                     <p style={{
                       fontSize: windowSize.isMobile ? '1rem' : '1.125rem',
-                      color: '#702963',
+                      color: '#2e0d50',
                       marginBottom: '2rem',
                       fontWeight: 300
                     }}>
@@ -529,7 +513,7 @@ const Team: React.FC = () => {
                           left: 0,
                           width: '30px',
                           height: '2px',
-                          background: '#702963'
+                          background: '#2e0d50'
                         }}></span>
                       </h3>
                       <ul style={{
@@ -549,7 +533,7 @@ const Team: React.FC = () => {
                             <span style={{
                               position: 'absolute',
                               left: 0,
-                              color: '#702963'
+                              color: '#2e0d50'
                             }}>▸</span>
                             {edu}
                           </li>
@@ -574,7 +558,7 @@ const Team: React.FC = () => {
                           left: 0,
                           width: '30px',
                           height: '2px',
-                          background: '#702963'
+                          background: '#2e0d50'
                         }}></span>
                       </h3>
                       <div style={{
@@ -613,7 +597,7 @@ const Team: React.FC = () => {
                           left: 0,
                           width: '30px',
                           height: '2px',
-                          background: '#702963'
+                          background: '#2e0d50'
                         }}></span>
                       </h3>
                       <p style={{
@@ -641,7 +625,7 @@ const Team: React.FC = () => {
                           left: 0,
                           width: '30px',
                           height: '2px',
-                          background: '#702963'
+                          background: '#2e0d50'
                         }}></span>
                       </h3>
                       <p style={{

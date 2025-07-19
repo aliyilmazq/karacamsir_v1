@@ -130,11 +130,11 @@ const HowWeAreDoing = () => {
         {/* Hero Section */}
         <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
           <div style={containerStyle}>
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#702963' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#2e0d50' }}>
               How We Are
               <span style={{ display: 'block', color: '#666666' }}>Doing</span>
             </h1>
-            <div style={{ width: '6rem', height: '1px', backgroundColor: '#702963', marginBottom: '2rem' }}></div>
+            <div style={{ width: '6rem', height: '1px', backgroundColor: '#2e0d50', marginBottom: '2rem' }}></div>
             <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
               Our integrated approach combines deep sector expertise with innovative legal 
               solutions, delivering measurable value in complex corporate transactions, 
@@ -147,7 +147,7 @@ const HowWeAreDoing = () => {
         <section id="approach" style={sectionStyle}>
           <div style={containerStyle}>
             <div style={{ marginBottom: '4rem' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#702963' }}>Our Methodology</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#2e0d50' }}>Our Methodology</h2>
               <p style={{ color: '#666666' }}>Four pillars that drive exceptional legal outcomes</p>
             </div>
 
@@ -160,7 +160,7 @@ const HowWeAreDoing = () => {
                     padding: '2rem',
                     transition: 'all 0.3s',
                     cursor: 'pointer',
-                    backgroundColor: hoveredApproach === index ? '#702963' : 'transparent',
+                    backgroundColor: hoveredApproach === index ? '#2e0d50' : 'transparent',
                     transform: hoveredApproach === index ? 'translateY(-5px)' : 'translateY(0)'
                   }}
                   onMouseEnter={() => setHoveredApproach(index)}
@@ -209,7 +209,7 @@ const HowWeAreDoing = () => {
         <section id="process" style={sectionStyle}>
           <div style={containerStyle}>
             <div style={{ marginBottom: '4rem' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#702963' }}>Transaction Lifecycle</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#2e0d50' }}>Transaction Lifecycle</h2>
               <p style={{ color: '#666666' }}>From strategic planning to value realization</p>
             </div>
 
@@ -223,7 +223,7 @@ const HowWeAreDoing = () => {
                     gap: '3rem',
                     padding: '2rem',
                     border: '1px solid #e0e0e0',
-                    backgroundColor: activeStep === index ? '#702963' : 'transparent',
+                    backgroundColor: activeStep === index ? '#2e0d50' : 'transparent',
                     cursor: 'pointer',
                     transition: 'all 0.3s',
                     opacity: scrollY > 200 + (index * 100) ? 1 : 0,
@@ -234,7 +234,7 @@ const HowWeAreDoing = () => {
                   <div style={{ 
                     fontSize: '2.5rem', 
                     fontWeight: 100, 
-                    color: activeStep === index ? '#ffffff' : '#702963' 
+                    color: activeStep === index ? '#ffffff' : '#2e0d50' 
                   }}>
                     {step.step}
                   </div>
@@ -281,7 +281,7 @@ const HowWeAreDoing = () => {
         <section style={{ ...sectionStyle, borderBottom: '1px solid #e0e0e0' }}>
           <div style={containerStyle}>
             <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#702963' }}>Performance Metrics</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#2e0d50' }}>Performance Metrics</h2>
               <p style={{ color: '#666666' }}>Delivering measurable value across every engagement</p>
             </div>
 
@@ -302,7 +302,7 @@ const HowWeAreDoing = () => {
                   <div style={{ 
                     fontSize: '2.5rem', 
                     fontWeight: 200, 
-                    color: '#702963',
+                    color: '#2e0d50',
                     marginBottom: '0.5rem' 
                   }}>
                     {metric.value}
@@ -323,7 +323,7 @@ const HowWeAreDoing = () => {
         <section id="case-studies" style={sectionStyle}>
           <div style={containerStyle}>
             <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#702963' }}>Recent Successes</h2>
+              <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '1rem', color: '#2e0d50' }}>Recent Successes</h2>
               <p style={{ color: '#666666' }}>Representative matters across our practice areas</p>
             </div>
 
@@ -359,7 +359,7 @@ const HowWeAreDoing = () => {
                   <div style={{ 
                     fontSize: '2.5rem', 
                     fontWeight: 200, 
-                    color: '#702963',
+                    color: '#2e0d50',
                     marginBottom: '1rem' 
                   }}>
                     {study.value}
@@ -390,7 +390,7 @@ const HowWeAreDoing = () => {
         {/* CTA Section */}
         <section style={{ padding: '5rem 2rem' }}>
           <div style={{ ...containerStyle, textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#702963' }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 200, marginBottom: '2rem', color: '#2e0d50' }}>
               Ready to Transform Your Legal Strategy?
             </h2>
             <p style={{ color: '#666666', fontSize: '1.125rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
@@ -399,9 +399,9 @@ const HowWeAreDoing = () => {
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <button style={{
-                border: '1px solid #702963',
+                border: '1px solid #2e0d50',
                 padding: '1.5rem 3rem',
-                backgroundColor: '#702963',
+                backgroundColor: '#2e0d50',
                 color: 'white',
                 cursor: 'pointer',
                 transition: 'all 0.3s',
@@ -412,27 +412,27 @@ const HowWeAreDoing = () => {
                 e.currentTarget.style.borderColor = 'rgba(0,0,0,0.5)';
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = '#702963';
-                e.currentTarget.style.borderColor = '#702963';
+                e.currentTarget.style.backgroundColor = '#2e0d50';
+                e.currentTarget.style.borderColor = '#2e0d50';
               }}>
                 Schedule Consultation
               </button>
               <button style={{
-                border: '1px solid #702963',
+                border: '1px solid #2e0d50',
                 padding: '1.5rem 3rem',
                 backgroundColor: 'transparent',
-                color: '#702963',
+                color: '#2e0d50',
                 cursor: 'pointer',
                 transition: 'all 0.3s',
                 fontSize: '1.125rem'
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = '#702963';
+                e.currentTarget.style.backgroundColor = '#2e0d50';
                 e.currentTarget.style.color = 'white';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = '#702963';
+                e.currentTarget.style.color = '#2e0d50';
               }}>
                 View Case Studies
               </button>

@@ -53,7 +53,7 @@ const LanguageSwitcher: React.FC = () => {
           top: '100%',
           right: 0,
           marginTop: '0.5rem',
-          backgroundColor: '#702963',
+          backgroundColor: '#2e0d50',
           border: '1px solid rgba(255, 255, 255, 0.2)',
           borderRadius: '4px',
           overflow: 'hidden',
@@ -70,7 +70,7 @@ const LanguageSwitcher: React.FC = () => {
                 padding: '0.75rem 1rem',
                 backgroundColor: 'transparent',
                 border: 'none',
-                color: lang.code === currentLanguage.code ? '#702963' : 'white',
+                color: lang.code === currentLanguage.code ? '#2e0d50' : 'white',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -80,7 +80,7 @@ const LanguageSwitcher: React.FC = () => {
                 textAlign: 'left'
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = 'rgba(112, 41, 99, 0.1)';
+                e.currentTarget.style.backgroundColor = 'rgba(46, 13, 80, 0.1)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.backgroundColor = 'transparent';

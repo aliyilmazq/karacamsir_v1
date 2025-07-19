@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import istanbulBg from '../assets/istanbul_1.jpg';
-import SubscriptionBox from "../components/SubscriptionBox/SubscriptionBox";
 
 const Home = () => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -240,108 +239,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section - Mobile Optimized */}
-      <section id="about" style={{ 
-        padding: windowSize.isMobile ? '3rem 1rem' : '5rem 2rem', 
-        borderTop: '1px solid #e0e0e0', 
-        backgroundColor: '#f8f9fa' 
-      }}>
-        <div style={{...containerStyle, padding: windowSize.isMobile ? '0 1rem' : '0 2rem'}}>
-          <div style={{ textAlign: 'center', marginBottom: windowSize.isMobile ? '2rem' : '4rem' }}>
-            <h2 style={{ 
-              fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
-              fontWeight: 200, 
-              marginBottom: '1rem', 
-              color: '#702963' 
-            }}>About Us</h2>
-          </div>
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: windowSize.isMobile ? '1fr' : 'repeat(auto-fit, minmax(400px, 1fr))', 
-            gap: windowSize.isMobile ? '2rem' : '4rem', 
-            alignItems: 'center' 
-          }}>
-            <div>
-              <h2 style={{ 
-                fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
-                fontWeight: 200, 
-                marginBottom: windowSize.isMobile ? '1.5rem' : '2rem' 
-              }}>
-                Why Choose 
-                <span style={{ color: '#702963' }}> KARAÇAM & ŞİR</span>
-              </h2>
-              <p style={{ 
-                fontSize: windowSize.isMobile ? '1rem' : '1.125rem', 
-                color: '#666', 
-                lineHeight: 1.8, 
-                marginBottom: windowSize.isMobile ? '1.5rem' : '2rem' 
-              }}>
-                We are a specialized law firm advising institutional clients on complex corporate 
-                transactions, infrastructure development, and technology ventures. Our integrated 
-                approach combines sector expertise with innovative legal solutions to deliver 
-                measurable value.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                {['Cross-Border Expertise', 'Sector-Specific Knowledge', 'Innovative Structuring', 'Integrated Solutions'].map((item, index) => (
-                  <li key={index} style={{ 
-                    marginBottom: '1rem', 
-                    paddingLeft: windowSize.isMobile ? '1.5rem' : '2rem',
-                    position: 'relative',
-                    fontSize: windowSize.isMobile ? '1rem' : '1.125rem'
-                  }}>
-                    <span style={{ 
-                      position: 'absolute', 
-                      left: 0, 
-                      color: '#702963',
-                      fontSize: windowSize.isMobile ? '1.25rem' : '1.5rem'
-                    }}>✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link to="/who-we-are" style={{ textDecoration: 'none' }}>
-                <button style={{
-                  marginTop: windowSize.isMobile ? '1.5rem' : '2rem',
-                  padding: windowSize.isMobile ? '0.875rem 1.5rem' : '1rem 2rem',
-                  backgroundColor: 'transparent',
-                  color: '#333',
-                  border: '1px solid #702963',
-                  fontSize: windowSize.isMobile ? '0.875rem' : '1rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                  width: windowSize.isMobile ? '100%' : 'auto' // Full width on mobile
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = '#702963';
-                  e.currentTarget.style.color = '#ffffff';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#333';
-                }}>
-                  Learn More About Us →
-                </button>
-              </Link>
-            </div>
-            {/* Testimonial card removed as requested */}
-          </div>
-        </div>
-      </section>
-
-      {/* SubscriptionBox Band */}
-      <div style={{
-        width: '100%',
-        background: 'linear-gradient(90deg, #f3e6f7 0%, #f8f9fa 100%)',
-        padding: windowSize.isMobile ? '2rem 0.5rem' : '2.5rem 0',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderTop: '1px solid #eee',
-        borderBottom: '1px solid #eee',
-        margin: 0
-      }}>
-        <SubscriptionBox />
-      </div>
 
       {/* Practice Areas/Services Section - Mobile Optimized */}
       <section id="practice-areas" style={{ 
@@ -355,7 +252,7 @@ const Home = () => {
               fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
               fontWeight: 200, 
               marginBottom: '1rem', 
-              color: '#702963' 
+              color: '#2e0d50' 
             }}>Our Expertise</h2>
           </div>
 
@@ -375,14 +272,14 @@ const Home = () => {
                     position: 'relative',
                     background: '#ffffff',
                     border: '2px solid',
-                    borderColor: hoveredService === index ? '#702963' : 'rgba(112, 41, 99, 0.2)',
+                    borderColor: hoveredService === index ? '#2e0d50' : 'rgba(46, 13, 80, 0.2)',
                     padding: '0',
                     overflow: 'hidden',
                     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     cursor: 'pointer',
                     transform: hoveredService === index ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
                     boxShadow: hoveredService === index 
-                      ? '0 20px 40px rgba(112, 41, 99, 0.3), inset 0 0 0 1px rgba(112, 41, 99, 0.2)' 
+                      ? '0 20px 40px rgba(46, 13, 80, 0.3), inset 0 0 0 1px rgba(46, 13, 80, 0.2)' 
                       : '0 4px 12px rgba(0, 0, 0, 0.1)',
                     clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)',
                     height: windowSize.isMobile ? 'auto' : '480px',
@@ -400,7 +297,7 @@ const Home = () => {
                     right: 0,
                     width: '20px',
                     height: '20px',
-                    backgroundColor: hoveredService === index ? '#702963' : 'rgba(112, 41, 99, 0.3)',
+                    backgroundColor: hoveredService === index ? '#2e0d50' : 'rgba(46, 13, 80, 0.3)',
                     clipPath: 'polygon(0 0, 100% 0, 100% 100%)',
                     transition: 'all 0.4s'
                   }} />
@@ -454,7 +351,7 @@ const Home = () => {
                       right: windowSize.isMobile ? '1rem' : '2rem',
                       fontSize: windowSize.isMobile ? '2.5rem' : '4rem',
                       fontWeight: '900',
-                      color: hoveredService === index ? '#702963' : 'rgba(112, 41, 99, 0.2)',
+                      color: hoveredService === index ? '#2e0d50' : 'rgba(46, 13, 80, 0.2)',
                       transition: 'all 0.4s',
                       lineHeight: 1,
                       fontFamily: 'Arial, sans-serif'
@@ -476,7 +373,7 @@ const Home = () => {
                     <div style={{
                       width: windowSize.isMobile ? '36px' : '48px',
                       height: '3px',
-                      backgroundColor: '#702963',
+                      backgroundColor: '#2e0d50',
                       margin: '0 auto 1rem auto',
                       transition: 'all 0.4s'
                     }} />
@@ -500,14 +397,14 @@ const Home = () => {
                       alignItems: 'center',
                       gap: '0.5rem',
                       justifyContent: 'center',
-                      color: '#702963',
+                      color: '#2e0d50',
                       fontSize: windowSize.isMobile ? '0.75rem' : '0.875rem',
                       fontWeight: 600,
                       opacity: windowSize.isMobile ? 1 : (hoveredService === index ? 1 : 0),
                       transform: windowSize.isMobile ? 'translateX(0)' : (hoveredService === index ? 'translateX(0)' : 'translateX(-10px)'),
                       transition: 'all 0.4s'
                     }}>
-                      <span style={{ color: '#702963' }}>Learn More</span>
+                      <span style={{ color: '#2e0d50' }}>Learn More</span>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
@@ -525,7 +422,7 @@ const Home = () => {
       <section id="contact" style={{ 
         padding: windowSize.isMobile ? '2rem 1rem' : '3rem 2rem', 
         borderTop: '1px solid #e0e0e0', 
-        backgroundColor: '#ffffff' 
+        backgroundColor: '#2e0d50' 
       }}>
         <div style={{...containerStyle, padding: windowSize.isMobile ? '0 1rem' : '0 2rem'}}>
           <div style={{ textAlign: 'center', marginBottom: windowSize.isMobile ? '1.5rem' : '2rem' }}>
@@ -533,7 +430,7 @@ const Home = () => {
               fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
               fontWeight: 200, 
               marginBottom: '0.5rem', 
-              color: '#702963' 
+              color: '#ffffff' 
             }}>Contact Us</h2>
           </div>
 
@@ -558,17 +455,17 @@ const Home = () => {
                   style={{
                     width: '100%', 
                     padding: windowSize.isMobile ? '12px 14px' : '10px 14px', 
-                    border: '1px solid #ddd', 
+                    border: '1px solid rgba(255, 255, 255, 0.3)', 
                     borderRadius: '4px',
                     fontSize: windowSize.isMobile ? '16px' : '0.95rem', // 16px prevents zoom on iOS
                     color: '#333', 
-                    backgroundColor: '#fff', 
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)', 
                     transition: 'all 0.3s',
                     outline: 'none',
                     WebkitAppearance: 'none' // Remove iOS styling
                   }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#702963'}
-                  onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#ffffff'}
+                  onBlur={e => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'}
                 />
                 <input 
                   type="email" 
@@ -589,7 +486,7 @@ const Home = () => {
                     outline: 'none',
                     WebkitAppearance: 'none'
                   }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                   onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                 />
                 <input 
@@ -610,7 +507,7 @@ const Home = () => {
                     outline: 'none',
                     WebkitAppearance: 'none'
                   }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                   onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                 />
               </div>
@@ -626,11 +523,11 @@ const Home = () => {
                   style={{
                     width: '100%', 
                     padding: windowSize.isMobile ? '12px 14px' : '10px 14px', 
-                    border: '1px solid #ddd', 
+                    border: '1px solid rgba(255, 255, 255, 0.3)', 
                     borderRadius: '4px',
                     fontSize: windowSize.isMobile ? '16px' : '0.95rem',
                     color: '#333', 
-                    backgroundColor: '#fff', 
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)', 
                     transition: 'all 0.3s', 
                     resize: 'vertical', 
                     minHeight: windowSize.isMobile ? '100px' : '80px',
@@ -639,8 +536,8 @@ const Home = () => {
                     WebkitAppearance: 'none',
                     fontFamily: 'inherit' // Ensure consistent font
                   }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#702963'}
-                  onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#ffffff'}
+                  onBlur={e => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'}
                 />
               </div>
               
@@ -650,8 +547,8 @@ const Home = () => {
                   disabled={isSubmitting} 
                   style={{
                     padding: windowSize.isMobile ? '12px 32px' : '10px 24px', 
-                    background: '#702963', 
-                    color: 'white', 
+                    background: '#ffffff', 
+                    color: '#2e0d50', 
                     border: 'none', 
                     borderRadius: '4px',
                     fontSize: windowSize.isMobile ? '16px' : '0.95rem', 
@@ -664,10 +561,14 @@ const Home = () => {
                     minHeight: '44px' // Minimum touch target size
                   }}
                   onMouseEnter={e => {
-                    if (!isSubmitting) e.currentTarget.style.background = '#702963';
+                    if (!isSubmitting) {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)';
+                      e.currentTarget.style.transform = 'scale(1.02)';
+                    }
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.background = '#702963';
+                    e.currentTarget.style.background = '#ffffff';
+                    e.currentTarget.style.transform = 'scale(1)';
                   }}
                 >
                   {isSubmitting ? 'Sending...' : submitMessage ? 'Sent ✓' : 'Send'}
@@ -691,7 +592,7 @@ const Home = () => {
             fontWeight: 200, 
             marginBottom: windowSize.isMobile ? '2rem' : '3rem', 
             textAlign: 'center', 
-            color: '#702963' 
+            color: '#2e0d50' 
           }}>
             Office Locations
           </h2>
@@ -725,7 +626,7 @@ const Home = () => {
                 <h3 style={{ 
                   fontSize: windowSize.isMobile ? '1.25rem' : '1.5rem', 
                   marginBottom: '1rem', 
-                  color: '#702963' 
+                  color: '#2e0d50' 
                 }}>
                   {office.city}
                 </h3>
@@ -740,7 +641,7 @@ const Home = () => {
                 <a 
                   href={`tel:${office.phone}`}
                   style={{ 
-                    color: '#702963', 
+                    color: '#2e0d50', 
                     textDecoration: 'none', 
                     fontWeight: 500,
                     fontSize: windowSize.isMobile ? '0.875rem' : '1rem'
@@ -789,6 +690,12 @@ const Home = () => {
             textarea {
               font-size: 16px !important;
             }
+          }
+          
+          /* Placeholder colors for contact form */
+          #contact input::placeholder,
+          #contact textarea::placeholder {
+            color: rgba(46, 13, 80, 0.6);
           }
         `}
       </style>

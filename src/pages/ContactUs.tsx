@@ -114,7 +114,7 @@ const ContactUs: React.FC = () => {
                   fontSize: windowSize.isMobile ? '1.5rem' : '2rem',
                   fontWeight: 300,
                   marginBottom: windowSize.isMobile ? '1.5rem' : '2rem',
-                  color: '#702963',
+                  color: '#2e0d50',
                   textAlign: 'center'
                 }}>
                   {t('contact.ourOffices', 'Our Offices')}
@@ -143,7 +143,7 @@ const ContactUs: React.FC = () => {
                         if (!windowSize.isMobile) {
                           e.currentTarget.style.transform = 'translateY(-4px)';
                           e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)';
-                          e.currentTarget.style.borderColor = '#702963';
+                          e.currentTarget.style.borderColor = '#2e0d50';
                         }
                       }}
                       onMouseLeave={e => {
@@ -156,7 +156,7 @@ const ContactUs: React.FC = () => {
                         fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
                         fontWeight: 400,
                         marginBottom: '1rem',
-                        color: '#702963',
+                        color: '#2e0d50',
                         letterSpacing: '1px'
                       }}>
                         {office.city}
@@ -173,7 +173,7 @@ const ContactUs: React.FC = () => {
                           <a 
                             href={`tel:${office.phone}`}
                             style={{
-                              color: '#702963',
+                              color: '#2e0d50',
                               textDecoration: 'none',
                               transition: 'color 0.3s ease',
                               fontWeight: 500
@@ -244,7 +244,7 @@ const ContactUs: React.FC = () => {
                         outline: 'none',
                         WebkitAppearance: 'none'
                       }}
-                      onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                      onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                       onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
@@ -269,7 +269,7 @@ const ContactUs: React.FC = () => {
                         outline: 'none',
                         WebkitAppearance: 'none'
                       }}
-                      onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                      onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                       onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
@@ -303,7 +303,7 @@ const ContactUs: React.FC = () => {
                         outline: 'none',
                         WebkitAppearance: 'none'
                       }}
-                      onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                      onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                       onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
@@ -327,7 +327,7 @@ const ContactUs: React.FC = () => {
                         outline: 'none',
                         WebkitAppearance: 'none'
                       }}
-                      onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                      onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                       onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                     />
                   </div>
@@ -354,7 +354,7 @@ const ContactUs: React.FC = () => {
                       outline: 'none',
                       WebkitAppearance: 'none'
                     }}
-                    onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                    onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                     onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                   />
                 </div>
@@ -385,7 +385,7 @@ const ContactUs: React.FC = () => {
                       WebkitAppearance: 'none',
                       fontFamily: 'inherit'
                     }}
-                    onFocus={e => e.currentTarget.style.borderColor = '#702963'}
+                    onFocus={e => e.currentTarget.style.borderColor = '#2e0d50'}
                     onBlur={e => e.currentTarget.style.borderColor = '#ddd'}
                   />
                 </div>
@@ -404,7 +404,7 @@ const ContactUs: React.FC = () => {
                     style={{
                       width: windowSize.isMobile ? '100%' : 'auto',
                       padding: windowSize.isMobile ? '14px 32px' : '14px 40px', 
-                      background: '#702963', 
+                      background: '#2e0d50', 
                       color: 'white', 
                       border: 'none', 
                       borderRadius: '4px',
@@ -420,13 +420,13 @@ const ContactUs: React.FC = () => {
                     }}
                     onMouseEnter={e => {
                       if (!isSubmitting && !windowSize.isMobile) {
-                        e.currentTarget.style.background = '#702963';
+                        e.currentTarget.style.background = '#2e0d50';
                         e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 10px 30px rgba(112, 41, 99, 0.3)';
+                        e.currentTarget.style.boxShadow = '0 10px 30px rgba(46, 13, 80, 0.3)';
                       }
                     }}
                     onMouseLeave={e => {
-                      e.currentTarget.style.background = '#702963';
+                      e.currentTarget.style.background = '#2e0d50';
                       e.currentTarget.style.transform = 'translateY(0)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
@@ -442,7 +442,7 @@ const ContactUs: React.FC = () => {
                     maxWidth: windowSize.isMobile ? '100%' : '300px'
                   }}>
                     By submitting this form, you agree to our{' '}
-                    <a href="/privacy" style={{ color: '#702963', textDecoration: 'none' }}>
+                    <a href="/privacy" style={{ color: '#2e0d50', textDecoration: 'none' }}>
                       Privacy Policy
                     </a>
                   </p>
@@ -475,7 +475,7 @@ const ContactUs: React.FC = () => {
           input:focus,
           textarea:focus,
           button:focus {
-            outline: 2px solid #702963;
+            outline: 2px solid #2e0d50;
             outline-offset: 2px;
           }
           
