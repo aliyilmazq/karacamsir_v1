@@ -166,23 +166,6 @@ const Team: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Responsive helper
-  const getResponsiveStyles = () => {
-    const isMobile = window.innerWidth < 768;
-    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-    return { isMobile, isTablet };
-  };
-
-  const [windowSize, setWindowSize] = useState(getResponsiveStyles());
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize(getResponsiveStyles());
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   const openModal = (member: TeamMember) => {
     setSelectedMember(member);
     setIsModalOpen(true);
@@ -211,12 +194,6 @@ const Team: React.FC = () => {
     };
   }, [isModalOpen]);
 
-  const containerStyle = {
-    maxWidth: '80rem',
-    margin: '0 auto',
-    padding: windowSize.isMobile ? '0 1rem' : '0 2rem'
-  };
-
   return (
     <>
       <PageHeaderSection
@@ -226,114 +203,42 @@ const Team: React.FC = () => {
       />
       
       <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-        <div style={{ 
-          ...containerStyle,
-          padding: windowSize.isMobile ? '3rem 1rem' : '5rem 2rem'
-        }}>
-          {/* Page Header */}
-          {/* Removed: <div> with 'Meet Our Team' and subtitle */}
-
+        <div className="team-container">
           {/* Team Grid */}
-          <div style={{ 
-            display: 'grid',
-            gridTemplateColumns: windowSize.isMobile ? 'repeat(2, 1fr)' : windowSize.isTablet ? 'repeat(3, 1fr)' : 'repeat(4, 1fr)',
-            gap: windowSize.isMobile ? '1rem' : '2rem'
-          }}>
+          <div className="team-grid">
             {teamData.map((member, index) => (
               <div
                 key={member.key}
+                className="team-member-wrapper"
                 style={{
-                  opacity: 1,
                   animation: `fadeInUp 0.8s ease forwards`,
                   animationDelay: `${index * 0.1}s`
                 }}
               >
                 <div
                   onClick={() => openModal(member)}
-                  style={{
-                    background: '#ffffff',
-                    border: '1px solid #e0e0e0',
-                    overflow: 'hidden',
-                    transition: 'all 0.4s ease',
-                    cursor: 'pointer',
-                    position: 'relative',
-                    borderRadius: '8px'
-                  }}
-                  onMouseEnter={e => {
-                    if (!windowSize.isMobile) {
-                      e.currentTarget.style.transform = 'translateY(-5px)';
-                      e.currentTarget.style.borderColor = '#2e0d50';
-                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(46, 13, 80, 0.2)';
-                    }
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.borderColor = '#e0e0e0';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
+                  className="team-member-card"
                 >
                   {/* Member Image/Initials */}
-                  <div style={{
-                    position: 'relative',
-                    width: '100%',
-                    paddingTop: '100%', // Kare oranı
-                    overflow: 'hidden',
-                    background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
-                    borderRadius: '8px'
-                  }}>
+                  <div className="member-image-container">
                     {member.photo ? (
                       <img
                         src={member.photo}
                         alt={member.name}
-                        style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          display: 'block',
-                          background: '#2e0d50',
-                          borderRadius: '8px'
-                        }}
+                        className="member-image"
                       />
                     ) : (
-                      <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: windowSize.isMobile ? '3rem' : '4rem',
-                        fontWeight: 300,
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        fontFamily: 'Georgia, serif',
-                        background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
-                        borderRadius: '8px'
-                      }}>
+                      <div className="member-initials">
                         {member.initials}
                       </div>
                     )}
                   </div>
 
                   {/* Member Info */}
-                  <div style={{
-                    padding: windowSize.isMobile ? '1.5rem 1rem' : '2rem',
-                    textAlign: 'center'
-                  }}>
-                    <h3 style={{
-                      fontSize: windowSize.isMobile ? '1.125rem' : '1.375rem',
-                      fontWeight: 400,
-                      letterSpacing: '1px',
-                      marginBottom: '0.5rem',
-                      color: '#333'
-                    }}>
+                  <div className="member-info">
+                    <h3 className="member-name">
                       {member.name}
                     </h3>
-                    {/* Ünvan kaldırıldı */}
                   </div>
                 </div>
               </div>
@@ -343,220 +248,67 @@ const Team: React.FC = () => {
 
         {/* Modal */}
         {isModalOpen && (
-          <div 
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              background: 'rgba(0, 0, 0, 0.9)',
-              display: 'flex',
-              alignItems: windowSize.isMobile ? 'flex-start' : 'center',
-              justifyContent: 'center',
-              zIndex: 2000,
-              opacity: isModalOpen ? 1 : 0,
-              transition: 'opacity 0.3s ease',
-              padding: windowSize.isMobile ? '0' : '2rem',
-              overflowY: 'auto'
-            }}
-          >
+          <div className={`modal ${isModalOpen ? 'open' : ''}`}>
             <div
               ref={modalRef}
-              style={{
-                background: '#ffffff',
-                border: '1px solid #e0e0e0',
-                maxWidth: windowSize.isMobile ? '100%' : '900px',
-                width: '100%',
-                maxHeight: windowSize.isMobile ? '100vh' : '90vh',
-                overflowY: 'auto',
-                position: 'relative',
-                transform: isModalOpen ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'transform 0.3s ease',
-                borderRadius: windowSize.isMobile ? '0' : '8px',
-                marginTop: windowSize.isMobile ? '0' : '2rem'
-              }}
+              className="modal-content"
             >
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                style={{
-                  position: windowSize.isMobile ? 'fixed' : 'absolute',
-                  top: windowSize.isMobile ? '1rem' : '2rem',
-                  right: windowSize.isMobile ? '1rem' : '2rem',
-                  width: '40px',
-                  height: '40px',
-                  background: 'rgba(0, 0, 0, 0.1)',
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  zIndex: 10,
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = 'rgba(0, 0, 0, 0.2)';
-                  e.currentTarget.style.transform = 'rotate(90deg)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = 'rgba(0, 0, 0, 0.1)';
-                  e.currentTarget.style.transform = 'rotate(0)';
-                }}
+                className="modal-close"
               >
-                <span style={{ fontSize: '1.5rem', color: '#333' }}>×</span>
+                <span>×</span>
               </button>
 
               {selectedMember && (
-                <div style={{
-                  padding: windowSize.isMobile ? '3rem 1.5rem' : '4rem',
-                  display: windowSize.isMobile ? 'block' : 'grid',
-                  gridTemplateColumns: windowSize.isMobile ? '1fr' : '300px 1fr',
-                  gap: windowSize.isMobile ? '2rem' : '4rem',
-                  alignItems: 'start'
-                }}>
-                  {/* Left Column - Image and Contact */}
-                  <div style={{ 
-                    position: windowSize.isMobile ? 'relative' : 'sticky',
-                    top: windowSize.isMobile ? '0' : '2rem'
-                  }}>
-                    <div style={{
-                      position: 'relative',
-                      width: '100%',
-                      paddingTop: '100%', // Kare oranı
-                      overflow: 'hidden',
-                      background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
-                      borderRadius: '8px',
-                      marginBottom: '2rem'
-                    }}>
+                <div className="modal-body">
+                  {/* Member Photo Section */}
+                  <div className="modal-image-section">
+                    <div className="modal-member-image-container">
                       {selectedMember.photo ? (
                         <img
                           src={selectedMember.photo}
                           alt={selectedMember.name}
-                          style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            display: 'block',
-                            background: '#2e0d50',
-                            borderRadius: '8px'
-                          }}
+                          className="modal-member-image"
                         />
                       ) : (
-                        <div style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '100%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: windowSize.isMobile ? '4rem' : '6rem',
-                          fontWeight: 300,
-                          color: 'rgba(255, 255, 255, 0.9)',
-                          fontFamily: 'Georgia, serif',
-                          background: 'linear-gradient(135deg, #2e0d50, #2e0d50)',
-                          borderRadius: '8px'
-                        }}>
+                        <div className="modal-member-initials">
                           {selectedMember.initials}
                         </div>
                       )}
                     </div>
-                    <div style={{ textAlign: 'center' }}>
+                    <div className="modal-contact">
                       <a
                         href={`mailto:${selectedMember.email}`}
-                        style={{
-                          color: '#2e0d50',
-                          textDecoration: 'none',
-                          fontSize: windowSize.isMobile ? '0.75rem' : '1rem',
-                          display: 'block',
-                          marginBottom: '0.5rem',
-                          transition: 'color 0.3s ease',
-                          wordBreak: 'break-all',
-                          overflowWrap: 'anywhere',
-                          hyphens: 'auto',
-                          lineHeight: '1.4',
-                          maxWidth: '100%',
-                          padding: windowSize.isMobile ? '0 0.5rem' : '0'
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
-                        onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
+                        className="modal-email"
                       >
                         {selectedMember.email}
                       </a>
-                      {/* Telefon numarası kaldırıldı */}
                     </div>
                   </div>
 
-                  {/* Right Column - Info */}
-                  <div style={{ color: '#333' }}>
-                    <h2 style={{
-                      fontSize: windowSize.isMobile ? '1.75rem' : '2.25rem',
-                      fontWeight: 300,
-                      letterSpacing: '1px',
-                      marginBottom: '0.5rem'
-                    }}>
+                  {/* Member Details Section */}
+                  <div className="modal-details">
+                    <h2 className="modal-name">
                       {selectedMember.name}
                     </h2>
-                    {/* Ünvan kaldırıldı */}
 
                     {selectedMember.intro && (
-                      <p style={{
-                        fontSize: windowSize.isMobile ? '0.875rem' : '1rem',
-                        lineHeight: 1.8,
-                        color: '#555',
-                        marginBottom: '2.5rem',
-                        textAlign: 'justify'
-                      }}>
+                      <p className="modal-intro">
                         {selectedMember.intro}
                       </p>
                     )}
 
                     {/* CV Sections */}
                     {selectedMember.cvSections.map((section, index) => (
-                      <div key={index} style={{ marginBottom: '2rem' }}>
-                        <h3 style={{
-                          fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
-                          fontWeight: 400,
-                          marginBottom: '1rem',
-                          color: '#333',
-                          position: 'relative',
-                          paddingBottom: '0.75rem'
-                        }}>
+                      <div key={index} className="cv-section">
+                        <h3 className="cv-section-title">
                           {section.title}
-                          <span style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '30px',
-                            height: '2px',
-                            background: '#2e0d50'
-                          }}></span>
                         </h3>
-                        <ul style={{
-                          listStyle: 'none',
-                          padding: 0,
-                          margin: 0,
-                          color: '#555',
-                          lineHeight: 1.8
-                        }}>
+                        <ul className="cv-section-list">
                           {section.items.map((item, itemIndex) => (
-                            <li key={itemIndex} style={{
-                              marginBottom: '0.5rem',
-                              paddingLeft: '1.5rem',
-                              position: 'relative',
-                              fontSize: windowSize.isMobile ? '0.875rem' : '0.9375rem'
-                            }}>
-                              <span style={{
-                                position: 'absolute',
-                                left: 0,
-                                color: '#2e0d50'
-                              }}>▸</span>
+                            <li key={itemIndex}>
                               {item}
                             </li>
                           ))}
@@ -571,49 +323,439 @@ const Team: React.FC = () => {
         )}
       </div>
 
-      <style>
-        {`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
+      <style jsx>{`
+        .team-container {
+          max-width: 80rem;
+          margin: 0 auto;
+          padding: 2rem 1rem;
+        }
+
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.75rem;
+        }
+
+        .team-member-wrapper {
+          opacity: 0;
+        }
+
+        .team-member-card {
+          background: #ffffff;
+          border: 1px solid #e0e0e0;
+          overflow: hidden;
+          transition: all 0.4s ease;
+          cursor: pointer;
+          position: relative;
+          border-radius: 4px;
+        }
+
+        .team-member-card:hover {
+          transform: translateY(-5px);
+          border-color: #2e0d50;
+          box-shadow: 0 10px 30px rgba(46, 13, 80, 0.2);
+        }
+
+        .member-image-container {
+          position: relative;
+          width: 100%;
+          padding-top: 100%;
+          overflow: hidden;
+          background: linear-gradient(135deg, #2e0d50, #2e0d50);
+        }
+
+        .member-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          background: #2e0d50;
+        }
+
+        .member-initials {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          font-weight: 300;
+          color: rgba(255, 255, 255, 0.9);
+          font-family: Georgia, serif;
+          background: linear-gradient(135deg, #2e0d50, #2e0d50);
+        }
+
+        .member-info {
+          padding: 0.75rem;
+          text-align: center;
+        }
+
+        .member-name {
+          font-size: 0.875rem;
+          font-weight: 400;
+          letter-spacing: 0.5px;
+          margin-bottom: 0;
+          color: #333;
+          line-height: 1.2;
+        }
+
+        .modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.9);
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          z-index: 2000;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          overflow-y: auto;
+        }
+
+        .modal.open {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .modal-content {
+          background: #ffffff;
+          border: 1px solid #e0e0e0;
+          width: 100%;
+          max-width: 100%;
+          height: 100vh;
+          overflow-y: auto;
+          position: relative;
+          transform: translateY(20px);
+          transition: transform 0.3s ease;
+        }
+
+        .modal.open .modal-content {
+          transform: translateY(0);
+        }
+
+        .modal-close {
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+          width: 40px;
+          height: 40px;
+          background: rgba(0, 0, 0, 0.1);
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          z-index: 10;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .modal-close:hover {
+          background: rgba(0, 0, 0, 0.2);
+          transform: rotate(90deg);
+        }
+
+        .modal-close span {
+          font-size: 1.5rem;
+          color: #333;
+        }
+
+        .modal-body {
+          padding: 3rem 1rem;
+        }
+
+        .modal-image-section {
+          position: relative;
+          max-width: 250px;
+          margin: 0 auto 2rem;
+        }
+
+        .modal-member-image-container {
+          position: relative;
+          width: 100%;
+          padding-top: 100%;
+          overflow: hidden;
+          background: linear-gradient(135deg, #2e0d50, #2e0d50);
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+        }
+
+        .modal-member-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          background: #2e0d50;
+          border-radius: 8px;
+        }
+
+        .modal-member-initials {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 3rem;
+          font-weight: 300;
+          color: rgba(255, 255, 255, 0.9);
+          font-family: Georgia, serif;
+          background: linear-gradient(135deg, #2e0d50, #2e0d50);
+          border-radius: 8px;
+        }
+
+        .modal-contact {
+          text-align: center;
+        }
+
+        .modal-email {
+          color: #2e0d50;
+          text-decoration: none;
+          font-size: 0.875rem;
+          display: block;
+          transition: color 0.3s ease;
+          word-break: break-all;
+          overflowWrap: anywhere;
+          hyphens: auto;
+          lineHeight: 1.4;
+          padding: 0 0.5rem;
+        }
+
+        .modal-email:hover {
+          text-decoration: underline;
+        }
+
+        .modal-details {
+          color: #333;
+        }
+
+        .modal-name {
+          font-size: 1.5rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        .modal-intro {
+          font-size: 0.875rem;
+          line-height: 1.8;
+          color: #555;
+          margin-bottom: 2rem;
+          text-align: justify;
+        }
+
+        .cv-section {
+          margin-bottom: 1.5rem;
+        }
+
+        .cv-section-title {
+          font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 0.75rem;
+          color: #333;
+          position: relative;
+          padding-bottom: 0.5rem;
+        }
+
+        .cv-section-title::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 30px;
+          height: 2px;
+          background: #2e0d50;
+        }
+
+        .cv-section-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          color: #555;
+          line-height: 1.8;
+        }
+
+        .cv-section-list li {
+          margin-bottom: 0.5rem;
+          padding-left: 1.5rem;
+          position: relative;
+          font-size: 0.875rem;
+        }
+
+        .cv-section-list li::before {
+          content: '▸';
+          position: absolute;
+          left: 0;
+          color: #2e0d50;
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Tablet styles */
+        @media (min-width: 768px) {
+          .team-container {
+            padding: 3rem 2rem;
           }
 
-          /* Prevent body scroll when modal is open */
-          body.modal-open {
-            overflow: hidden;
+          .team-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
           }
 
-          /* Smooth scrolling */
-          html {
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
+          .member-initials {
+            font-size: 3rem;
           }
 
-          /* Better scrollbar for modal */
-          .modal-content::-webkit-scrollbar {
-            width: 8px;
+          .member-info {
+            padding: 1.5rem;
           }
 
-          .modal-content::-webkit-scrollbar-track {
-            background: #f1f1f1;
+          .member-name {
+            font-size: 1.125rem;
           }
 
-          .modal-content::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 4px;
+          .modal-content {
+            max-width: 90%;
+            height: auto;
+            max-height: 90vh;
+            border-radius: 8px;
+            margin-top: 2rem;
           }
 
-          .modal-content::-webkit-scrollbar-thumb:hover {
-            background: #555;
+          .modal {
+            align-items: center;
+            padding: 2rem;
           }
-        `}
-      </style>
+
+          .modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+          }
+
+          .modal-body {
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+          }
+
+          .modal-image-section {
+            position: sticky;
+            top: 2rem;
+            max-width: 100%;
+          }
+
+          .modal-member-image-container {
+            margin-bottom: 2rem;
+          }
+
+          .modal-member-initials {
+            font-size: 5rem;
+          }
+
+          .modal-email {
+            font-size: 1rem;
+            padding: 0;
+          }
+
+          .modal-name {
+            font-size: 2rem;
+            text-align: left;
+          }
+
+          .modal-intro {
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+          }
+
+          .cv-section {
+            margin-bottom: 2rem;
+          }
+
+          .cv-section-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+          }
+
+          .cv-section-list li {
+            font-size: 0.9375rem;
+          }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+          .team-container {
+            padding: 5rem 2rem;
+          }
+
+          .team-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+          }
+
+          .member-initials {
+            font-size: 4rem;
+          }
+
+          .member-info {
+            padding: 2rem;
+          }
+
+          .member-name {
+            font-size: 1.375rem;
+            letter-spacing: 1px;
+          }
+
+          .modal-content {
+            max-width: 900px;
+          }
+
+          .modal-member-initials {
+            font-size: 6rem;
+          }
+
+          .modal-name {
+            font-size: 2.25rem;
+          }
+        }
+
+        /* Mobile hover prevention */
+        @media (hover: none) {
+          .team-member-card:hover {
+            transform: none;
+            border-color: #e0e0e0;
+            box-shadow: none;
+          }
+        }
+      `}</style>
     </>
   );
 };
