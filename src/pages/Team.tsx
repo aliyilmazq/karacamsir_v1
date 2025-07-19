@@ -333,13 +333,7 @@ const Team: React.FC = () => {
                     }}>
                       {member.name}
                     </h3>
-                    <p style={{
-                      fontSize: windowSize.isMobile ? '0.875rem' : '1rem',
-                      color: '#2e0d50',
-                      marginBottom: '1rem'
-                    }}>
-                      {member.title}
-                    </p>
+                    {/* Ünvan kaldırıldı */}
                   </div>
                 </div>
               </div>
@@ -514,14 +508,7 @@ const Team: React.FC = () => {
                     }}>
                       {selectedMember.name}
                     </h2>
-                    <p style={{
-                      fontSize: windowSize.isMobile ? '1rem' : '1.125rem',
-                      color: '#2e0d50',
-                      marginBottom: '2rem',
-                      fontWeight: 300
-                    }}>
-                      {selectedMember.title}
-                    </p>
+                    {/* Ünvan kaldırıldı */}
 
                     {selectedMember.intro && (
                       <p style={{
