@@ -252,7 +252,7 @@ const Home = () => {
               fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
               fontWeight: 200, 
               marginBottom: '1rem', 
-              color: '#5D3FD3' 
+              color: '#702963' 
             }}>About Us</h2>
           </div>
           <div style={{ 
@@ -355,7 +355,7 @@ const Home = () => {
               fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
               fontWeight: 200, 
               marginBottom: '1rem', 
-              color: '#5D3FD3' 
+              color: '#702963' 
             }}>Our Expertise</h2>
           </div>
 
@@ -533,7 +533,7 @@ const Home = () => {
               fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
               fontWeight: 200, 
               marginBottom: '0.5rem', 
-              color: '#5D3FD3' 
+              color: '#702963' 
             }}>Contact Us</h2>
           </div>
 
@@ -664,7 +664,7 @@ const Home = () => {
                     minHeight: '44px' // Minimum touch target size
                   }}
                   onMouseEnter={e => {
-                    if (!isSubmitting) e.currentTarget.style.background = '#5D3FD3';
+                    if (!isSubmitting) e.currentTarget.style.background = '#702963';
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.background = '#702963';
@@ -691,7 +691,7 @@ const Home = () => {
             fontWeight: 200, 
             marginBottom: windowSize.isMobile ? '2rem' : '3rem', 
             textAlign: 'center', 
-            color: '#5D3FD3' 
+            color: '#702963' 
           }}>
             Office Locations
           </h2>

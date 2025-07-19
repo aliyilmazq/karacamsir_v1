@@ -130,11 +130,11 @@ const Blog = () => {
         {/* Hero Section */}
         <section style={{ padding: '8rem 2rem 5rem', backgroundColor: '#ffffff' }}>
           <div style={containerStyle}>
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#5D3FD3' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 200, lineHeight: 1.1, marginBottom: '2rem', color: '#702963' }}>
               Blog &
               <span style={{ display: 'block', color: '#666666' }}>Insights</span>
             </h1>
-            <div style={{ width: '6rem', height: '1px', backgroundColor: '#5D3FD3', marginBottom: '2rem' }}></div>
+            <div style={{ width: '6rem', height: '1px', backgroundColor: '#702963', marginBottom: '2rem' }}></div>
             <p style={{ fontSize: '1.25rem', color: '#666666', maxWidth: '42rem', fontWeight: 300, lineHeight: 1.6 }}>
               Expert insights on complex corporate transactions, infrastructure projects, and technology 
               ventures from our specialized legal teams across multiple jurisdictions.
@@ -175,7 +175,7 @@ const Blog = () => {
                   position: 'absolute',
                   top: '1rem',
                   left: '1rem',
-                  backgroundColor: '#5D3FD3',
+                  backgroundColor: '#702963',
                   padding: '0.5rem 1rem',
                   borderRadius: '4px',
                   fontSize: '0.875rem',
@@ -211,7 +211,7 @@ const Blog = () => {
                   </div>
                   <button style={{
                     padding: '0.75rem 2rem',
-                    backgroundColor: '#5D3FD3',
+                    backgroundColor: '#702963',
                     color: 'white',
                     border: 'none',
                     fontSize: '1rem',
@@ -224,7 +224,7 @@ const Blog = () => {
                     e.currentTarget.style.transform = 'translateX(5px)';
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.backgroundColor = '#5D3FD3';
+                    e.currentTarget.style.backgroundColor = '#702963';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}>
                     Read More →
@@ -251,9 +251,9 @@ const Blog = () => {
                   onClick={() => setSelectedCategory(category)}
                   style={{
                     padding: '0.75rem 1.5rem',
-                    backgroundColor: selectedCategory === category ? '#8b5cf6' : 'transparent',
-                    color: 'white',
-                    border: `1px solid ${selectedCategory === category ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)'}`,
+                    backgroundColor: selectedCategory === category ? '#702963' : 'transparent',
+                    color: selectedCategory === category ? 'white' : '#333333',
+                    border: `1px solid ${selectedCategory === category ? '#702963' : '#e0e0e0'}`,
                     fontSize: '0.875rem',
                     cursor: 'pointer',
                     transition: 'all 0.3s',

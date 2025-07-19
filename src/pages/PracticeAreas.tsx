@@ -211,7 +211,7 @@ const PracticeAreas: React.FC = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
                       {service.subcategories.map((sub, subIndex) => (
                         <div key={subIndex}>
-                          <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#5D3FD3' }}>
+                          <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#702963' }}>
                             {sub.name}
                           </h4>
                           <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -225,7 +225,7 @@ const PracticeAreas: React.FC = () => {
                                 <span style={{ 
                                   position: 'absolute', 
                                   left: 0, 
-                                  color: '#5D3FD3'
+                                  color: '#702963'
                                 }}>•</span>
                                 {item}
                               </li>
