@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OG Image Generator - Karaçam & Şir</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1200px;
+            height: 630px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2e0d50 0%, #4a1d7d 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
+        }
+        
+        .content {
+            text-align: center;
+            z-index: 1;
+            color: white;
+            padding: 60px;
+        }
+        
+        .logo {
+            font-size: 80px;
+            font-weight: 200;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .ampersand {
+            font-size: 60px;
+            margin: 0 10px;
+        }
+        
+        .tagline {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .description {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.8;
+        }
+        
+        .locations {
+            font-size: 18px;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+        
+        .year {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 24px;
+            font-weight: 200;
+            opacity: 0.6;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern"></div>
+    <div class="content">
+        <div class="logo">
+            KARAÇAM <span class="ampersand">&</span> ŞİR
+        </div>
+        <div class="tagline">LAW FIRM</div>
+        <div class="description">
+            Professional legal services in corporate law, infrastructure projects,<br>
+            and technology ventures across Turkey, Central Asia, Europe, and America
+        </div>
+        <div class="locations">
+            ISTANBUL • LONDON • NEW YORK • ASTANA
+        </div>
+    </div>
+    <div class="year">EST. 2021</div>
+</body>
+</html>

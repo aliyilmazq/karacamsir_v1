@@ -42,8 +42,8 @@ const ContactUs: React.FC = () => {
     },
     {
       city: "Astana",
-      address: ["Mangilik El Avenue 55/20", "Esil District, EXPO Business Center", "Z05T8F6 Astana, Kazakhstan"],
-      phone: "+7 7172 123 456"
+      address: ["Koskharbayeva St. 10/115", "010010 Astana, Kazakhstan"],
+      phone: "+7 705 800 50 20"
     },
     {
       city: "London",
