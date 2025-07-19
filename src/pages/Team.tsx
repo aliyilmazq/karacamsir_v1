@@ -112,7 +112,7 @@ const teamData: TeamMember[] = [
     phone: '+90 212 123 4505',
     initials: 'CŞ',
     photo: CankatImg,
-    intro: 'Cankat Şir is a corporate and commercial lawyer focused on technology ventures. His practice covers startup law, venture capital transactions, data protection, and intellectual property. He advises emerging technology ventures and VCs and angel investors on complex projects, corporate structuring, and fundraising strategies, from seed rounds to Series A, B, C, and IPO and exit.',
+    intro: 'Cankat Şir is a corporate and commercial lawyer focused on technology ventures. His practice covers startup law, venture capital transactions, data protection, and intellectual property. He advises emerging technology startups, VCs and angel investors on complex projects, corporate structuring, and fundraising strategies, from seed rounds to Series A, B, C, and IPO & exit.',
     cvSections: [
       { title: 'Education', items: ['Ozyegin University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Technology & Ventures'] },
