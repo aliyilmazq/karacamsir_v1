@@ -157,7 +157,7 @@ const AboutUs: React.FC = () => {
                 color: '#333',
                 letterSpacing: '-0.02em'
               }}>
-                Boutique Excellence in <span style={{ color: '#5D3FD3' }}>International Law</span>
+                Boutique Excellence in <span style={{ color: '#702963' }}>International Law</span>
               </h1>
               
               <p style={{ 
@@ -182,7 +182,7 @@ const AboutUs: React.FC = () => {
               <div style={{
                 width: windowSize.isMobile ? '60px' : '80px',
                 height: '3px',
-                backgroundColor: '#5D3FD3',
+                backgroundColor: '#702963',
                 margin: '0 auto'
               }}></div>
             </div>
@@ -207,7 +207,7 @@ const AboutUs: React.FC = () => {
                 fontSize: windowSize.isMobile ? '1.5rem' : '2rem', 
                 fontWeight: 200, 
                 marginBottom: '1rem', 
-                color: '#5D3FD3' 
+                color: '#702963' 
               }}>Our Expertise</h2>
             </div>
             <div style={{ 
@@ -399,7 +399,7 @@ const AboutUs: React.FC = () => {
                     cursor: 'pointer',
                     transform: activeValue === index ? 'translateY(-8px)' : 'translateY(0)',
                     boxShadow: activeValue === index 
-                      ? '0 20px 40px rgba(93, 63, 211, 0.2)' 
+                      ? '0 20px 40px rgba(112, 41, 99, 0.2)' 
                       : '0 4px 12px rgba(0, 0, 0, 0.05)'
                   }}
                   onMouseEnter={() => !windowSize.isMobile && setActiveValue(index)}
@@ -418,7 +418,7 @@ const AboutUs: React.FC = () => {
                     fontSize: windowSize.isMobile ? '1.125rem' : '1.375rem', 
                     fontWeight: 500,
                     marginBottom: '1rem',
-                    color: activeValue === index ? '#5D3FD3' : '#333',
+                    color: activeValue === index ? '#702963' : '#333',
                     transition: 'all 0.3s ease'
                   }}>
                     {value.title}
@@ -435,7 +435,7 @@ const AboutUs: React.FC = () => {
             </div>
 
             <div style={{
-              backgroundColor: '#5D3FD3',
+              backgroundColor: '#702963',
               color: '#ffffff',
               padding: windowSize.isMobile ? '2rem 1.5rem' : '3rem',
               borderRadius: '8px',
@@ -494,7 +494,7 @@ const AboutUs: React.FC = () => {
                 >
                   <div style={{ order: windowSize.isMobile ? 1 : (index % 2 === 0 ? 1 : 2) }}>
                     <div style={{
-                      backgroundColor: '#5D3FD3',
+                      backgroundColor: '#702963',
                       color: '#ffffff',
                       padding: windowSize.isMobile ? '1.5rem' : '2rem',
                       borderRadius: '8px',
@@ -569,7 +569,7 @@ const AboutUs: React.FC = () => {
                 fontSize: windowSize.isMobile ? '1.5rem' : '2rem',
                 fontWeight: 300,
                 marginBottom: windowSize.isMobile ? '1.5rem' : '2rem',
-                color: '#5D3FD3'
+                color: '#702963'
               }}>
                 Precision-Oriented Legal Partnership
               </h2>
@@ -592,7 +592,7 @@ const AboutUs: React.FC = () => {
                 <a href="/contact" style={{ textDecoration: 'none', width: windowSize.isMobile ? '100%' : 'auto' }}>
                   <button style={{
                     padding: windowSize.isMobile ? '1rem 2rem' : '1rem 2.5rem',
-                    backgroundColor: '#5D3FD3',
+                    backgroundColor: '#702963',
                     color: '#ffffff',
                     border: 'none',
                     borderRadius: '4px',
@@ -600,19 +600,19 @@ const AboutUs: React.FC = () => {
                     fontWeight: 500,
                     cursor: 'pointer',
                     transition: 'all 0.3s',
-                    boxShadow: '0 4px 12px rgba(93, 63, 211, 0.3)',
+                    boxShadow: '0 4px 12px rgba(112, 41, 99, 0.3)',
                     width: windowSize.isMobile ? '100%' : 'auto',
                     minHeight: '44px'
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.backgroundColor = '#702963';
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 6px 20px rgba(93, 63, 211, 0.4)';
+                    e.currentTarget.style.boxShadow = '0 6px 20px rgba(112, 41, 99, 0.4)';
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.backgroundColor = '#5D3FD3';
+                    e.currentTarget.style.backgroundColor = '#702963';
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(93, 63, 211, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(112, 41, 99, 0.3)';
                   }}>
                     Get in Touch
                   </button>
@@ -621,8 +621,8 @@ const AboutUs: React.FC = () => {
                   <button style={{
                     padding: windowSize.isMobile ? '1rem 2rem' : '1rem 2.5rem',
                     backgroundColor: 'transparent',
-                    color: '#5D3FD3',
-                    border: '2px solid #5D3FD3',
+                    color: '#702963',
+                    border: '2px solid #702963',
                     borderRadius: '4px',
                     fontSize: windowSize.isMobile ? '0.875rem' : '1rem',
                     fontWeight: 500,
@@ -632,12 +632,12 @@ const AboutUs: React.FC = () => {
                     minHeight: '44px'
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.backgroundColor = '#5D3FD3';
+                    e.currentTarget.style.backgroundColor = '#702963';
                     e.currentTarget.style.color = '#ffffff';
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = '#5D3FD3';
+                    e.currentTarget.style.color = '#702963';
                   }}>
                     Meet Our Team
                   </button>

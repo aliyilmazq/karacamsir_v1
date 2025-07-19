@@ -5,13 +5,13 @@ import istanbulImage from "../assets/istanbul_1.jpg";
 const NasilYapariz: React.FC = () => (
   <>
     <PageHeaderSection
-      title="Nasıl Yaparız"
-      breadcrumb="Ana Sayfa / Nasıl Yaparız"
+      title="How We Work"
+      breadcrumb="Home / How We Work"
       backgroundImage={istanbulImage}
     />
     <section style={{ padding: '3rem 1rem', textAlign: 'center' }}>
-      <h1>Nasıl Yaparız</h1>
-      <p>Buraya işleyiş ve yaklaşım metni gelecek.</p>
+      <h1>How We Work</h1>
+      <p>Process and approach content will be added here.</p>
     </section>
   </>
 );

@@ -3,15 +3,15 @@ import React from 'react';
 const LegalInsightsQuarterly: React.FC = () => (
   <div style={{maxWidth: 900, margin: '0 auto', padding: 32}}>
     <h1>Legal Insights Quarterly</h1>
-    <p>Her çeyrekte yayımlanan “Legal Insights Quarterly”, hukuk dünyasındaki güncel gelişmeleri, mevzuat değişikliklerini ve önemli yargı kararlarını kapsamlı analizlerle sunar. Amacımız, müvekkillerimizi ve iş ortaklarımızı, hukuki riskler ve fırsatlar konusunda bilgilendirmek, stratejik karar alma süreçlerinde desteklemektir.</p>
+    <p>Published quarterly, "Legal Insights Quarterly" presents current developments in the legal world, legislative changes, and important judicial decisions with comprehensive analyses. Our goal is to inform our clients and business partners about legal risks and opportunities, and support them in strategic decision-making processes.</p>
     <ul>
-      <li><b>Ticaret Hukukunda Güncel Gelişmeler:</b> Son dönemde yürürlüğe giren ticaret hukuku düzenlemeleri ve iş dünyasına etkileri.</li>
-      <li><b>Kişisel Verilerin Korunması:</b> KVKK ve GDPR kapsamında veri işleme süreçlerinde dikkat edilmesi gerekenler, güncel idari para cezaları ve yargı kararları.</li>
-      <li><b>Teknoloji ve Hukuk:</b> Yapay zeka, blockchain ve kripto varlıklar alanında mevzuat ve uygulama gelişmeleri.</li>
-      <li><b>Yargı Kararları Analizi:</b> Yüksek Mahkeme kararlarının iş dünyası ve bireyler üzerindeki etkileri.</li>
-      <li><b>Uluslararası Tahkim ve Uyuşmazlık Çözümü:</b> Son dönemdeki önemli tahkim kararları ve uygulama örnekleri.</li>
+      <li><b>Current Developments in Commercial Law:</b> Recent commercial law regulations and their impact on the business world.</li>
+      <li><b>Personal Data Protection:</b> Key considerations in data processing under KVKK and GDPR, current administrative fines, and judicial decisions.</li>
+      <li><b>Technology and Law:</b> Legislative and implementation developments in artificial intelligence, blockchain, and crypto assets.</li>
+      <li><b>Judicial Decision Analysis:</b> The impact of High Court decisions on businesses and individuals.</li>
+      <li><b>International Arbitration and Dispute Resolution:</b> Recent important arbitration decisions and case studies.</li>
     </ul>
-    <p>Her sayımızda, alanında uzman avukatlarımızın kaleme aldığı makaleler ve pratik rehberler ile müvekkillerimizin hukuki farkındalığını artırmayı hedefliyoruz.</p>
+    <p>In each issue, we aim to increase our clients' legal awareness through articles and practical guides written by our expert lawyers in their respective fields.</p>
   </div>
 );
 

@@ -1,20 +1,20 @@
-# Kurumsal Hukuk Firması Web Sitesi
+# Corporate Law Firm Website
 
-Kurumsal, ciddi, modern ve iddialı bir hukuk firması için hazırlanmış SPA/PWA web uygulaması. 
+A SPA/PWA web application designed for a corporate, serious, modern, and prestigious law firm.
 
-- Ana renk: **#522D72**
-- Teknoloji: React + TypeScript
-- Tamamen izole frontend, sadece API ile backend iletişimi
-- Responsive ve stepper tabanlı kullanıcı akışı
+- Primary color: **#522D72**
+- Technology: React + TypeScript
+- Fully isolated frontend, backend communication via API only
+- Responsive and stepper-based user flow
 
-## Klasör Yapısı (Özet)
+## Folder Structure (Summary)
 
-- `src/components/` : UI bileşenleri
-- `src/pages/` : Sayfa bileşenleri
-- `src/api/` : API çağrıları
-- `src/styles/` : Tema ve global stiller
+- `src/components/` : UI components
+- `src/pages/` : Page components
+- `src/api/` : API calls
+- `src/styles/` : Theme and global styles
 
-## Kurulum
+## Installation
 
 ```bash
 npm install

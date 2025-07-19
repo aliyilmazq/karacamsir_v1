@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
 import istanbulImage from "../assets/istanbul_1.jpg";
 
-// Team member data (React objesi olarak)
+// Team member data (as React object)
 type TeamMember = {
   key: string;
   name: string;
@@ -21,74 +21,74 @@ const teamData: TeamMember[] = [
   {
     key: 'ozlem',
     name: 'Özlem Albayrak',
-    title: 'Avukat',
+    title: 'Lawyer',
     email: 'ozlem.albayrak@karacamsir.com',
     phone: '+90 212 123 4501',
     initials: 'ÖA',
-    education: ['İstanbul Üniversitesi Hukuk Fakültesi'],
-    specializations: ['Ticaret Hukuku'],
-    languages: ['Türkçe', 'İngilizce'],
-    bar: 'İstanbul Barosu'
+    education: ['Istanbul University Faculty of Law'],
+    specializations: ['Commercial Law'],
+    languages: ['Turkish', 'English'],
+    bar: 'Istanbul Bar Association'
   },
   {
     key: 'bahadir',
     name: 'Bahadır İşgören',
-    title: 'Avukat',
+    title: 'Lawyer',
     email: 'bahadir.isgoren@karacamsir.com',
     phone: '+90 212 123 4503',
     initials: 'Bİ',
-    education: ['Ankara Üniversitesi Hukuk Fakültesi'],
-    specializations: ['Ceza Hukuku'],
-    languages: ['Türkçe', 'İngilizce'],
-    bar: 'Ankara Barosu'
+    education: ['Ankara University Faculty of Law'],
+    specializations: ['Criminal Law'],
+    languages: ['Turkish', 'English'],
+    bar: 'Ankara Bar Association'
   },
   {
     key: 'furkan',
     name: 'Furkan Karaçam',
-    title: 'Avukat',
+    title: 'Lawyer',
     email: 'furkan.karacam@karacamsir.com',
     phone: '+90 212 123 4506',
     initials: 'FK',
-    education: ['İstanbul Bilgi Üniversitesi Hukuk Fakültesi'],
-    specializations: ['Vergi Hukuku'],
-    languages: ['Türkçe', 'İngilizce'],
-    bar: 'İstanbul Barosu'
+    education: ['Istanbul Bilgi University Faculty of Law'],
+    specializations: ['Tax Law'],
+    languages: ['Turkish', 'English'],
+    bar: 'Istanbul Bar Association'
   },
   {
     key: 'kerem',
     name: 'Kerem Seber',
-    title: 'Avukat',
+    title: 'Lawyer',
     email: 'kerem.seber@karacamsir.com',
     phone: '+90 212 123 4504',
     initials: 'KS',
-    education: ['Galatasaray Üniversitesi Hukuk Fakültesi'],
-    specializations: ['Şirketler Hukuku'],
-    languages: ['Türkçe', 'İngilizce'],
-    bar: 'İstanbul Barosu'
+    education: ['Galatasaray University Faculty of Law'],
+    specializations: ['Corporate Law'],
+    languages: ['Turkish', 'English'],
+    bar: 'Istanbul Bar Association'
   },
   {
     key: 'cankat',
     name: 'Cankat Şir',
-    title: 'Avukat',
+    title: 'Lawyer',
     email: 'cankat.sir@karacamsir.com',
     phone: '+90 212 123 4505',
     initials: 'CŞ',
-    education: ['Bilkent Üniversitesi Hukuk Fakültesi'],
-    specializations: ['Fikri Mülkiyet Hukuku'],
-    languages: ['Türkçe', 'İngilizce'],
-    bar: 'Ankara Barosu'
+    education: ['Bilkent University Faculty of Law'],
+    specializations: ['Intellectual Property Law'],
+    languages: ['Turkish', 'English'],
+    bar: 'Ankara Bar Association'
   },
   {
     key: 'burcu',
     name: 'Burcu Uman',
-    title: 'Avukat',
+    title: 'Lawyer',
     email: 'burcu.uman@karacamsir.com',
     phone: '+90 212 123 4502',
     initials: 'BU',
-    education: ['Marmara Üniversitesi Hukuk Fakültesi'],
-    specializations: ['İş Hukuku'],
-    languages: ['Türkçe', 'İngilizce'],
-    bar: 'İstanbul Barosu'
+    education: ['Marmara University Faculty of Law'],
+    specializations: ['Labor Law'],
+    languages: ['Turkish', 'English'],
+    bar: 'Istanbul Bar Association'
   }
 ].sort((a, b) => {
   const getLastName = (name: string) => name.trim().split(' ').slice(-1)[0].toLocaleLowerCase('tr');
@@ -446,7 +446,7 @@ const Team: React.FC = () => {
                         position: 'relative',
                         paddingBottom: '0.75rem'
                       }}>
-                        Eğitim
+                        Education
                         <span style={{
                           position: 'absolute',
                           bottom: 0,
@@ -491,7 +491,7 @@ const Team: React.FC = () => {
                         position: 'relative',
                         paddingBottom: '0.75rem'
                       }}>
-                        Uzmanlık Alanları
+                        Areas of Expertise
                         <span style={{
                           position: 'absolute',
                           bottom: 0,
@@ -530,7 +530,7 @@ const Team: React.FC = () => {
                         position: 'relative',
                         paddingBottom: '0.75rem'
                       }}>
-                        Diller
+                        Languages
                         <span style={{
                           position: 'absolute',
                           bottom: 0,
@@ -558,7 +558,7 @@ const Team: React.FC = () => {
                         position: 'relative',
                         paddingBottom: '0.75rem'
                       }}>
-                        Baro Kaydı
+                        Bar Registration
                         <span style={{
                           position: 'absolute',
                           bottom: 0,

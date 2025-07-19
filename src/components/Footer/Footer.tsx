@@ -18,10 +18,10 @@ const Footer: React.FC = () => {
     try {
       // TODO: Implement actual subscription logic
       await new Promise(resolve => setTimeout(resolve, 1000));
-      setMessage('Başarıyla abone oldunuz!');
+      setMessage('Successfully subscribed!');
       setEmail('');
     } catch (error) {
-      setMessage('Bir hata oluştu. Lütfen tekrar deneyin.');
+      setMessage('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -65,13 +65,13 @@ const Footer: React.FC = () => {
           </div>
           <div className="footer__right">
             <form onSubmit={handleSubscribe} className="footer__subscription-form">
-              <label className="footer__subscription-label">Bülten:</label>
+              <label className="footer__subscription-label">Newsletter:</label>
               <div className="footer__subscription-wrapper">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-posta"
+                  placeholder="Email"
                   className="footer__subscription-input"
                   required
                 />
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
               </div>
             </form>
             {message && (
-              <p className={`footer__subscription-message ${message.includes('hata') ? 'error' : 'success'}`}>
+              <p className={`footer__subscription-message ${message.includes('error') ? 'error' : 'success'}`}>
                 {message}
               </p>
             )}

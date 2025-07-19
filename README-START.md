@@ -1,44 +1,44 @@
-# Uygulamayı Başlatma Kılavuzu
+# Application Startup Guide
 
-## Hızlı Başlangıç
+## Quick Start
 
-### Yöntem 1: Çift Tıklama (Önerilen)
-1. Finder'da `start-dev.command` dosyasını bulun
-2. Dosyaya çift tıklayın
-3. Terminal açılacak ve uygulama otomatik başlayacak
-4. Tarayıcınız otomatik olarak http://localhost:3000 adresini açacak
+### Method 1: Double Click (Recommended)
+1. Find the `start-dev.command` file in Finder
+2. Double-click the file
+3. Terminal will open and the application will start automatically
+4. Your browser will automatically open http://localhost:3000
 
-### Yöntem 2: Terminal Kullanarak
+### Method 2: Using Terminal
 ```bash
 cd /Users/aliyilmaz/Desktop/karacamsir_v1
 npm start
 ```
 
-## Sorun Giderme
+## Troubleshooting
 
-### "ERR_CONNECTION_REFUSED" Hatası
-1. Terminal'i açın
-2. Şu komutları sırayla çalıştırın:
+### "ERR_CONNECTION_REFUSED" Error
+1. Open Terminal
+2. Run these commands in order:
 ```bash
 cd /Users/aliyilmaz/Desktop/karacamsir_v1
 lsof -ti:3000 | xargs kill -9
 npm start
 ```
 
-### Port Kullanımda Hatası
-Farklı bir port kullanmak için:
+### Port Already in Use Error
+To use a different port:
 ```bash
 PORT=3001 npm start
 ```
 
-### Bağımlılıkları Yeniden Yükle
+### Reinstall Dependencies
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 npm start
 ```
 
-## Önemli Notlar
-- Node.js v20 veya üzeri gereklidir
-- İlk başlatmada bağımlılıkların yüklenmesi biraz zaman alabilir
-- Uygulama başladıktan sonra tarayıcınız otomatik açılmazsa http://localhost:3000 adresine gidin
+## Important Notes
+- Node.js v20 or higher is required
+- First startup may take some time while dependencies are installed
+- If your browser doesn't open automatically after startup, go to http://localhost:3000

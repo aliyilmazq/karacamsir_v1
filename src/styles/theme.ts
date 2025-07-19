@@ -1,9 +1,9 @@
-// Tema renkleri ve fontlar merkezi olarak burada tanımlanır
+// Theme colors and fonts are defined centrally here
 
 export const theme = {
   colors: {
-    primary: '#702963', // Ana mor
-    secondary: '#702963', // Açık mor
+    primary: '#702963', // Main purple
+    secondary: '#702963', // Light purple
     background: 'linear-gradient(135deg, #702963 60%, #702963 100%)',
     card: '#702963',
     text: '#fff',
@@ -15,6 +15,6 @@ export const theme = {
     main: 'Montserrat, Inter, Arial, sans-serif',
     heading: 'Montserrat, Arial, sans-serif',
   },
-  borderRadius: '0px', // Köşeli ve ciddi
-  boxShadow: '0 2px 8px rgba(82,45,114,0.18)', // Daha net gölge
+  borderRadius: '0px', // Angular and serious
+  boxShadow: '0 2px 8px rgba(82,45,114,0.18)', // Sharper shadow
 };

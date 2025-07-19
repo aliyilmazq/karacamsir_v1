@@ -5,13 +5,13 @@ import istanbulImage from "../assets/istanbul_1.jpg";
 const BizKimiz: React.FC = () => (
   <>
     <PageHeaderSection
-      title="Biz Kimiz"
-      breadcrumb="Ana Sayfa / Biz Kimiz"
+      title="Who We Are"
+      breadcrumb="Home / Who We Are"
       backgroundImage={istanbulImage}
     />
     <section style={{ padding: '3rem 1rem', textAlign: 'center' }}>
-      <h1>Biz Kimiz</h1>
-      <p>Buraya ekip ve kurum hakkında içerik gelecek.</p>
+      <h1>Who We Are</h1>
+      <p>Content about our team and institution will be added here.</p>
     </section>
   </>
 );
