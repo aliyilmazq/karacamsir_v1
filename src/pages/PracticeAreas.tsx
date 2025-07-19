@@ -172,14 +172,14 @@ const PracticeAreas: React.FC = () => {
                     padding: '2rem',
                     transition: 'all 0.5s',
                     cursor: 'pointer',
-                    backgroundColor: hoveredCard === index ? '#702963' : '#ffffff',
+                    backgroundColor: hoveredCard === index ? '#2e0d50' : '#ffffff',
                   }}
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '0.5rem' }}>
-                        <span style={{ fontSize: '2rem', color: hoveredCard === index ? '#ffffff' : '#702963', fontWeight: 300 }}>
+                        <span style={{ fontSize: '2rem', color: hoveredCard === index ? '#ffffff' : '#2e0d50', fontWeight: 300 }}>
                           {service.number}
                         </span>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: hoveredCard === index ? '#ffffff' : '#333' }}>
@@ -193,7 +193,7 @@ const PracticeAreas: React.FC = () => {
                     </div>
                     <div style={{
                       fontSize: '1.5rem',
-                      color: hoveredCard === index ? '#ffffff' : '#702963',
+                      color: hoveredCard === index ? '#ffffff' : '#2e0d50',
                       transform: activeIndex === index ? 'rotate(180deg)' : 'rotate(0deg)',
                       transition: 'transform 0.3s, color 0.3s'
                     }}>
@@ -211,7 +211,7 @@ const PracticeAreas: React.FC = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
                       {service.subcategories.map((sub, subIndex) => (
                         <div key={subIndex}>
-                          <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#702963' }}>
+                          <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#2e0d50' }}>
                             {sub.name}
                           </h4>
                           <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -225,7 +225,7 @@ const PracticeAreas: React.FC = () => {
                                 <span style={{ 
                                   position: 'absolute', 
                                   left: 0, 
-                                  color: '#702963'
+                                  color: '#2e0d50'
                                 }}>•</span>
                                 {item}
                               </li>

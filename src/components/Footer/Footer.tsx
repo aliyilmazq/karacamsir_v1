@@ -33,19 +33,19 @@ const Footer: React.FC = () => {
         <div className="footer__content">
           <div className="footer__left">
             <div className="footer__links">
-              <Link to="/legal-insights-quarterly" className="footer__link">
+              <Link to="/legal-insights-quarterly" className="footer__link" tabIndex={-1} style={{ pointerEvents: 'none', opacity: 0.5 }}>
                 Legal Insights Quarterly
               </Link>
               <span className="footer__divider">|</span>
-              <Link to="/declaration-clean-conduct" className="footer__link">
+              <Link to="/declaration-clean-conduct" className="footer__link" tabIndex={-1} style={{ pointerEvents: 'none', opacity: 0.5 }}>
                 Declaration on Promotion of Clean Conduct
               </Link>
               <span className="footer__divider">|</span>
-              <Link to="/compliance" className="footer__link">
+              <Link to="/compliance" className="footer__link" tabIndex={-1} style={{ pointerEvents: 'none', opacity: 0.5 }}>
                 Compliance
               </Link>
               <span className="footer__divider">|</span>
-              <Link to="/privacy-notice" className="footer__link">
+              <Link to="/privacy-notice" className="footer__link" tabIndex={-1} style={{ pointerEvents: 'none', opacity: 0.5 }}>
                 Privacy Notice
               </Link>
               <span className="footer__divider">|</span>

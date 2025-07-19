@@ -2,13 +2,13 @@
 
 export const theme = {
   colors: {
-    primary: '#702963', // Main purple
-    secondary: '#702963', // Light purple
-    background: 'linear-gradient(135deg, #702963 60%, #702963 100%)',
-    card: '#702963',
+    primary: '#2e0d50', // Main purple
+    secondary: '#2e0d50', // Light purple
+    background: 'linear-gradient(135deg, #2e0d50 60%, #2e0d50 100%)',
+    card: '#2e0d50',
     text: '#fff',
     white: '#fff',
-    accent: '#702963',
+    accent: '#2e0d50',
     error: '#fff',
   },
   fonts: {

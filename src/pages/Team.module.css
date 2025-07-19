@@ -104,7 +104,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #702963, transparent);
+  background: linear-gradient(90deg, transparent, #2e0d50, transparent);
   transform: translateX(-100%);
   transition: transform 0.6s ease;
 }
@@ -113,14 +113,14 @@
 }
 .memberCard:hover {
   transform: translateY(-5px);
-  border-color: #702963;
+  border-color: #2e0d50;
   background: rgba(255, 255, 255, 0.04);
 }
 .memberImageContainer {
   position: relative;
   height: 350px;
   overflow: hidden;
-  background: linear-gradient(135deg, #702963, #702963);
+  background: linear-gradient(135deg, #2e0d50, #2e0d50);
 }
 .placeholderImage {
   width: 100%;
@@ -128,7 +128,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #702963, #702963);
+  background: linear-gradient(135deg, #2e0d50, #2e0d50);
   color: rgba(255, 255, 255, 0.3);
   font-size: 80px;
   font-weight: 300;
@@ -160,11 +160,11 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #702963;
+  background: #2e0d50;
   transition: width 0.3s ease;
 }
 .memberEmail:hover {
-  color: #702963;
+  color: #2e0d50;
 }
 .memberEmail:hover::after {
   width: 100%;
@@ -191,8 +191,8 @@
   opacity: 1;
 }
 .modalContent {
-  background: linear-gradient(135deg, #702963, #702963);
-  border: 1px solid #702963;
+  background: linear-gradient(135deg, #2e0d50, #2e0d50);
+  border: 1px solid #2e0d50;
   max-width: 900px;
   width: 100%;
   max-height: 90vh;
@@ -250,7 +250,7 @@
 .modalImageContainer {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #702963, #702963);
+  background: linear-gradient(135deg, #2e0d50, #2e0d50);
   margin-bottom: 30px;
   overflow: hidden;
 }
@@ -269,7 +269,7 @@
   text-align: center;
 }
 .modalEmail {
-  color: #702963;
+  color: #2e0d50;
   text-decoration: none;
   font-size: 16px;
   display: block;
@@ -294,7 +294,7 @@
 }
 .modalTitle {
   font-size: 18px;
-  color: #702963;
+  color: #2e0d50;
   margin-bottom: 30px;
   font-weight: 300;
 }
@@ -323,7 +323,7 @@
   left: 0;
   width: 30px;
   height: 1px;
-  background: #702963;
+  background: #2e0d50;
 }
 .modalList {
   list-style: none;
@@ -341,7 +341,7 @@
   content: '▸';
   position: absolute;
   left: 0;
-  color: #702963;
+  color: #2e0d50;
 }
 /* Responsive Modal */
 @media (max-width: 768px) {
