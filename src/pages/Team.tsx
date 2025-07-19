@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
 import istanbulImage from "../assets/istanbul_1.jpg";
 
-// Team member data (React objesi olarak)
+// Team member data (as React object)
 type TeamMember = {
   key: string;
   name: string;

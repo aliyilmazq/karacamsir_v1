@@ -2,16 +2,16 @@ import React from 'react';
 
 const Compliance: React.FC = () => (
   <div style={{maxWidth: 900, margin: '0 auto', padding: 32}}>
-    <h1>Compliance (Uyum Politikası)</h1>
-    <p>Karaçam & Şir, faaliyet gösterdiği tüm alanlarda ulusal ve uluslararası mevzuata tam uyum sağlamayı temel ilke olarak benimser. Uyum politikamızın ana unsurları şunlardır:</p>
+    <h1>Compliance Policy</h1>
+    <p>KARAÇAM & ŞİR adopts full compliance with national and international legislation in all areas of its operations as a fundamental principle. The main elements of our compliance policy are:</p>
     <ul>
-      <li><b>Mevzuata Uyum:</b> Tüm hizmetlerimiz, Türkiye Cumhuriyeti yasaları ve ilgili uluslararası düzenlemeler çerçevesinde yürütülür.</li>
-      <li><b>İç Denetim ve Kontrol:</b> Uyum süreçlerimiz düzenli olarak gözden geçirilir, risk analizleri yapılır ve iç denetim mekanizmaları işletilir.</li>
-      <li><b>Eğitim ve Farkındalık:</b> Çalışanlarımız, mevzuat değişiklikleri ve uyum gereklilikleri konusunda düzenli olarak eğitilir.</li>
-      <li><b>İhbar ve Bildirim:</b> Uyum ihlallerinin tespiti için güvenli ve gizli ihbar kanalları oluşturulmuştur. Tüm bildirimler titizlikle incelenir ve gerekli aksiyonlar alınır.</li>
-      <li><b>Yaptırımlar ve Sorumluluk:</b> Uyum ihlallerine karşı disiplin süreçleri işletilir, gerekli durumlarda yasal mercilere başvurulur.</li>
+      <li><b>Legal Compliance:</b> All our services are conducted within the framework of the laws of the Republic of Turkey and relevant international regulations.</li>
+      <li><b>Internal Audit and Control:</b> Our compliance processes are regularly reviewed, risk analyses are conducted, and internal audit mechanisms are operated.</li>
+      <li><b>Training and Awareness:</b> Our employees are regularly trained on legislative changes and compliance requirements.</li>
+      <li><b>Reporting and Notification:</b> Secure and confidential reporting channels have been established for detecting compliance violations. All reports are carefully reviewed and necessary actions are taken.</li>
+      <li><b>Sanctions and Responsibility:</b> Disciplinary processes are implemented against compliance violations, and legal authorities are contacted when necessary.</li>
     </ul>
-    <p>Uyum politikamız, müvekkillerimizin ve iş ortaklarımızın güvenliğini ve itibarını korumak için sürekli olarak güncellenir ve geliştirilir.</p>
+    <p>Our compliance policy is continuously updated and improved to protect the security and reputation of our clients and business partners.</p>
   </div>
 );
 
