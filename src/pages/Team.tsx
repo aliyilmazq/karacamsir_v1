@@ -1,6 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PageHeaderSection from "../components/PageHeaderSection/PageHeaderSection";
 import istanbulImage from "../assets/istanbul_1.jpg";
+import BahadirImg from "../assets/team_photos/bahadır.png";
+import BiancaImg from "../assets/team_photos/bianca.png";
+import BurcuImg from "../assets/team_photos/Burcu UMAN.jpg";
+import KeremImg from "../assets/team_photos/Kerem SEBER.JPG";
+import FurkanImg from "../assets/team_photos/H.Furkan KARAÇAM.JPG";
+import OzlemImg from "../assets/team_photos/Özlem ALBAYRAK.jpeg";
+import CankatImg from "../assets/team_photos/Cankat Şir.JPG";
 
 // Team member data (as React object)
 type TeamMember = {
@@ -15,6 +22,7 @@ type TeamMember = {
   languages: string[];
   bar: string;
   bio?: string;
+  photo?: string;
 };
 
 const teamData: TeamMember[] = [
@@ -28,7 +36,8 @@ const teamData: TeamMember[] = [
     education: ['Istanbul University Faculty of Law'],
     specializations: ['Commercial Law'],
     languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association'
+    bar: 'Istanbul Bar Association',
+    photo: OzlemImg
   },
   {
     key: 'bahadir',
@@ -40,7 +49,8 @@ const teamData: TeamMember[] = [
     education: ['Ankara University Faculty of Law'],
     specializations: ['Criminal Law'],
     languages: ['Turkish', 'English'],
-    bar: 'Ankara Bar Association'
+    bar: 'Ankara Bar Association',
+    photo: BahadirImg
   },
   {
     key: 'furkan',
@@ -52,7 +62,8 @@ const teamData: TeamMember[] = [
     education: ['Istanbul Bilgi University Faculty of Law'],
     specializations: ['Tax Law'],
     languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association'
+    bar: 'Istanbul Bar Association',
+    photo: FurkanImg
   },
   {
     key: 'kerem',
@@ -64,7 +75,8 @@ const teamData: TeamMember[] = [
     education: ['Galatasaray University Faculty of Law'],
     specializations: ['Corporate Law'],
     languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association'
+    bar: 'Istanbul Bar Association',
+    photo: KeremImg
   },
   {
     key: 'cankat',
@@ -76,7 +88,8 @@ const teamData: TeamMember[] = [
     education: ['Bilkent University Faculty of Law'],
     specializations: ['Intellectual Property Law'],
     languages: ['Turkish', 'English'],
-    bar: 'Ankara Bar Association'
+    bar: 'Ankara Bar Association',
+    photo: CankatImg
   },
   {
     key: 'burcu',
@@ -88,7 +101,21 @@ const teamData: TeamMember[] = [
     education: ['Marmara University Faculty of Law'],
     specializations: ['Labor Law'],
     languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association'
+    bar: 'Istanbul Bar Association',
+    photo: BurcuImg
+  },
+  {
+    key: 'bianca',
+    name: 'Bianca Geangalau',
+    title: 'Lawyer',
+    email: 'bianca.geangalau@karacamsir.com',
+    phone: '+90 212 123 4507',
+    initials: 'BG',
+    education: ['Bucharest University Faculty of Law'],
+    specializations: ['International Law'],
+    languages: ['Romanian', 'English', 'Turkish'],
+    bar: 'Bucharest Bar Association',
+    photo: BiancaImg
   }
 ].sort((a, b) => {
   const getLastName = (name: string) => name.trim().split(' ').slice(-1)[0].toLocaleLowerCase('tr');
@@ -209,23 +236,48 @@ const Team: React.FC = () => {
                   {/* Member Image/Initials */}
                   <div style={{
                     position: 'relative',
-                    height: windowSize.isMobile ? '200px' : '300px',
+                    width: '100%',
+                    paddingTop: '100%', // Kare oranı
                     overflow: 'hidden',
-                    background: 'linear-gradient(135deg, #702963, #702963)'
+                    background: 'linear-gradient(135deg, #702963, #702963)',
+                    borderRadius: '8px'
                   }}>
-                    <div style={{
-                      width: '100%',
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: windowSize.isMobile ? '3rem' : '4rem',
-                      fontWeight: 300,
-                      color: 'rgba(255, 255, 255, 0.9)',
-                      fontFamily: 'Georgia, serif'
-                    }}>
-                      {member.initials}
-                    </div>
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                          background: '#702963',
+                          borderRadius: '8px'
+                        }}
+                      />
+                    ) : (
+                      <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: windowSize.isMobile ? '3rem' : '4rem',
+                        fontWeight: 300,
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        fontFamily: 'Georgia, serif',
+                        background: 'linear-gradient(135deg, #702963, #702963)',
+                        borderRadius: '8px'
+                      }}>
+                        {member.initials}
+                      </div>
+                    )}
                   </div>
 
                   {/* Member Info */}
@@ -359,26 +411,50 @@ const Team: React.FC = () => {
                     top: windowSize.isMobile ? '0' : '2rem'
                   }}>
                     <div style={{
+                      position: 'relative',
                       width: '100%',
-                      height: windowSize.isMobile ? '250px' : '350px',
-                      background: 'linear-gradient(135deg, #702963, #702963)',
-                      marginBottom: '2rem',
+                      paddingTop: '100%', // Kare oranı
                       overflow: 'hidden',
-                      borderRadius: '8px'
+                      background: 'linear-gradient(135deg, #702963, #702963)',
+                      borderRadius: '8px',
+                      marginBottom: '2rem'
                     }}>
-                      <div style={{
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: windowSize.isMobile ? '4rem' : '6rem',
-                        fontWeight: 300,
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        fontFamily: 'Georgia, serif'
-                      }}>
-                        {selectedMember.initials}
-                      </div>
+                      {selectedMember.photo ? (
+                        <img
+                          src={selectedMember.photo}
+                          alt={selectedMember.name}
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            display: 'block',
+                            background: '#702963',
+                            borderRadius: '8px'
+                          }}
+                        />
+                      ) : (
+                        <div style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: windowSize.isMobile ? '4rem' : '6rem',
+                          fontWeight: 300,
+                          color: 'rgba(255, 255, 255, 0.9)',
+                          fontFamily: 'Georgia, serif',
+                          background: 'linear-gradient(135deg, #702963, #702963)',
+                          borderRadius: '8px'
+                        }}>
+                          {selectedMember.initials}
+                        </div>
+                      )}
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <a

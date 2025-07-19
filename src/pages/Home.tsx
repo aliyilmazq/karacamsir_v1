@@ -74,7 +74,7 @@ const Home = () => {
   const offices = [
     {
       city: 'Istanbul',
-      address: 'Levent Mahallesi, Büyükdere Caddesi No: 199, 34394 Şişli/Istanbul, Turkey',
+      address: 'Kısıklı Mah. Gurbet Sokak Rumeli Plaza No: 12/5 Üsküdar/Istanbul, Turkey',
       phone: '+90 212 123 45 67'
     },
     {
@@ -84,12 +84,12 @@ const Home = () => {
     },
     {
       city: 'London',
-      address: '100 Bishopsgate, London EC2N 4AG, United Kingdom',
+      address: '115 Mount Street, Flat 3, London W1K 3NQ, United Kingdom',
       phone: '+44 20 1234 5678'
     },
     {
       city: 'New York',
-      address: '1 Wall Street, New York, NY 10005, United States',
+      address: '447 Broadway, 2nd Floor Suite #2069, New York, NY 10013, United States',
       phone: '+1 212 123 4567'
     }
   ];

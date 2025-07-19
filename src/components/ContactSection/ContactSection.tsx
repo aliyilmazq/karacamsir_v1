@@ -7,13 +7,13 @@ const ContactSection: React.FC = () => {
       <h2 className="contact__title">Contact</h2>
       <div className="contact__info">
         <div>
-          <strong>Address:</strong> Sample District Law St. No:1, Istanbul
+          <strong>Address:</strong> Kısıklı Mah. Gurbet Sokak Rumeli Plaza No: 12/5 Üsküdar, Istanbul
         </div>
         <div>
-          <strong>Phone:</strong> +90 212 000 00 00
+          <strong>Phone:</strong> +90 212 123 45 67
         </div>
         <div>
-          <strong>Email:</strong> info@lawfirm.com
+          <strong>Email:</strong> info@karacamsir.com
         </div>
       </div>
       <form className="contact__form">
