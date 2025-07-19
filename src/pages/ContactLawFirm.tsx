@@ -22,17 +22,17 @@ const ContactLawFirm: React.FC = () => {
   const offices = [
     {
       city: "Istanbul - Head Office",
-      address: ["Levent, Buyukdere Avenue No: 185", "Kanyon Office Block Floor: 18", "34394 Sisli, Istanbul"],
+      address: ["Kısıklı Mah. Gurbet Sokak", "Rumeli Plaza No: 12/5", "Üsküdar, Istanbul"],
       phone: "+90 212 123 4567",
       fax: "+90 212 123 4568",
       hours: "Monday - Friday: 09:00 - 18:00"
     },
     {
-      city: "Ankara Office",
-      address: ["Cankaya, Kizilirmak District", "Ufuk University Street No: 12", "06550 Ankara"],
-      phone: "+90 312 123 4567",
-      fax: "+90 312 123 4568",
-      hours: "Monday - Friday: 09:00 - 18:00"
+      city: "London Office",
+      address: ["115 Mount Street", "Flat 3", "London W1K 3NQ"],
+      phone: "+44 20 1234 5678",
+      fax: "+44 20 1234 5679",
+      hours: "Monday - Friday: 09:00 - 18:00 GMT"
     }
   ];
 

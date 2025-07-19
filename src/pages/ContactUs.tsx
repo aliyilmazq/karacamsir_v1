@@ -37,7 +37,7 @@ const ContactUs: React.FC = () => {
   const offices = [
     {
       city: "Istanbul",
-      address: ["Levent, Büyükdere Caddesi No: 185", "Kanyon Ofis Bloğu Kat: 18", "34394 Şişli, Istanbul, Turkey"],
+      address: ["Kısıklı Mah. Gurbet Sokak", "Rumeli Plaza No: 12/5", "Üsküdar, Istanbul, Turkey"],
       phone: "+90 212 123 4567"
     },
     {
@@ -47,12 +47,12 @@ const ContactUs: React.FC = () => {
     },
     {
       city: "London",
-      address: ["30 St Mary Axe", "London EC3A 8BF", "United Kingdom"],
+      address: ["115 Mount Street", "Flat 3", "London W1K 3NQ, United Kingdom"],
       phone: "+44 20 7123 4567"
     },
     {
       city: "New York",
-      address: ["One World Trade Center", "285 Fulton Street, Suite 8500", "New York, NY 10007, United States"],
+      address: ["447 Broadway", "2nd Floor Suite #2069", "New York, NY 10013, United States"],
       phone: "+1 212 123 4567"
     }
   ];
