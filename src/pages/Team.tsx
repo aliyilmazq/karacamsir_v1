@@ -10,6 +10,11 @@ import OzlemImg from "../assets/team_photos/Özlem ALBAYRAK.jpeg";
 import CankatImg from "../assets/team_photos/Cankat Şir.JPG";
 
 // Team member data (as React object)
+type CVSection = {
+  title: string;
+  items: string[];
+};
+
 type TeamMember = {
   key: string;
   name: string;
@@ -17,13 +22,9 @@ type TeamMember = {
   email: string;
   phone: string;
   initials: string;
-  education: string[];
-  specializations: string[];
-  languages: string[];
-  bar: string;
-  bio?: string;
   photo?: string;
-  cv?: string; // CV file path
+  intro?: string; // Short bio or intro
+  cvSections: CVSection[];
 };
 
 const teamData: TeamMember[] = [
@@ -34,12 +35,14 @@ const teamData: TeamMember[] = [
     email: 'ozlem.albayrak@karacamsir.com',
     phone: '+90 212 123 4501',
     initials: 'ÖA',
-    education: ['Hacettepe University, LL.B.'],
-    specializations: ['Technology & Ventures'],
-    languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association',
-    bio: undefined,
-    photo: OzlemImg
+    photo: OzlemImg,
+    intro: undefined,
+    cvSections: [
+      { title: 'Education', items: ['Hacettepe University, LL.B.'] },
+      { title: 'Areas of Expertise', items: ['Technology & Ventures'] },
+      { title: 'Languages', items: ['Turkish', 'English'] },
+      { title: 'Memberships', items: ['Istanbul Bar Association'] }
+    ]
   },
   {
     key: 'bahadir',
@@ -48,12 +51,14 @@ const teamData: TeamMember[] = [
     email: 'bahadir.isgoren@karacamsir.com',
     phone: '+90 212 123 4503',
     initials: 'Bİ',
-    education: ['Ankara University, LL.B.'],
-    specializations: ['Corporate & Commercial'],
-    languages: ['Turkish', 'English'],
-    bar: 'Ankara Bar Association',
-    bio: undefined,
-    photo: BahadirImg
+    photo: BahadirImg,
+    intro: undefined,
+    cvSections: [
+      { title: 'Education', items: ['Ankara University, LL.B.'] },
+      { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
+      { title: 'Languages', items: ['Turkish', 'English'] },
+      { title: 'Memberships', items: ['Ankara Bar Association'] }
+    ]
   },
   {
     key: 'furkan',
@@ -62,12 +67,25 @@ const teamData: TeamMember[] = [
     email: 'furkan.karacam@karacamsir.com',
     phone: '+90 212 123 4506',
     initials: 'FK',
-    education: ['Istanbul University, LL.M in Finance Law', 'Bilkent University, LL.B.'],
-    specializations: ['Corporate & Commercial'],
-    languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association',
-    bio: 'H. Furkan Karaçam is a dual-qualified corporate lawyer. His practice focuses on cross-border transactions, international commercial contracts, and institutional advisory. He advises under Turkish law, English law, and AIFC law. Other Professional Qualifications: Capital Markets Activities Level 3 License, Derivative Instruments License, Corporate Governance Rating License, Trademark Attorney. Memberships: Solicitor of England & Wales, Rights of Audience in AIFC Courts (Kazakhstan), Artificial Intelligence Policies Association Turkey (Disciplinary Board Member).',
-    photo: FurkanImg
+    photo: FurkanImg,
+    intro: 'H. Furkan Karaçam is a dual-qualified corporate lawyer. His practice focuses on cross-border transactions, international commercial contracts, and institutional advisory. He advises under Turkish law, English law, and AIFC law.',
+    cvSections: [
+      { title: 'Education', items: ['Istanbul University, LL.M in Finance Law', 'Bilkent University, LL.B.'] },
+      { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
+      { title: 'Languages', items: ['Turkish', 'English'] },
+      { title: 'Memberships', items: [
+        'Istanbul Bar Association',
+        'Solicitor of England & Wales',
+        'Rights of Audience in AIFC Courts (Kazakhstan)',
+        'Artificial Intelligence Policies Association Turkey (Disciplinary Board Member)'
+      ] },
+      { title: 'Other Professional Qualifications', items: [
+        'Capital Markets Activities Level 3 License',
+        'Derivative Instruments License',
+        'Corporate Governance Rating License',
+        'Trademark Attorney'
+      ] }
+    ]
   },
   {
     key: 'kerem',
@@ -76,12 +94,14 @@ const teamData: TeamMember[] = [
     email: 'kerem.seber@karacamsir.com',
     phone: '+90 212 123 4504',
     initials: 'KS',
-    education: ['Queen Marry University, LL.M.', 'Marmara University, LL.B.'],
-    specializations: ['Corporate & Commercial'],
-    languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association',
-    bio: undefined,
-    photo: KeremImg
+    photo: KeremImg,
+    intro: undefined,
+    cvSections: [
+      { title: 'Education', items: ['Queen Marry University, LL.M.', 'Marmara University, LL.B.'] },
+      { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
+      { title: 'Languages', items: ['Turkish', 'English'] },
+      { title: 'Memberships', items: ['Istanbul Bar Association'] }
+    ]
   },
   {
     key: 'cankat',
@@ -90,12 +110,19 @@ const teamData: TeamMember[] = [
     email: 'cankat.sir@karacamsir.com',
     phone: '+90 212 123 4505',
     initials: 'CŞ',
-    education: ['Ozyegin University, LL.B.'],
-    specializations: ['Technology & Ventures'],
-    languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association',
-    bio: 'Cankat Şir is a corporate and commercial lawyer focused on technology ventures. His practice covers startup law, venture capital transactions, data protection, and intellectual property. He advises emerging technology ventures and VCs and angel investors on complex projects, corporate structuring, and fundraising strategies, from seed rounds to Series A, B, C, and IPO and exit. Memberships: Artificial Intelligence Policies Association Turkey, Better Justice Association Turkey, Former TOBB E-Commerce Council, Data Protection Working Group Secretary.',
-    photo: CankatImg
+    photo: CankatImg,
+    intro: 'Cankat Şir is a corporate and commercial lawyer focused on technology ventures. His practice covers startup law, venture capital transactions, data protection, and intellectual property. He advises emerging technology ventures and VCs and angel investors on complex projects, corporate structuring, and fundraising strategies, from seed rounds to Series A, B, C, and IPO and exit.',
+    cvSections: [
+      { title: 'Education', items: ['Ozyegin University, LL.B.'] },
+      { title: 'Areas of Expertise', items: ['Technology & Ventures'] },
+      { title: 'Languages', items: ['Turkish', 'English'] },
+      { title: 'Memberships', items: [
+        'Istanbul Bar Association',
+        'Artificial Intelligence Policies Association Turkey',
+        'Better Justice Association Turkey',
+        'Former TOBB E-Commerce Council, Data Protection Working Group Secretary'
+      ] }
+    ]
   },
   {
     key: 'burcu',
@@ -104,12 +131,14 @@ const teamData: TeamMember[] = [
     email: 'burcu.uman@karacamsir.com',
     phone: '+90 212 123 4502',
     initials: 'BU',
-    education: ['Marmara University, LL.B.'],
-    specializations: ['Corporate & Commercial'],
-    languages: ['Turkish', 'English'],
-    bar: 'Istanbul Bar Association',
-    bio: undefined,
-    photo: BurcuImg
+    photo: BurcuImg,
+    intro: undefined,
+    cvSections: [
+      { title: 'Education', items: ['Marmara University, LL.B.'] },
+      { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
+      { title: 'Languages', items: ['Turkish', 'English'] },
+      { title: 'Memberships', items: ['Istanbul Bar Association'] }
+    ]
   },
   {
     key: 'bianca',
@@ -118,12 +147,14 @@ const teamData: TeamMember[] = [
     email: 'bianca.geangalau@karacamsir.com',
     phone: '+90 212 123 4507',
     initials: 'BG',
-    education: ['Robert Gordon University, LL.B.'],
-    specializations: ['Dispute Resolution'],
-    languages: ['Romanian', 'English', 'Turkish'],
-    bar: 'Bucharest Bar Association',
-    bio: undefined,
-    photo: BiancaImg
+    photo: BiancaImg,
+    intro: undefined,
+    cvSections: [
+      { title: 'Education', items: ['Robert Gordon University, LL.B.'] },
+      { title: 'Areas of Expertise', items: ['Dispute Resolution'] },
+      { title: 'Languages', items: ['Romanian', 'English', 'Turkish'] },
+      { title: 'Memberships', items: ['Bucharest Bar Association'] }
+    ]
   }
 ].sort((a, b) => {
   const getLastName = (name: string) => name.trim().split(' ').slice(-1)[0].toLocaleLowerCase('tr');
@@ -492,7 +523,7 @@ const Team: React.FC = () => {
                       {selectedMember.title}
                     </p>
 
-                    {selectedMember.bio && (
+                    {selectedMember.intro && (
                       <p style={{
                         fontSize: windowSize.isMobile ? '0.875rem' : '1rem',
                         lineHeight: 1.8,
@@ -500,149 +531,56 @@ const Team: React.FC = () => {
                         marginBottom: '2.5rem',
                         textAlign: 'justify'
                       }}>
-                        {selectedMember.bio}
+                        {selectedMember.intro}
                       </p>
                     )}
 
-                    {/* Education */}
-                    <div style={{ marginBottom: '2rem' }}>
-                      <h3 style={{
-                        fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
-                        fontWeight: 400,
-                        marginBottom: '1rem',
-                        color: '#333',
-                        position: 'relative',
-                        paddingBottom: '0.75rem'
-                      }}>
-                        Education
-                        <span style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          width: '30px',
-                          height: '2px',
-                          background: '#2e0d50'
-                        }}></span>
-                      </h3>
-                      <ul style={{
-                        listStyle: 'none',
-                        padding: 0,
-                        margin: 0,
-                        color: '#555',
-                        lineHeight: 1.8
-                      }}>
-                        {selectedMember.education.map((edu, index) => (
-                          <li key={index} style={{
-                            marginBottom: '0.5rem',
-                            paddingLeft: '1.5rem',
-                            position: 'relative',
-                            fontSize: windowSize.isMobile ? '0.875rem' : '0.9375rem'
-                          }}>
-                            <span style={{
-                              position: 'absolute',
-                              left: 0,
-                              color: '#2e0d50'
-                            }}>▸</span>
-                            {edu}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Specializations */}
-                    <div style={{ marginBottom: '2rem' }}>
-                      <h3 style={{
-                        fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
-                        fontWeight: 400,
-                        marginBottom: '1rem',
-                        color: '#333',
-                        position: 'relative',
-                        paddingBottom: '0.75rem'
-                      }}>
-                        Areas of Expertise
-                        <span style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          width: '30px',
-                          height: '2px',
-                          background: '#2e0d50'
-                        }}></span>
-                      </h3>
-                      <div style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: '0.5rem'
-                      }}>
-                        {selectedMember.specializations.map((spec, index) => (
-                          <span key={index} style={{
-                            background: '#f0f0f0',
-                            padding: windowSize.isMobile ? '0.375rem 0.75rem' : '0.5rem 1rem',
-                            borderRadius: '20px',
-                            fontSize: windowSize.isMobile ? '0.75rem' : '0.875rem',
-                            color: '#555'
-                          }}>
-                            {spec}
-                          </span>
-                        ))}
+                    {/* CV Sections */}
+                    {selectedMember.cvSections.map((section, index) => (
+                      <div key={index} style={{ marginBottom: '2rem' }}>
+                        <h3 style={{
+                          fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
+                          fontWeight: 400,
+                          marginBottom: '1rem',
+                          color: '#333',
+                          position: 'relative',
+                          paddingBottom: '0.75rem'
+                        }}>
+                          {section.title}
+                          <span style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            width: '30px',
+                            height: '2px',
+                            background: '#2e0d50'
+                          }}></span>
+                        </h3>
+                        <ul style={{
+                          listStyle: 'none',
+                          padding: 0,
+                          margin: 0,
+                          color: '#555',
+                          lineHeight: 1.8
+                        }}>
+                          {section.items.map((item, itemIndex) => (
+                            <li key={itemIndex} style={{
+                              marginBottom: '0.5rem',
+                              paddingLeft: '1.5rem',
+                              position: 'relative',
+                              fontSize: windowSize.isMobile ? '0.875rem' : '0.9375rem'
+                            }}>
+                              <span style={{
+                                position: 'absolute',
+                                left: 0,
+                                color: '#2e0d50'
+                              }}>▸</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </div>
-
-                    {/* Languages */}
-                    <div style={{ marginBottom: '2rem' }}>
-                      <h3 style={{
-                        fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
-                        fontWeight: 400,
-                        marginBottom: '1rem',
-                        color: '#333',
-                        position: 'relative',
-                        paddingBottom: '0.75rem'
-                      }}>
-                        Languages
-                        <span style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          width: '30px',
-                          height: '2px',
-                          background: '#2e0d50'
-                        }}></span>
-                      </h3>
-                      <p style={{
-                        color: '#555',
-                        fontSize: windowSize.isMobile ? '0.875rem' : '0.9375rem'
-                      }}>
-                        {selectedMember.languages.join(' • ')}
-                      </p>
-                    </div>
-
-                    {/* Bar */}
-                    <div>
-                      <h3 style={{
-                        fontSize: windowSize.isMobile ? '1.125rem' : '1.25rem',
-                        fontWeight: 400,
-                        marginBottom: '1rem',
-                        color: '#333',
-                        position: 'relative',
-                        paddingBottom: '0.75rem'
-                      }}>
-                        Bar Registration
-                        <span style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          width: '30px',
-                          height: '2px',
-                          background: '#2e0d50'
-                        }}></span>
-                      </h3>
-                      <p style={{
-                        color: '#555',
-                        fontSize: windowSize.isMobile ? '0.875rem' : '0.9375rem'
-                      }}>
-                        {selectedMember.bar}
-                      </p>
-                    </div>
+                    ))}
                   </div>
                 </div>
               )}
