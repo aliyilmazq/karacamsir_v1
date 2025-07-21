@@ -267,14 +267,17 @@ const Team: React.FC = () => {
                         </div>
                       )}
                     </div>
-                    <div className={styles.modalContact}>
-                      <a
-                        href={`mailto:${selectedMember.email}`}
-                        className={styles.modalEmail}
-                      >
-                        {selectedMember.email}
-                      </a>
-                    </div>
+                    {(selectedMember.email === 'cankat.sir@karacamsir.com' || 
+                     selectedMember.email === 'furkan.karacam@karacamsir.com') && (
+                      <div className={styles.modalContact}>
+                        <a
+                          href={`mailto:${selectedMember.email}`}
+                          className={styles.modalEmail}
+                        >
+                          {selectedMember.email}
+                        </a>
+                      </div>
+                    )}
                   </div>
 
                   <div className={styles.modalDetails}>
