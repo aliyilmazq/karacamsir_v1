@@ -72,12 +72,15 @@
 }
 
 .memberName {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 400;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
   margin-bottom: 0;
   color: #333;
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Modal Styles - Mobile First */
@@ -312,7 +315,11 @@
   }
 
   .memberName {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .memberCard:hover {
@@ -412,8 +419,11 @@
   }
 
   .memberName {
-    font-size: 1.375rem;
-    letter-spacing: 1px;
+    font-size: 1.15rem;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .modalContent {
