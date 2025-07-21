@@ -23,8 +23,8 @@ const ContactLawFirm: React.FC = () => {
     {
       city: "Istanbul - Head Office",
       address: ["Kısıklı Mah. Gurbet Sokak", "Rumeli Plaza No: 12/5", "Üsküdar, Istanbul"],
-      phone: "+90 212 123 4567",
-      fax: "+90 212 123 4568",
+      phone: "0216 329 00 60",
+      fax: "0216 329 00 61",
       hours: "Monday - Friday: 09:00 - 18:00"
     },
     {
@@ -103,7 +103,7 @@ const ContactLawFirm: React.FC = () => {
             <span className="quick-icon">📞</span>
             <div className="quick-info">
               <span className="quick-label">Emergency Consultation Line</span>
-              <a href="tel:+902121234567" className="quick-value">+90 212 123 4567</a>
+              <a href="tel:02163290060" className="quick-value">0216 329 00 60</a>
             </div>
           </div>
           <div className="quick-contact-item">
@@ -372,7 +372,7 @@ const ContactLawFirm: React.FC = () => {
             Our expert team is here for professional legal support.
           </p>
           <div className="cta-buttons">
-            <a href="tel:+902121234567" className="cta-btn primary">
+            <a href="tel:02163290060" className="cta-btn primary">
               <span className="btn-icon">📞</span>
               Call Now
             </a>
