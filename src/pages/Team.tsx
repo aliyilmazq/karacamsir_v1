@@ -75,7 +75,7 @@ const teamData: TeamMember[] = [
       { title: 'Education', items: ['Istanbul University, LL.M in Finance Law', 'Bilkent University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
       { title: 'Languages', items: ['Turkish', 'English', 'French'] },
-      { title: 'Memberships', items: ['Member of Law Society of England'] },
+      { title: 'Memberships', items: ['Member of Law Society of England', 'Artificial Intelligence Policies Association Turkey Disciplinary Board'] },
       { title: 'Other Professional Qualifications', items: [
         'Capital Markets Activities Level 3 License',
         'Derivative Instruments License',
@@ -267,8 +267,8 @@ const Team: React.FC = () => {
                         </div>
                       )}
                     </div>
-                    {(selectedMember.email === 'cankat.sir@karacamsir.com' || 
-                     selectedMember.email === 'furkan.karacam@karacamsir.com') && (
+                    {(selectedMember.email === 'cankat@karacamsir.com' || 
+                     selectedMember.email === 'furkan@karacamsir.com') && (
                       <div className={styles.modalContact}>
                         <a
                           href={`mailto:${selectedMember.email}`}
