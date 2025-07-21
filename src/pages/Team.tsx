@@ -37,12 +37,12 @@ const teamData: TeamMember[] = [
     phone: '+90 212 123 4501',
     initials: 'ÖA',
     photo: OzlemImg,
-    intro: undefined,
+    intro: 'Özlem Albayrak is an associate specializing in technology ventures. She is a member of the Istanbul Bar Association and holds an LL.B. from Hacettepe University. She is fluent in Turkish and English.',
     cvSections: [
+      { title: 'Bars', items: ['Istanbul'] },
       { title: 'Education', items: ['Hacettepe University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Technology & Ventures'] },
-      { title: 'Languages', items: ['Turkish', 'English'] },
-      { title: 'Memberships', items: ['Istanbul Bar Association'] }
+      { title: 'Languages', items: ['Turkish', 'English'] }
     ]
   },
   {
@@ -71,15 +71,11 @@ const teamData: TeamMember[] = [
     photo: FurkanImg,
     intro: 'H. Furkan Karaçam is a dual-qualified corporate lawyer. His practice focuses on cross-border transactions, international commercial contracts, and institutional advisory. He advises under Turkish law, English law, and AIFC law.',
     cvSections: [
+      { title: 'Bars', items: ['Istanbul', 'England & Wales', 'Rights of Audience in AIFC Courts (Kazakhstan)'] },
       { title: 'Education', items: ['Istanbul University, LL.M in Finance Law', 'Bilkent University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
-      { title: 'Languages', items: ['Turkish', 'English'] },
-      { title: 'Memberships', items: [
-        'Istanbul Bar Association',
-        'Solicitor of England & Wales',
-        'Rights of Audience in AIFC Courts (Kazakhstan)',
-        'Artificial Intelligence Policies Association Turkey (Disciplinary Board Member)'
-      ] },
+      { title: 'Languages', items: ['Turkish', 'English', 'French'] },
+      { title: 'Memberships', items: ['Member of Law Society of England'] },
       { title: 'Other Professional Qualifications', items: [
         'Capital Markets Activities Level 3 License',
         'Derivative Instruments License',
@@ -96,12 +92,12 @@ const teamData: TeamMember[] = [
     phone: '+90 212 123 4504',
     initials: 'KS',
     photo: KeremImg,
-    intro: undefined,
+    intro: 'Kerem Seber is Of Counsel with expertise in corporate and commercial law. He is a member of the Istanbul Bar Association and holds an LL.M. from Queen Mary University and an LL.B. from Marmara University. He is fluent in Turkish and English.',
     cvSections: [
+      { title: 'Bars', items: ['Istanbul'] },
       { title: 'Education', items: ['Queen Marry University, LL.M.', 'Marmara University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
-      { title: 'Languages', items: ['Turkish', 'English'] },
-      { title: 'Memberships', items: ['Istanbul Bar Association'] }
+      { title: 'Languages', items: ['Turkish', 'English'] }
     ]
   },
   {
@@ -114,11 +110,11 @@ const teamData: TeamMember[] = [
     photo: CankatImg,
     intro: 'Cankat Şir is a corporate and commercial lawyer focused on technology ventures. His practice covers startup law, venture capital transactions, data protection, and intellectual property. He advises emerging technology startups, VCs and angel investors on complex projects, corporate structuring, and fundraising strategies, from seed rounds to Series A, B, C, and IPO & exit.',
     cvSections: [
+      { title: 'Bars', items: ['Istanbul'] },
       { title: 'Education', items: ['Ozyegin University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Technology & Ventures'] },
       { title: 'Languages', items: ['Turkish', 'English'] },
       { title: 'Memberships', items: [
-        'Istanbul Bar Association',
         'Artificial Intelligence Policies Association Turkey',
         'Better Justice Association Turkey',
         'Former TOBB E-Commerce Council, Data Protection Working Group Secretary'
@@ -133,12 +129,12 @@ const teamData: TeamMember[] = [
     phone: '+90 212 123 4502',
     initials: 'BU',
     photo: BurcuImg,
-    intro: undefined,
+    intro: 'Burcu Uman is an associate specializing in corporate and commercial law. She is a member of the Istanbul Bar Association and holds an LL.B. from Marmara University. She is fluent in Turkish and English.',
     cvSections: [
+      { title: 'Bars', items: ['Istanbul'] },
       { title: 'Education', items: ['Marmara University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Corporate & Commercial'] },
-      { title: 'Languages', items: ['Turkish', 'English'] },
-      { title: 'Memberships', items: ['Istanbul Bar Association'] }
+      { title: 'Languages', items: ['Turkish', 'English'] }
     ]
   },
   {
@@ -149,12 +145,11 @@ const teamData: TeamMember[] = [
     phone: '+90 212 123 4507',
     initials: 'BG',
     photo: BiancaImg,
-    intro: undefined,
+    intro: 'Bianca Geangalau is an associate specializing in dispute resolution. She holds an LL.B. from Robert Gordon University and is fluent in Romanian, English, and Greek.',
     cvSections: [
       { title: 'Education', items: ['Robert Gordon University, LL.B.'] },
       { title: 'Areas of Expertise', items: ['Dispute Resolution'] },
-      { title: 'Languages', items: ['Romanian', 'English', 'Turkish'] },
-      { title: 'Memberships', items: ['Bucharest Bar Association'] }
+      { title: 'Languages', items: ['Romanian', 'English', 'Greek'] }
     ]
   }
 ].sort((a, b) => {

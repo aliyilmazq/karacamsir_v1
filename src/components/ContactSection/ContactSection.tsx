@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
           <strong>Address:</strong> Kısıklı Mah. Gurbet Sokak Rumeli Plaza No: 12/5 Üsküdar, Istanbul
         </div>
         <div>
-          <strong>Phone:</strong> +90 212 123 45 67
+          <strong>Phone:</strong> 0216 329 00 60
         </div>
         <div>
           <strong>Email:</strong> info@karacamsir.com
