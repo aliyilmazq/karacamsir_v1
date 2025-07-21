@@ -34,7 +34,7 @@ const AboutUs: React.FC = () => {
     {
       city: 'Istanbul',
       address: 'Kısıklı Mah. Gurbet Sokak Rumeli Plaza No: 12/5 Üsküdar, Istanbul, Turkey',
-      phone: '+90 212 123 45 67'
+      phone: '+90 216 329 00 60'
     },
     {
       city: 'Astana',
