@@ -133,7 +133,7 @@ const AboutUs: React.FC = () => {
                   lineHeight: 1.8, 
                   marginBottom: windowSize.isMobile ? '1.5rem' : '2rem' 
                 }}>
-                  With over 15 years of experience, we provide advisory services to our corporate 
+                  We provide advisory services to our corporate 
                   clients operating in Turkey, Central Asia, Europe, and America on complex commercial 
                   transactions, infrastructure projects, and technology ventures.
                 </p>
